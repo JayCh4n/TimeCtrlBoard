@@ -54,6 +54,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "pin_manager.h"
+#include "eusart.h"
 
 #ifdef __cplusplus  // Provide C++ Compatibility
 

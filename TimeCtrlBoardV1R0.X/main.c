@@ -68,10 +68,28 @@ void main(void)
 
     while (1)
     {
-        
         // Add your application code
+        if (eusartRxOvertimeMask)
+        {
+            EUSART_Deal();
+            eusartRxOvertimeMask = 0;
+        }
     }
 }
 /**
  End of File
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+

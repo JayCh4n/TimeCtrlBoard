@@ -77,8 +77,9 @@
  Section: Global variables
  */
 extern volatile uint8_t eusartTxBufferRemaining;
-extern volatile uint8_t eusartRxCount;
-
+extern uint8_t eusartRxBuffer[EUSART_RX_BUFFER_SIZE];
+extern uint8_t eusartRxCount;
+extern uint8_t eusartRxOvertimeMask;
 /**
   Section: EUSART APIs
 */

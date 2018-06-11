@@ -123,7 +123,17 @@ void TMR0_ISR(void)
 void TMR0_CallBack(void)
 {
     // Add your custom callback code here
-        
+    static uint8_t eusartRXOvertimeCnt = 0;                        //串口接收超时计数    50ms没有数据接收，则认为一个数据包接收完成
+
+    if(eusartRxCount != 0)
+    {
+        if (++eusartRXOvertimeCnt >= 50)
+        {
+            eusartRXOvertimeCnt = 0;
+            eusartRxOvertimeMask = 1;
+        }
+    }
+
     if(TMR0_InterruptHandler)
     {
         TMR0_InterruptHandler();

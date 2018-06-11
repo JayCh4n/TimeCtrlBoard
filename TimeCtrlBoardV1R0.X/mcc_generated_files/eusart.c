@@ -53,8 +53,8 @@
   Section: Macro Declarations
 */
 
-#define EUSART_TX_BUFFER_SIZE 8
-#define EUSART_RX_BUFFER_SIZE 8
+#define EUSART_TX_BUFFER_SIZE 200
+#define EUSART_RX_BUFFER_SIZE 200
 
 /**
   Section: Global Variables
@@ -66,8 +66,9 @@ volatile uint8_t eusartTxBufferRemaining;
 
 volatile uint8_t eusartRxHead = 0;
 volatile uint8_t eusartRxTail = 0;
-volatile uint8_t eusartRxBuffer[EUSART_RX_BUFFER_SIZE];
-volatile uint8_t eusartRxCount;
+uint8_t eusartRxBuffer[EUSART_RX_BUFFER_SIZE];
+uint8_t eusartRxCount;
+uint8_t eusartRxOvertimeMask = 0;
 
 /**
   Section: EUSART APIs
@@ -223,6 +224,21 @@ void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void)){
 void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void)){
     EUSART_RxDefaultInterruptHandler = interruptHandler;
 }
+
+void EUSART_Deal(void)
+{
+    if(eusartRxBuffer[0] == A5 && eusartRxBuffer[1] == 5A)
+    {
+        if(eusartRxBuffer[2] == eusartRxCount)
+        {
+            //判断命令
+
+        }
+    }
+
+}
+
+
 /**
   End of File
 */
