@@ -4021,31 +4021,157 @@ void PIN_MANAGER_Initialize (void);
 # 284
 void PIN_MANAGER_IOC(void);
 
-# 105 "mcc_generated_files/tmr0.h"
+# 4 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\__size_t.h"
+typedef unsigned size_t;
+
+# 7 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdarg.h"
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+
+# 43 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h"
+struct __prbuf
+{
+char * ptr;
+void (* func)(char);
+};
+
+# 29 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\errno.h"
+extern int errno;
+
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\conio.h"
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+# 23
+extern char * cgets(char *);
+extern void cputs(const char *);
+
+# 88 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h"
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+
+
+# 180
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+
+# 109 "mcc_generated_files/interrupt_manager.h"
+void interrupt INTERRUPT_InterruptManager(void);
+
+# 20 "mcc_generated_files/time_ctrl.h"
+extern uint16_t timeCtrlValue[8][4];
+extern uint8_t timeCtrlIQRSta[8];
+extern uint8_t timeCtrlStartFlag;
+extern uint8_t timeCtrlOvertimeMask;
+
+# 72 "mcc_generated_files/mcc.h"
+void SYSTEM_Initialize(void);
+
+# 85
+void OSCILLATOR_Initialize(void);
+
+# 97
+void WDT_Initialize(void);
+
+
+unsigned char Get_Device_Addr(void);
+
+# 80 "mcc_generated_files/eusart.h"
+extern volatile uint8_t eusartTxBufferRemaining;
+extern uint8_t eusartRxBuffer[50];
+extern uint8_t eusartRxCount;
+extern uint8_t eusartRxOvertimeMask;
+
+# 88
+void (*EUSART_TxDefaultInterruptHandler)(void);
+void (*EUSART_RxDefaultInterruptHandler)(void);
+
+# 111
+void EUSART_Initialize(void);
+
+# 164
+uint8_t EUSART_is_tx_ready(void);
+
+# 216
+uint8_t EUSART_is_rx_ready(void);
+
+# 263
+bool EUSART_is_tx_done(void);
+
+# 283
+uint8_t EUSART_Read(void);
+
+# 303
+void EUSART_Write(uint8_t txData);
+
+# 324
+void EUSART_Transmit_ISR(void);
+
+# 345
+void EUSART_Receive_ISR(void);
+
+# 365
+void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void));
+
+# 385
+void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
+
+void EUSART_Deal(void);
+
+# 107 "mcc_generated_files/tmr0.h"
 void TMR0_Initialize(void);
 
-# 136
+# 138
 uint8_t TMR0_ReadTimer(void);
 
-# 175
+# 177
 void TMR0_WriteTimer(uint8_t timerVal);
 
-# 211
+# 213
 void TMR0_Reload(void);
 
-# 226
+# 228
 void TMR0_ISR(void);
 
-# 244
+# 246
 void TMR0_CallBack(void);
 
-# 262
+# 264
 void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
 
-# 280
+# 282
 extern void (*TMR0_InterruptHandler)(void);
 
-# 298
+# 300
 void TMR0_DefaultInterruptHandler(void);
 
 # 58 "mcc_generated_files/tmr0.c"
@@ -4115,6 +4241,27 @@ TMR0_CallBack();
 void TMR0_CallBack(void)
 {
 
+static uint8_t eusartRXOvertimeCnt = 0;
+static uint8_t timeCrlCnt = 0;
+
+if(timeCtrlStartFlag)
+{
+if(++timeCrlCnt >= 10)
+{
+timeCrlCnt = 0;
+timeCtrlOvertimeMask = 1;
+}
+}
+
+
+if(eusartRxCount != 0)
+{
+if (++eusartRXOvertimeCnt >= 50)
+{
+eusartRXOvertimeCnt = 0;
+eusartRxOvertimeMask = 1;
+}
+}
 
 if(TMR0_InterruptHandler)
 {

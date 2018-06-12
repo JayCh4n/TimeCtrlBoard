@@ -4024,33 +4024,6 @@ typedef unsigned char bool;
 # 109 "mcc_generated_files/interrupt_manager.h"
 void interrupt INTERRUPT_InterruptManager(void);
 
-# 105 "mcc_generated_files/tmr0.h"
-void TMR0_Initialize(void);
-
-# 136
-uint8_t TMR0_ReadTimer(void);
-
-# 175
-void TMR0_WriteTimer(uint8_t timerVal);
-
-# 211
-void TMR0_Reload(void);
-
-# 226
-void TMR0_ISR(void);
-
-# 244
-void TMR0_CallBack(void);
-
-# 262
-void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
-
-# 280
-extern void (*TMR0_InterruptHandler)(void);
-
-# 298
-void TMR0_DefaultInterruptHandler(void);
-
 # 4 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\__size_t.h"
 typedef unsigned size_t;
 
@@ -4114,51 +4087,88 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
-# 79 "mcc_generated_files/eusart.h"
-extern volatile uint8_t eusartTxBufferRemaining;
-extern volatile uint8_t eusartRxCount;
+# 20 "mcc_generated_files/time_ctrl.h"
+extern uint16_t timeCtrlValue[8][4];
+extern uint8_t timeCtrlIQRSta[8];
+extern uint8_t timeCtrlStartFlag;
+extern uint8_t timeCtrlOvertimeMask;
 
-# 86
+# 80 "mcc_generated_files/eusart.h"
+extern volatile uint8_t eusartTxBufferRemaining;
+extern uint8_t eusartRxBuffer[50];
+extern uint8_t eusartRxCount;
+extern uint8_t eusartRxOvertimeMask;
+
+# 88
 void (*EUSART_TxDefaultInterruptHandler)(void);
 void (*EUSART_RxDefaultInterruptHandler)(void);
 
-# 109
+# 111
 void EUSART_Initialize(void);
 
-# 162
+# 164
 uint8_t EUSART_is_tx_ready(void);
 
-# 214
+# 216
 uint8_t EUSART_is_rx_ready(void);
 
-# 261
+# 263
 bool EUSART_is_tx_done(void);
 
-# 281
+# 283
 uint8_t EUSART_Read(void);
 
-# 301
+# 303
 void EUSART_Write(uint8_t txData);
 
-# 322
+# 324
 void EUSART_Transmit_ISR(void);
 
-# 343
+# 345
 void EUSART_Receive_ISR(void);
 
-# 363
+# 365
 void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void));
 
-# 383
+# 385
 void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
 
-# 71 "mcc_generated_files/mcc.h"
+void EUSART_Deal(void);
+
+# 107 "mcc_generated_files/tmr0.h"
+void TMR0_Initialize(void);
+
+# 138
+uint8_t TMR0_ReadTimer(void);
+
+# 177
+void TMR0_WriteTimer(uint8_t timerVal);
+
+# 213
+void TMR0_Reload(void);
+
+# 228
+void TMR0_ISR(void);
+
+# 246
+void TMR0_CallBack(void);
+
+# 264
+void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+
+# 282
+extern void (*TMR0_InterruptHandler)(void);
+
+# 300
+void TMR0_DefaultInterruptHandler(void);
+
+# 72 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 
-# 84
+# 85
 void OSCILLATOR_Initialize(void);
 
-# 96
+# 97
 void WDT_Initialize(void);
 
 

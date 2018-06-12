@@ -74,6 +74,12 @@ void main(void)
             EUSART_Deal();
             eusartRxOvertimeMask = 0;
         }
+        
+        if(timeCtrlOvertimeMask)
+        {
+            tempCtrlProcess();
+            timeCtrlOvertimeMask = 0;
+        }
     }
 }
 /**

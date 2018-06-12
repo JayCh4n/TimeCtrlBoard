@@ -55,6 +55,8 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
+#include "mcc.h"
+#include "time_ctrl.h"
 
 #ifdef __cplusplus  // Provide C++ Compatibility
 
@@ -69,10 +71,9 @@
 
 #define EUSART_DataReady  (EUSART_is_rx_ready())
 
-/**
-  Section: Data Type Definitions
-*/
-
+#define EUSART_TX_BUFFER_SIZE 50
+#define EUSART_RX_BUFFER_SIZE 50
+        
 /**
  Section: Global variables
  */
@@ -383,6 +384,7 @@ void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void));
 */
 void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
 
+void EUSART_Deal(void);
 #ifdef __cplusplus  // Provide C++ Compatibility
 
     }

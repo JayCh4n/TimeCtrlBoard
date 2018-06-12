@@ -53,6 +53,7 @@
 #include "interrupt_manager.h"
 #include "tmr0.h"
 #include "eusart.h"
+#include "time_ctrl.h"
 
 #define _XTAL_FREQ  16000000
 

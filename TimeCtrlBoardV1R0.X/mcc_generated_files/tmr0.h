@@ -55,6 +55,7 @@
 #include <stdbool.h>
 #include "pin_manager.h"
 #include "eusart.h"
+#include "time_ctrl.h"
 
 #ifdef __cplusplus  // Provide C++ Compatibility
 

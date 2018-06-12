@@ -124,7 +124,18 @@ void TMR0_CallBack(void)
 {
     // Add your custom callback code here
     static uint8_t eusartRXOvertimeCnt = 0;                        //串口接收超时计数    50ms没有数据接收，则认为一个数据包接收完成
-
+    static uint8_t timeCrlCnt = 0;                                 //???????? 10ms  ???????
+    
+    if(timeCtrlStartFlag)
+    {
+        if(++timeCrlCnt >= 10)
+        {
+            timeCrlCnt = 0;
+            timeCtrlOvertimeMask = 1;
+        }
+    }
+    
+    /*???????? ?????*/
     if(eusartRxCount != 0)
     {
         if (++eusartRXOvertimeCnt >= 50)

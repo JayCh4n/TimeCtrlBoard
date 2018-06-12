@@ -53,9 +53,6 @@
   Section: Macro Declarations
 */
 
-#define EUSART_TX_BUFFER_SIZE 200
-#define EUSART_RX_BUFFER_SIZE 200
-
 /**
   Section: Global Variables
 */
@@ -225,14 +222,24 @@ void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void)){
     EUSART_RxDefaultInterruptHandler = interruptHandler;
 }
 
+/*?Eusart??????????*/
 void EUSART_Deal(void)
 {
-    if(eusartRxBuffer[0] == A5 && eusartRxBuffer[1] == 5A)
+    if(eusartRxBuffer[0] == 0xA5 && eusartRxBuffer[1] == 0x5A)      //????????
     {
-        if(eusartRxBuffer[2] == eusartRxCount)
+        if(eusartRxBuffer[2] == eusartRxCount)                      //??????????
         {
-            //判断命令
-
+            if(eusartRxBuffer[4] == Get_Device_Addr())
+            {
+                if(eusartRxBuffer[3] == TIME_CTRL_STOP)
+                {
+                 //???????   
+                }
+                else if(eusartRxBuffer[3] == TIME_CTRL_START)
+                {
+                //????????  ??????????    
+                }
+            }    
         }
     }
 

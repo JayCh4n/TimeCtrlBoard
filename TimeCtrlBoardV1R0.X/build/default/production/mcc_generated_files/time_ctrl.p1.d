@@ -1,6 +1,6 @@
- build/default/production/main.d  \
- build/default/production/main.p1:  \
- main.c  \
+ build/default/production/mcc_generated_files/time_ctrl.d  \
+ build/default/production/mcc_generated_files/time_ctrl.p1:  \
+ mcc_generated_files/time_ctrl.c  \
 mcc_generated_files/mcc.h  \
 mcc_generated_files/time_ctrl.h  \
 mcc_generated_files/interrupt_manager.h  \
