@@ -71,8 +71,8 @@ void main(void)
         // Add your application code
         if (eusartRxOvertimeMask)
         {
-            EUSART_Deal();
             eusartRxOvertimeMask = 0;
+            EUSART_Deal();
         }
         
         if(timeCtrlOvertimeMask)

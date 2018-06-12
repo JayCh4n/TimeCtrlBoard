@@ -135,7 +135,7 @@ void TMR0_Initialize(void);
     }
     </code>
 */
-uint8_t TMR0_ReadTimer(void);
+//uint8_t TMR0_ReadTimer(void);
 
 /**
   @Summary
@@ -174,7 +174,7 @@ uint8_t TMR0_ReadTimer(void);
     }
     </code>
 */
-void TMR0_WriteTimer(uint8_t timerVal);
+//void TMR0_WriteTimer(uint8_t timerVal);
 
 /**
   @Summary
@@ -210,7 +210,7 @@ void TMR0_WriteTimer(uint8_t timerVal);
     }
     </code>
 */
-void TMR0_Reload(void);
+//void TMR0_Reload(void);
 
 /**
   @Summary

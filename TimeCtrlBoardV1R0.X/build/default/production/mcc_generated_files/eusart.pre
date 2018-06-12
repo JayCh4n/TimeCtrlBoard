@@ -4081,29 +4081,23 @@ extern int printf(const char *, ...);
 # 272 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 284
-void PIN_MANAGER_IOC(void);
-
 # 109 "mcc_generated_files/interrupt_manager.h"
 void interrupt INTERRUPT_InterruptManager(void);
 
 # 20 "mcc_generated_files/time_ctrl.h"
 extern uint16_t timeCtrlValue[8][4];
-extern uint8_t timeCtrlIQRSta[8];
 extern uint8_t timeCtrlStartFlag;
 extern uint8_t timeCtrlOvertimeMask;
+extern uint8_t IQRPreSta[8];
+extern uint8_t IQRSta[8];
+
+void tempCtrlProcess(void);
+void startTimeCtrl(void);
+void stopTimeCtrl(void);
+void getTimeData(void);
 
 # 107 "mcc_generated_files/tmr0.h"
 void TMR0_Initialize(void);
-
-# 138
-uint8_t TMR0_ReadTimer(void);
-
-# 177
-void TMR0_WriteTimer(uint8_t timerVal);
-
-# 213
-void TMR0_Reload(void);
 
 # 228
 void TMR0_ISR(void);
@@ -4134,66 +4128,43 @@ unsigned char Get_Device_Addr(void);
 
 # 80 "mcc_generated_files/eusart.h"
 extern volatile uint8_t eusartTxBufferRemaining;
-extern uint8_t eusartRxBuffer[50];
+extern uint8_t eusartRxBuffer[75];
 extern uint8_t eusartRxCount;
 extern uint8_t eusartRxOvertimeMask;
+extern uint8_t EusartRxLenth;
 
-# 88
+# 89
 void (*EUSART_TxDefaultInterruptHandler)(void);
 void (*EUSART_RxDefaultInterruptHandler)(void);
 
-# 111
+# 112
 void EUSART_Initialize(void);
 
-# 164
-uint8_t EUSART_is_tx_ready(void);
-
-# 216
-uint8_t EUSART_is_rx_ready(void);
-
-# 263
-bool EUSART_is_tx_done(void);
-
-# 283
-uint8_t EUSART_Read(void);
-
-# 303
-void EUSART_Write(uint8_t txData);
-
-# 324
-void EUSART_Transmit_ISR(void);
-
-# 345
+# 346
 void EUSART_Receive_ISR(void);
 
-# 365
+# 366
 void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void));
 
-# 385
+# 386
 void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
 
 void EUSART_Deal(void);
 
-# 59 "mcc_generated_files/eusart.c"
-volatile uint8_t eusartTxHead = 0;
-volatile uint8_t eusartTxTail = 0;
-volatile uint8_t eusartTxBuffer[50];
-volatile uint8_t eusartTxBufferRemaining;
-
-volatile uint8_t eusartRxHead = 0;
-volatile uint8_t eusartRxTail = 0;
-uint8_t eusartRxBuffer[50];
+# 66 "mcc_generated_files/eusart.c"
+uint8_t eusartRxBuffer[75];
 uint8_t eusartRxCount;
 uint8_t eusartRxOvertimeMask = 0;
+uint8_t EusartRxLenth = 0;
 
-# 73
+# 74
 void EUSART_Initialize(void)
 {
 
 PIE1bits.RCIE = 0;
 EUSART_SetRxInterruptHandler(EUSART_Receive_ISR);
 PIE1bits.TXIE = 0;
-EUSART_SetTxInterruptHandler(EUSART_Transmit_ISR);
+
 
 
 
@@ -4211,107 +4182,14 @@ SPBRGL = 0xA0;
 
 SPBRGH = 0x01;
 
-
-
-eusartTxHead = 0;
-eusartTxTail = 0;
-eusartTxBufferRemaining = sizeof(eusartTxBuffer);
-
-eusartRxHead = 0;
-eusartRxTail = 0;
+# 106
 eusartRxCount = 0;
 
 
 PIE1bits.RCIE = 1;
 }
 
-uint8_t EUSART_is_tx_ready(void)
-{
-return eusartTxBufferRemaining;
-}
-
-uint8_t EUSART_is_rx_ready(void)
-{
-return eusartRxCount;
-}
-
-bool EUSART_is_tx_done(void)
-{
-return TXSTAbits.TRMT;
-}
-
-uint8_t EUSART_Read(void)
-{
-uint8_t readValue = 0;
-
-while(0 == eusartRxCount)
-{
-}
-
-readValue = eusartRxBuffer[eusartRxTail++];
-if(sizeof(eusartRxBuffer) <= eusartRxTail)
-{
-eusartRxTail = 0;
-}
-PIE1bits.RCIE = 0;
-eusartRxCount--;
-PIE1bits.RCIE = 1;
-
-return readValue;
-}
-
-void EUSART_Write(uint8_t txData)
-{
-while(0 == eusartTxBufferRemaining)
-{
-}
-
-if(0 == PIE1bits.TXIE)
-{
-TXREG = txData;
-}
-else
-{
-PIE1bits.TXIE = 0;
-eusartTxBuffer[eusartTxHead++] = txData;
-if(sizeof(eusartTxBuffer) <= eusartTxHead)
-{
-eusartTxHead = 0;
-}
-eusartTxBufferRemaining--;
-}
-PIE1bits.TXIE = 1;
-}
-
-char getch(void)
-{
-return EUSART_Read();
-}
-
-void putch(char txData)
-{
-EUSART_Write(txData);
-}
-
-void EUSART_Transmit_ISR(void)
-{
-
-
-if(sizeof(eusartTxBuffer) > eusartTxBufferRemaining)
-{
-TXREG = eusartTxBuffer[eusartTxTail++];
-if(sizeof(eusartTxBuffer) <= eusartTxTail)
-{
-eusartTxTail = 0;
-}
-eusartTxBufferRemaining++;
-}
-else
-{
-PIE1bits.TXIE = 0;
-}
-}
-
+# 199
 void EUSART_Receive_ISR(void)
 {
 if(1 == RCSTAbits.OERR)
@@ -4322,19 +4200,11 @@ RCSTAbits.CREN = 0;
 RCSTAbits.CREN = 1;
 }
 
-
-eusartRxBuffer[eusartRxHead++] = RCREG;
-if(sizeof(eusartRxBuffer) <= eusartRxHead)
-{
-eusartRxHead = 0;
-}
-eusartRxCount++;
+# 216
+eusartRxBuffer[eusartRxCount++] = RCREG;
 }
 
-void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void)){
-EUSART_TxDefaultInterruptHandler = interruptHandler;
-}
-
+# 223
 void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void)){
 EUSART_RxDefaultInterruptHandler = interruptHandler;
 }
@@ -4342,23 +4212,24 @@ EUSART_RxDefaultInterruptHandler = interruptHandler;
 
 void EUSART_Deal(void)
 {
+
 if(eusartRxBuffer[0] == 0xA5 && eusartRxBuffer[1] == 0x5A)
 {
-if(eusartRxBuffer[2] == eusartRxCount)
+
+if(eusartRxBuffer[2] == EusartRxLenth-5)
 {
 if(eusartRxBuffer[4] == Get_Device_Addr())
 {
 if(eusartRxBuffer[3] == 0x1C)
 {
-
+stopTimeCtrl();
 }
 else if(eusartRxBuffer[3] == 0x1D)
 {
-
+startTimeCtrl();
 }
 }
 }
 }
-
 }
 

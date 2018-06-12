@@ -56,16 +56,17 @@
 /**
   Section: Global Variables
 */
-volatile uint8_t eusartTxHead = 0;
-volatile uint8_t eusartTxTail = 0;
-volatile uint8_t eusartTxBuffer[EUSART_TX_BUFFER_SIZE];
-volatile uint8_t eusartTxBufferRemaining;
+//volatile uint8_t eusartTxHead = 0;
+//volatile uint8_t eusartTxTail = 0;
+//volatile uint8_t eusartTxBuffer[EUSART_TX_BUFFER_SIZE];
+//volatile uint8_t eusartTxBufferRemaining;
 
-volatile uint8_t eusartRxHead = 0;
-volatile uint8_t eusartRxTail = 0;
+//volatile uint8_t eusartRxHead = 0;
+//volatile uint8_t eusartRxTail = 0;
 uint8_t eusartRxBuffer[EUSART_RX_BUFFER_SIZE];
 uint8_t eusartRxCount;
 uint8_t eusartRxOvertimeMask = 0;
+uint8_t EusartRxLenth = 0;
 
 /**
   Section: EUSART APIs
@@ -76,7 +77,7 @@ void EUSART_Initialize(void)
     PIE1bits.RCIE = 0;
     EUSART_SetRxInterruptHandler(EUSART_Receive_ISR);
     PIE1bits.TXIE = 0;
-    EUSART_SetTxInterruptHandler(EUSART_Transmit_ISR);
+//    EUSART_SetTxInterruptHandler(EUSART_Transmit_ISR);
     // Set the EUSART module to the options selected in the user interface.
 
     // ABDOVF no_overflow; SCKP Non-Inverted; BRG16 16bit_generator; WUE disabled; ABDEN disabled; 
@@ -96,104 +97,104 @@ void EUSART_Initialize(void)
 
 
     // initializing the driver state
-    eusartTxHead = 0;
-    eusartTxTail = 0;
-    eusartTxBufferRemaining = sizeof(eusartTxBuffer);
-
-    eusartRxHead = 0;
-    eusartRxTail = 0;
+//    eusartTxHead = 0;
+//    eusartTxTail = 0;
+//    eusartTxBufferRemaining = sizeof(eusartTxBuffer);
+//
+//    eusartRxHead = 0;
+//    eusartRxTail = 0;
     eusartRxCount = 0;
 
     // enable receive interrupt
     PIE1bits.RCIE = 1;
 }
 
-uint8_t EUSART_is_tx_ready(void)
-{
-    return eusartTxBufferRemaining;
-}
-
-uint8_t EUSART_is_rx_ready(void)
-{
-    return eusartRxCount;
-}
-
-bool EUSART_is_tx_done(void)
-{
-    return TXSTAbits.TRMT;
-}
-
-uint8_t EUSART_Read(void)
-{
-    uint8_t readValue  = 0;
-    
-    while(0 == eusartRxCount)
-    {
-    }
-
-    readValue = eusartRxBuffer[eusartRxTail++];
-    if(sizeof(eusartRxBuffer) <= eusartRxTail)
-    {
-        eusartRxTail = 0;
-    }
-    PIE1bits.RCIE = 0;
-    eusartRxCount--;
-    PIE1bits.RCIE = 1;
-
-    return readValue;
-}
-
-void EUSART_Write(uint8_t txData)
-{
-    while(0 == eusartTxBufferRemaining)
-    {
-    }
-
-    if(0 == PIE1bits.TXIE)
-    {
-        TXREG = txData;
-    }
-    else
-    {
-        PIE1bits.TXIE = 0;
-        eusartTxBuffer[eusartTxHead++] = txData;
-        if(sizeof(eusartTxBuffer) <= eusartTxHead)
-        {
-            eusartTxHead = 0;
-        }
-        eusartTxBufferRemaining--;
-    }
-    PIE1bits.TXIE = 1;
-}
-
-char getch(void)
-{
-    return EUSART_Read();
-}
-
-void putch(char txData)
-{
-    EUSART_Write(txData);
-}
-
-void EUSART_Transmit_ISR(void)
-{
-
-    // add your EUSART interrupt custom code
-    if(sizeof(eusartTxBuffer) > eusartTxBufferRemaining)
-    {
-        TXREG = eusartTxBuffer[eusartTxTail++];
-        if(sizeof(eusartTxBuffer) <= eusartTxTail)
-        {
-            eusartTxTail = 0;
-        }
-        eusartTxBufferRemaining++;
-    }
-    else
-    {
-        PIE1bits.TXIE = 0;
-    }
-}
+//uint8_t EUSART_is_tx_ready(void)
+//{
+//    return eusartTxBufferRemaining;
+//}
+//
+//uint8_t EUSART_is_rx_ready(void)
+//{
+//    return eusartRxCount;
+//}
+//
+//bool EUSART_is_tx_done(void)
+//{
+//    return TXSTAbits.TRMT;
+//}
+//
+//uint8_t EUSART_Read(void)
+//{
+//    uint8_t readValue  = 0;
+//    
+//    while(0 == eusartRxCount)
+//    {
+//    }
+//
+//    readValue = eusartRxBuffer[eusartRxTail++];
+//    if(sizeof(eusartRxBuffer) <= eusartRxTail)
+//    {
+//        eusartRxTail = 0;
+//    }
+//    PIE1bits.RCIE = 0;
+//    eusartRxCount--;
+//    PIE1bits.RCIE = 1;
+//
+//    return readValue;
+//}
+//
+//void EUSART_Write(uint8_t txData)
+//{
+//    while(0 == eusartTxBufferRemaining)
+//    {
+//    }
+//
+//    if(0 == PIE1bits.TXIE)
+//    {
+//        TXREG = txData;
+//    }
+//    else
+//    {
+//        PIE1bits.TXIE = 0;
+//        eusartTxBuffer[eusartTxHead++] = txData;
+//        if(sizeof(eusartTxBuffer) <= eusartTxHead)
+//        {
+//            eusartTxHead = 0;
+//        }
+//        eusartTxBufferRemaining--;
+//    }
+//    PIE1bits.TXIE = 1;
+//}
+//
+//char getch(void)
+//{
+//    return EUSART_Read();
+//}
+//
+//void putch(char txData)
+//{
+//    EUSART_Write(txData);
+//}
+//
+//void EUSART_Transmit_ISR(void)
+//{
+//
+//    // add your EUSART interrupt custom code
+//    if(sizeof(eusartTxBuffer) > eusartTxBufferRemaining)
+//    {
+//        TXREG = eusartTxBuffer[eusartTxTail++];
+//        if(sizeof(eusartTxBuffer) <= eusartTxTail)
+//        {
+//            eusartTxTail = 0;
+//        }
+//        eusartTxBufferRemaining++;
+//    }
+//    else
+//    {
+//        PIE1bits.TXIE = 0;
+//    }
+//}
 
 void EUSART_Receive_ISR(void)
 {
@@ -206,17 +207,18 @@ void EUSART_Receive_ISR(void)
     }
 
     // buffer overruns are ignored
-    eusartRxBuffer[eusartRxHead++] = RCREG;
-    if(sizeof(eusartRxBuffer) <= eusartRxHead)
-    {
-        eusartRxHead = 0;
-    }
-    eusartRxCount++;
+//    eusartRxBuffer[eusartRxHead++] = RCREG;
+//    if(sizeof(eusartRxBuffer) <= eusartRxHead)
+//    {
+//        eusartRxHead = 0;
+//    }
+//    eusartRxCount++;
+    eusartRxBuffer[eusartRxCount++] = RCREG;
 }
 
-void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void)){
-    EUSART_TxDefaultInterruptHandler = interruptHandler;
-}
+//void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void)){
+//    EUSART_TxDefaultInterruptHandler = interruptHandler;
+//}
 
 void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void)){
     EUSART_RxDefaultInterruptHandler = interruptHandler;
@@ -225,24 +227,25 @@ void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void)){
 /*?Eusart??????????*/
 void EUSART_Deal(void)
 {
+//    LED_Toggle();
     if(eusartRxBuffer[0] == 0xA5 && eusartRxBuffer[1] == 0x5A)      //????????
     {
-        if(eusartRxBuffer[2] == eusartRxCount)                      //??????????
+ //       LED_SetLow();
+        if(eusartRxBuffer[2] == EusartRxLenth-5)                      //??????????
         {
             if(eusartRxBuffer[4] == Get_Device_Addr())
             {
                 if(eusartRxBuffer[3] == TIME_CTRL_STOP)
                 {
-                 //???????   
+                    stopTimeCtrl();
                 }
                 else if(eusartRxBuffer[3] == TIME_CTRL_START)
                 {
-                //????????  ??????????    
+                    startTimeCtrl();
                 }
             }    
         }
     }
-
 }
 
 

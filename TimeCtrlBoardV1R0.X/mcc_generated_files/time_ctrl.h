@@ -20,9 +20,14 @@ extern "C" {
 extern uint16_t timeCtrlValue[8][4];
 extern uint8_t timeCtrlStartFlag;
 extern uint8_t timeCtrlOvertimeMask;
-
+extern uint8_t IQRPreSta[8];
+extern uint8_t IQRSta[8];
 
 void tempCtrlProcess(void);
+void startTimeCtrl(void);
+void stopTimeCtrl(void);
+void getTimeData(void);
+
 #ifdef	__cplusplus
 }
 #endif

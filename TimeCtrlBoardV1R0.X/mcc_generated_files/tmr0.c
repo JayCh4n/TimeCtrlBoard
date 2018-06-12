@@ -84,26 +84,26 @@ void TMR0_Initialize(void)
     TMR0_SetInterruptHandler(TMR0_DefaultInterruptHandler);
 }
 
-uint8_t TMR0_ReadTimer(void)
-{
-    uint8_t readVal;
+//uint8_t TMR0_ReadTimer(void)
+//{
+//    uint8_t readVal;
+//
+//    readVal = TMR0;
+//
+//    return readVal;
+//}
 
-    readVal = TMR0;
-
-    return readVal;
-}
-
-void TMR0_WriteTimer(uint8_t timerVal)
-{
-    // Write to the Timer0 register
-    TMR0 = timerVal;
-}
-
-void TMR0_Reload(void)
-{
-    // Write to the Timer0 register
-    TMR0 = timer0ReloadVal;
-}
+//void TMR0_WriteTimer(uint8_t timerVal)
+//{
+//    // Write to the Timer0 register
+//    TMR0 = timerVal;
+//}
+//
+//void TMR0_Reload(void)
+//{
+//    // Write to the Timer0 register
+//    TMR0 = timer0ReloadVal;
+//}
 
 void TMR0_ISR(void)
 {
@@ -125,6 +125,7 @@ void TMR0_CallBack(void)
     // Add your custom callback code here
     static uint8_t eusartRXOvertimeCnt = 0;                        //串口接收超时计数    50ms没有数据接收，则认为一个数据包接收完成
     static uint8_t timeCrlCnt = 0;                                 //???????? 10ms  ???????
+    static uint8_t preEusartRxCount = 0;
     
     if(timeCtrlStartFlag)
     {
@@ -136,12 +137,23 @@ void TMR0_CallBack(void)
     }
     
     /*???????? ?????*/
-    if(eusartRxCount != 0)
+    if(eusartRxCount != preEusartRxCount)
     {
-        if (++eusartRXOvertimeCnt >= 50)
+        preEusartRxCount = eusartRxCount;
+        eusartRXOvertimeCnt = 0;
+    }
+    else
+    {
+        if(eusartRxCount != 0)
         {
-            eusartRXOvertimeCnt = 0;
-            eusartRxOvertimeMask = 1;
+            if(++eusartRXOvertimeCnt >= 20)
+            {
+                eusartRXOvertimeCnt = 0;
+                EusartRxLenth = eusartRxCount;
+                preEusartRxCount = 0;
+                eusartRxCount = 0;
+                eusartRxOvertimeMask = 1;
+            }
         }
     }
 

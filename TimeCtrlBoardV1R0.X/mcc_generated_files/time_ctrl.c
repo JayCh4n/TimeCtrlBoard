@@ -3,36 +3,50 @@
 uint16_t timeCtrlValue[8][4];
 uint8_t timeCtrlStartFlag = 0;        //?????????? 0???  1???
 uint8_t timeCtrlOvertimeMask = 0;     //???????????  10ms
+uint8_t IQRPreSta[8] = {3,3,3,3,3,3,3,3};   //????????
+uint8_t IQRSta[8] = {0};      //?????? ??8??? 0?T1  1?T2  2:T3 3:T4
 
 void getTimeData(void)
 {
     uint8_t i, j;
-    
+    uint8_t cnt = 0;
     for(i=0; i<8; i++)
     {
         for(j=0; j<4; j++)
         {
-            timeCtrlValue[i][j] = eusartRxBuffer[i*4+j];
+            timeCtrlValue[i][j] = eusartRxBuffer[cnt+5];
+            timeCtrlValue[i][j] = (timeCtrlValue[i][j] << 8) 
+                                    | eusartRxBuffer[cnt+6];
+            cnt += 2;
         }
     }
 }
 
-void statTimeCtrl(void)
+void startTimeCtrl(void)
 {
-
+    getTimeData();
+    LED_SetLow();
+    timeCtrlStartFlag = 1;
 }
 
 void stopTimeCtrl(void)
 {
+    uint8_t i;
+    timeCtrlStartFlag = 0;
+    LED_SetHigh();
     
+    for(i=0; i<8; i++)
+    {
+        IQRSta[i] = 0;
+        IQRPreSta[i] = 3;
+        LATC &= ~(1<<i);
+    }
 }
 
 void tempCtrlProcess(void)
 {
     uint8_t i;
     static uint16_t timeCnt[8] = {0};
-    static uint8_t IQRPreSta[8] = {3,3,3,3,3,3,3,3};   //????????
-    static uint8_t IQRSta[8] = {0};      //?????? ??8??? 0?T1  1?T2  2:T3 3:T4
     
     for(i=0; i<8; i++)
     {
@@ -46,25 +60,25 @@ void tempCtrlProcess(void)
                 case 3: timeCnt[i] = timeCtrlValue[i][3]; break;
                 default: break;
             }
+            
+            IQRPreSta[i] = IQRSta[i];
         }
-        
-        IQRPreSta[i] = IQRSta[i];
         
         if(--timeCnt[i] == 0)
         {
             if(IQRSta[i]%2 == 0)
             {
-                LATC &= ~(1<<i);
+                LATC |= 1 << i;
             }
-            
             else if(IQRSta[i]%2 == 1)
             { 
-                LATC |= 1<<i;  
+                LATC &= ~(1<<i);   
             }
             
             if(++IQRSta[i] >= 4)
             {
                 IQRSta[i] = 0;
+                
             }
         }
     }

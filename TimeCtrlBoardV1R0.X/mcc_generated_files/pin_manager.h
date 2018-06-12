@@ -281,7 +281,7 @@ void PIN_MANAGER_Initialize (void);
  * @Example
     PIN_MANAGER_IOC();
  */
-void PIN_MANAGER_IOC(void);
+//void PIN_MANAGER_IOC(void);
 
 
 

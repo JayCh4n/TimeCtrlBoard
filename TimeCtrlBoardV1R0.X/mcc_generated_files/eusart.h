@@ -71,8 +71,8 @@
 
 #define EUSART_DataReady  (EUSART_is_rx_ready())
 
-#define EUSART_TX_BUFFER_SIZE 50
-#define EUSART_RX_BUFFER_SIZE 50
+#define EUSART_TX_BUFFER_SIZE 8
+#define EUSART_RX_BUFFER_SIZE 75
         
 /**
  Section: Global variables
@@ -81,6 +81,7 @@ extern volatile uint8_t eusartTxBufferRemaining;
 extern uint8_t eusartRxBuffer[EUSART_RX_BUFFER_SIZE];
 extern uint8_t eusartRxCount;
 extern uint8_t eusartRxOvertimeMask;
+extern uint8_t EusartRxLenth;
 /**
   Section: EUSART APIs
 */
@@ -161,7 +162,7 @@ void EUSART_Initialize(void);
     }
     </code>
 */
-uint8_t EUSART_is_tx_ready(void);
+//uint8_t EUSART_is_tx_ready(void);
 
 /**
   @Summary
@@ -213,7 +214,7 @@ uint8_t EUSART_is_tx_ready(void);
     }
     </code>
 */
-uint8_t EUSART_is_rx_ready(void);
+//uint8_t EUSART_is_rx_ready(void);
 
 /**
   @Summary
@@ -260,7 +261,7 @@ uint8_t EUSART_is_rx_ready(void);
     }
     </code>
 */
-bool EUSART_is_tx_done(void);
+//bool EUSART_is_tx_done(void);
 
 /**
   @Summary
@@ -280,7 +281,7 @@ bool EUSART_is_tx_done(void);
   @Returns
     A data byte received by the driver.
 */
-uint8_t EUSART_Read(void);
+//uint8_t EUSART_Read(void);
 
  /**
   @Summary
@@ -300,7 +301,7 @@ uint8_t EUSART_Read(void);
   @Returns
     None
 */
-void EUSART_Write(uint8_t txData);
+//void EUSART_Write(uint8_t txData);
 
 /**
   @Summary
@@ -321,7 +322,7 @@ void EUSART_Write(uint8_t txData);
   @Returns
     None
 */
-void EUSART_Transmit_ISR(void);
+//void EUSART_Transmit_ISR(void);
 
 /**
   @Summary

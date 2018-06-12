@@ -4018,9 +4018,6 @@ typedef unsigned char bool;
 # 272 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 284
-void PIN_MANAGER_IOC(void);
-
 # 4 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\__size_t.h"
 typedef unsigned size_t;
 
@@ -4089,9 +4086,15 @@ void interrupt INTERRUPT_InterruptManager(void);
 
 # 20 "mcc_generated_files/time_ctrl.h"
 extern uint16_t timeCtrlValue[8][4];
-extern uint8_t timeCtrlIQRSta[8];
 extern uint8_t timeCtrlStartFlag;
 extern uint8_t timeCtrlOvertimeMask;
+extern uint8_t IQRPreSta[8];
+extern uint8_t IQRSta[8];
+
+void tempCtrlProcess(void);
+void startTimeCtrl(void);
+void stopTimeCtrl(void);
+void getTimeData(void);
 
 # 72 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
@@ -4107,57 +4110,31 @@ unsigned char Get_Device_Addr(void);
 
 # 80 "mcc_generated_files/eusart.h"
 extern volatile uint8_t eusartTxBufferRemaining;
-extern uint8_t eusartRxBuffer[50];
+extern uint8_t eusartRxBuffer[75];
 extern uint8_t eusartRxCount;
 extern uint8_t eusartRxOvertimeMask;
+extern uint8_t EusartRxLenth;
 
-# 88
+# 89
 void (*EUSART_TxDefaultInterruptHandler)(void);
 void (*EUSART_RxDefaultInterruptHandler)(void);
 
-# 111
+# 112
 void EUSART_Initialize(void);
 
-# 164
-uint8_t EUSART_is_tx_ready(void);
-
-# 216
-uint8_t EUSART_is_rx_ready(void);
-
-# 263
-bool EUSART_is_tx_done(void);
-
-# 283
-uint8_t EUSART_Read(void);
-
-# 303
-void EUSART_Write(uint8_t txData);
-
-# 324
-void EUSART_Transmit_ISR(void);
-
-# 345
+# 346
 void EUSART_Receive_ISR(void);
 
-# 365
+# 366
 void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void));
 
-# 385
+# 386
 void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
 
 void EUSART_Deal(void);
 
 # 107 "mcc_generated_files/tmr0.h"
 void TMR0_Initialize(void);
-
-# 138
-uint8_t TMR0_ReadTimer(void);
-
-# 177
-void TMR0_WriteTimer(uint8_t timerVal);
-
-# 213
-void TMR0_Reload(void);
 
 # 228
 void TMR0_ISR(void);
@@ -4202,27 +4179,7 @@ INTCONbits.TMR0IE = 1;
 TMR0_SetInterruptHandler(TMR0_DefaultInterruptHandler);
 }
 
-uint8_t TMR0_ReadTimer(void)
-{
-uint8_t readVal;
-
-readVal = TMR0;
-
-return readVal;
-}
-
-void TMR0_WriteTimer(uint8_t timerVal)
-{
-
-TMR0 = timerVal;
-}
-
-void TMR0_Reload(void)
-{
-
-TMR0 = timer0ReloadVal;
-}
-
+# 108
 void TMR0_ISR(void)
 {
 
@@ -4243,6 +4200,7 @@ void TMR0_CallBack(void)
 
 static uint8_t eusartRXOvertimeCnt = 0;
 static uint8_t timeCrlCnt = 0;
+static uint8_t preEusartRxCount = 0;
 
 if(timeCtrlStartFlag)
 {
@@ -4254,12 +4212,23 @@ timeCtrlOvertimeMask = 1;
 }
 
 
+if(eusartRxCount != preEusartRxCount)
+{
+preEusartRxCount = eusartRxCount;
+eusartRXOvertimeCnt = 0;
+}
+else
+{
 if(eusartRxCount != 0)
 {
-if (++eusartRXOvertimeCnt >= 50)
+if(++eusartRXOvertimeCnt >= 20)
 {
 eusartRXOvertimeCnt = 0;
+EusartRxLenth = eusartRxCount;
+preEusartRxCount = 0;
+eusartRxCount = 0;
 eusartRxOvertimeMask = 1;
+}
 }
 }
 
