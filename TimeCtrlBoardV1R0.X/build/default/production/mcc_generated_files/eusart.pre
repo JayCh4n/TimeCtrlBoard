@@ -4078,8 +4078,11 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
-# 272 "mcc_generated_files/pin_manager.h"
+# 289 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
+
+# 301
+void PIN_MANAGER_IOC(void);
 
 # 109 "mcc_generated_files/interrupt_manager.h"
 void interrupt INTERRUPT_InterruptManager(void);

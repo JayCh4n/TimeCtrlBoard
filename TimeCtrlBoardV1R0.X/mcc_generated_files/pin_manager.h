@@ -59,6 +59,23 @@
 #define PULL_UP_ENABLED      1
 #define PULL_UP_DISABLED     0
 
+// get/set SIGNAL aliases
+#define SIGNAL_TRIS                 TRISAbits.TRISA0
+#define SIGNAL_LAT                  LATAbits.LATA0
+#define SIGNAL_PORT                 PORTAbits.RA0
+#define SIGNAL_WPU                  WPUAbits.WPUA0
+#define SIGNAL_ANS                  ANSELAbits.ANSA0
+#define SIGNAL_SetHigh()            do { LATAbits.LATA0 = 1; } while(0)
+#define SIGNAL_SetLow()             do { LATAbits.LATA0 = 0; } while(0)
+#define SIGNAL_Toggle()             do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0)
+#define SIGNAL_GetValue()           PORTAbits.RA0
+#define SIGNAL_SetDigitalInput()    do { TRISAbits.TRISA0 = 1; } while(0)
+#define SIGNAL_SetDigitalOutput()   do { TRISAbits.TRISA0 = 0; } while(0)
+#define SIGNAL_SetPullup()          do { WPUAbits.WPUA0 = 1; } while(0)
+#define SIGNAL_ResetPullup()        do { WPUAbits.WPUA0 = 0; } while(0)
+#define SIGNAL_SetAnalogMode()      do { ANSELAbits.ANSA0 = 1; } while(0)
+#define SIGNAL_SetDigitalMode()     do { ANSELAbits.ANSA0 = 0; } while(0)
+
 // get/set LED aliases
 #define LED_TRIS                 TRISAbits.TRISA2
 #define LED_LAT                  LATAbits.LATA2
@@ -281,7 +298,7 @@ void PIN_MANAGER_Initialize (void);
  * @Example
     PIN_MANAGER_IOC();
  */
-//void PIN_MANAGER_IOC(void);
+void PIN_MANAGER_IOC(void);
 
 
 

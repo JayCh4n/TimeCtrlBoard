@@ -3,13 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Sumson/Documents/GitHub/TimeCtrlBoardV1R0/TimeCtrlBoardV1R0.X/mcc_generated_files/time_ctrl.c</file>
-            <file>file:/C:/Users/Sumson/Documents/GitHub/TimeCtrlBoardV1R0/TimeCtrlBoardV1R0.X/mcc_generated_files/eusart.h</file>
-            <file>file:/C:/Users/Sumson/Documents/GitHub/TimeCtrlBoardV1R0/TimeCtrlBoardV1R0.X/mcc_generated_files/tmr0.c</file>
-            <file>file:/C:/Users/Sumson/Documents/GitHub/TimeCtrlBoardV1R0/TimeCtrlBoardV1R0.X/mcc_generated_files/mcc.c</file>
-            <file>file:/C:/Users/Sumson/Documents/GitHub/TimeCtrlBoardV1R0/TimeCtrlBoardV1R0.X/mcc_generated_files/eusart.c</file>
-            <file>file:/C:/Users/Sumson/Documents/GitHub/TimeCtrlBoardV1R0/TimeCtrlBoardV1R0.X/main.c</file>
-            <file>file:/C:/Users/Sumson/Documents/GitHub/TimeCtrlBoardV1R0/TimeCtrlBoardV1R0.X/mcc_generated_files/time_ctrl.h</file>
+            <file>file:/C:/Users/Sumson/Desktop/TimeCtrlBoardV1R0/TimeCtrlBoardV1R0.X/mcc_generated_files/pin_manager.h</file>
+            <file>file:/C:/Users/Sumson/Desktop/TimeCtrlBoardV1R0/TimeCtrlBoardV1R0.X/main.c</file>
+            <file>file:/C:/Users/Sumson/Desktop/TimeCtrlBoardV1R0/TimeCtrlBoardV1R0.X/mcc_generated_files/pin_manager.c</file>
+            <file>file:/C:/Users/Sumson/Desktop/TimeCtrlBoardV1R0/TimeCtrlBoardV1R0.X/mcc_generated_files/mcc.c</file>
         </group>
     </open-files>
 </project-private>

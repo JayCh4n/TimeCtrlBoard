@@ -2912,7 +2912,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 193: extern __bank0 unsigned char __resetbits;
 [; ;pic.h: 194: extern __bank0 __bit __powerdown;
 [; ;pic.h: 195: extern __bank0 __bit __timeout;
-[; ;pin_manager.h: 272: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 289: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 301: void PIN_MANAGER_IOC(void);
 [; ;stdbool.h: 12: typedef unsigned char bool;
 "57 mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 1 ef ]
@@ -2946,21 +2947,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pin_manager.c: 77: ANSELB = 0x00;
 "77
 [e = _ANSELB -> -> 0 `i `uc ]
-[; ;pin_manager.c: 78: ANSELA = 0x13;
+[; ;pin_manager.c: 78: ANSELA = 0x12;
 "78
-[e = _ANSELA -> -> 19 `i `uc ]
+[e = _ANSELA -> -> 18 `i `uc ]
 [; ;pin_manager.c: 83: WPUB = 0x00;
 "83
 [e = _WPUB -> -> 0 `i `uc ]
-[; ;pin_manager.c: 84: WPUA = 0x00;
+[; ;pin_manager.c: 84: WPUA = 0x01;
 "84
-[e = _WPUA -> -> 0 `i `uc ]
+[e = _WPUA -> -> 1 `i `uc ]
 [; ;pin_manager.c: 85: WPUC = 0x00;
 "85
 [e = _WPUC -> -> 0 `i `uc ]
-[; ;pin_manager.c: 86: OPTION_REGbits.nWPUEN = 1;
+[; ;pin_manager.c: 86: OPTION_REGbits.nWPUEN = 0;
 "86
-[e = . . _OPTION_REGbits 0 7 -> -> 1 `i `uc ]
+[e = . . _OPTION_REGbits 0 7 -> -> 0 `i `uc ]
 [; ;pin_manager.c: 95: APFCON0 = 0x00;
 "95
 [e = _APFCON0 -> -> 0 `i `uc ]
@@ -2970,4 +2971,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pin_manager.c: 103: }
 "103
 [e :UE 360 ]
+}
+"105
+[v _PIN_MANAGER_IOC `(v ~T0 @X0 1 ef ]
+"106
+{
+[; ;pin_manager.c: 105: void PIN_MANAGER_IOC(void)
+[; ;pin_manager.c: 106: {
+[e :U _PIN_MANAGER_IOC ]
+[f ]
+[; ;pin_manager.c: 107: }
+"107
+[e :UE 361 ]
 }
