@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.45 build -152302408 
-                                                                                               Fri Jun 15 12:56:15 2018
+                                                                                               Tue Jun 19 18:10:59 2018
 
 Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160504
      1                           	processor	16F1828
@@ -2084,23 +2084,23 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2070                           ;psect for function _TMR0_Initialize
   2071  0265                     _TMR0_Initialize:	
   2072                           
-  2073                           ;tmr0.c: 69: OPTION_REG = (uint8_t)((OPTION_REG & 0xC0) | 0xD7 & 0x3F);
+  2073                           ;tmr0.c: 69: OPTION_REG = (uint8_t)((OPTION_REG & 0xC0) | 0xD4 & 0x3F);
   2074                           
   2075                           ;incstack = 0
   2076                           ; Regs used in _TMR0_Initialize: [wreg+status,2+status,0+pclath+cstack]
   2077  0265  0021               	movlb	1	; select bank1
   2078  0266  0815               	movf	21,w	;volatile
   2079  0267  39C0               	andlw	192
-  2080  0268  3817               	iorlw	23
+  2080  0268  3814               	iorlw	20
   2081  0269  0095               	movwf	21	;volatile
   2082                           
-  2083                           ;tmr0.c: 72: TMR0 = 0xF0;
-  2084  026A  30F0               	movlw	240
+  2083                           ;tmr0.c: 72: TMR0 = 0x83;
+  2084  026A  3083               	movlw	131
   2085  026B  0020               	movlb	0	; select bank0
   2086  026C  0095               	movwf	21	;volatile
   2087                           
-  2088                           ;tmr0.c: 75: timer0ReloadVal= 240;
-  2089  026D  30F0               	movlw	240
+  2088                           ;tmr0.c: 75: timer0ReloadVal= 131;
+  2089  026D  3083               	movlw	131
   2090  026E  00F4               	movwf	??_TMR0_Initialize
   2091  026F  0874               	movf	??_TMR0_Initialize,w
   2092  0270  00D7               	movwf	_timer0ReloadVal	;volatile
@@ -3634,7 +3634,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.45 build -152302408 
-Symbol Table                                                                                   Fri Jun 15 12:56:15 2018
+Symbol Table                                                                                   Tue Jun 19 18:10:59 2018
 
                ?_EUSART_SetRxInterruptHandler 0072                              ?_tempCtrlProcess 0070  
                                  __CFG_CP$OFF 0000                               _timer0ReloadVal 0057  

@@ -3019,15 +3019,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr0.c: 65: {
 [e :U _TMR0_Initialize ]
 [f ]
-[; ;tmr0.c: 69: OPTION_REG = (uint8_t)((OPTION_REG & 0xC0) | 0xD7 & 0x3F);
+[; ;tmr0.c: 69: OPTION_REG = (uint8_t)((OPTION_REG & 0xC0) | 0xD4 & 0x3F);
 "69
-[e = _OPTION_REG -> | & -> _OPTION_REG `i -> 192 `i & -> 215 `i -> 63 `i `uc ]
-[; ;tmr0.c: 72: TMR0 = 0xF0;
+[e = _OPTION_REG -> | & -> _OPTION_REG `i -> 192 `i & -> 212 `i -> 63 `i `uc ]
+[; ;tmr0.c: 72: TMR0 = 0x83;
 "72
-[e = _TMR0 -> -> 240 `i `uc ]
-[; ;tmr0.c: 75: timer0ReloadVal= 240;
+[e = _TMR0 -> -> 131 `i `uc ]
+[; ;tmr0.c: 75: timer0ReloadVal= 131;
 "75
-[e = _timer0ReloadVal -> -> 240 `i `uc ]
+[e = _timer0ReloadVal -> -> 131 `i `uc ]
 [; ;tmr0.c: 78: INTCONbits.TMR0IF = 0;
 "78
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
