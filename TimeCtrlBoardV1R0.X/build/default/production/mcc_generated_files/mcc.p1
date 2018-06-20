@@ -1,6 +1,6 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[v F3071 `(v ~T0 @X0 0 tf ]
-[v F3074 `(v ~T0 @X0 0 tf ]
+[v F3078 `(v ~T0 @X0 0 tf ]
+[v F3081 `(v ~T0 @X0 0 tf ]
 "289 mcc_generated_files/pin_manager.h
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
 "85 mcc_generated_files/mcc.h
@@ -2963,25 +2963,30 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
 [; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
 [; ;stdio.h: 195: extern int printf(const char *, ...);
-[; ;time_ctrl.h: 20: extern uint16_t timeCtrlValue[8][4];
-[; ;time_ctrl.h: 21: extern uint8_t timeCtrlStartFlag;
-[; ;time_ctrl.h: 22: extern uint8_t timeCtrlOvertimeMask;
-[; ;time_ctrl.h: 23: extern uint8_t IQRPreSta[8];
-[; ;time_ctrl.h: 24: extern uint8_t IQRSta[8];
-[; ;time_ctrl.h: 26: void tempCtrlProcess(void);
-[; ;time_ctrl.h: 27: void startTimeCtrl(void);
-[; ;time_ctrl.h: 28: void stopTimeCtrl(void);
-[; ;time_ctrl.h: 29: void getTimeData(void);
+[; ;time_ctrl.h: 28: extern uint16_t timeCtrlValue[8][4];
+[; ;time_ctrl.h: 29: extern uint8_t timeCtrlStartFlag;
+[; ;time_ctrl.h: 30: extern uint8_t timeCtrlOvertimeMask;
+[; ;time_ctrl.h: 31: extern uint8_t IQRPreSta[8];
+[; ;time_ctrl.h: 32: extern uint8_t IQRSta[8];
+[; ;time_ctrl.h: 33: extern uint8_t testTimeCtrlFlag;
+[; ;time_ctrl.h: 34: extern uint8_t testTimeCtrlOvertimeMask;
+[; ;time_ctrl.h: 35: extern uint8_t testIQRNum;
+[; ;time_ctrl.h: 37: void tempCtrlProcess(void);
+[; ;time_ctrl.h: 38: void testTimeCtrlProcess(uint8_t IQRNum);
+[; ;time_ctrl.h: 39: void startTimeCtrl(void);
+[; ;time_ctrl.h: 40: void stopTimeCtrl(void);
+[; ;time_ctrl.h: 41: void testTimeCtrl(uint8_t iqr_num);
+[; ;time_ctrl.h: 42: void getTimeData(void);
 [; ;eusart.h: 80: extern volatile uint8_t eusartTxBufferRemaining;
 [; ;eusart.h: 81: extern uint8_t eusartRxBuffer[75];
 [; ;eusart.h: 82: extern uint8_t eusartRxCount;
 [; ;eusart.h: 83: extern uint8_t eusartRxOvertimeMask;
 [; ;eusart.h: 84: extern uint8_t EusartRxLenth;
 "89 mcc_generated_files/eusart.h
-[v _EUSART_TxDefaultInterruptHandler `*F3071 ~T0 @X0 1 e ]
+[v _EUSART_TxDefaultInterruptHandler `*F3078 ~T0 @X0 1 e ]
 [; ;eusart.h: 89: void (*EUSART_TxDefaultInterruptHandler)(void);
 "90
-[v _EUSART_RxDefaultInterruptHandler `*F3074 ~T0 @X0 1 e ]
+[v _EUSART_RxDefaultInterruptHandler `*F3081 ~T0 @X0 1 e ]
 [; ;eusart.h: 90: void (*EUSART_RxDefaultInterruptHandler)(void);
 [; ;eusart.h: 112: void EUSART_Initialize(void);
 [; ;eusart.h: 346: void EUSART_Receive_ISR(void);

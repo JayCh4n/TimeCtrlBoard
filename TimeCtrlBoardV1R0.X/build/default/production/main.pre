@@ -4087,16 +4087,21 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
-# 20 "mcc_generated_files/time_ctrl.h"
+# 28 "mcc_generated_files/time_ctrl.h"
 extern uint16_t timeCtrlValue[8][4];
 extern uint8_t timeCtrlStartFlag;
 extern uint8_t timeCtrlOvertimeMask;
 extern uint8_t IQRPreSta[8];
 extern uint8_t IQRSta[8];
+extern uint8_t testTimeCtrlFlag;
+extern uint8_t testTimeCtrlOvertimeMask;
+extern uint8_t testIQRNum;
 
 void tempCtrlProcess(void);
+void testTimeCtrlProcess(uint8_t IQRNum);
 void startTimeCtrl(void);
 void stopTimeCtrl(void);
+void testTimeCtrl(uint8_t iqr_num);
 void getTimeData(void);
 
 # 80 "mcc_generated_files/eusart.h"
@@ -4180,6 +4185,12 @@ if(timeCtrlOvertimeMask)
 {
 tempCtrlProcess();
 timeCtrlOvertimeMask = 0;
+}
+
+if(testTimeCtrlOvertimeMask)
+{
+testTimeCtrlProcess(testIQRNum);
+testTimeCtrlOvertimeMask = 0;
 }
 }
 }

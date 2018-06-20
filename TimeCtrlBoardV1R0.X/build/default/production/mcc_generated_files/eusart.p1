@@ -1,6 +1,6 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[v F3094 `(v ~T0 @X0 0 tf ]
-[v F3097 `(v ~T0 @X0 0 tf ]
+[v F3101 `(v ~T0 @X0 0 tf ]
+[v F3104 `(v ~T0 @X0 0 tf ]
 "1321 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1828.h
 [s S72 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S72 . TMR1IE TMR2IE CCP1IE SSP1IE TXIE RCIE ADIE TMR1GIE ]
@@ -9,9 +9,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S71 . . ]
 "1332
 [v _PIE1bits `VS71 ~T0 @X0 0 e@145 ]
-[v F3109 `(v ~T0 @X0 0 tf ]
+[v F3116 `(v ~T0 @X0 0 tf ]
 "386 mcc_generated_files/eusart.h
-[v _EUSART_SetRxInterruptHandler `(v ~T0 @X0 0 ef1`*F3109 ]
+[v _EUSART_SetRxInterruptHandler `(v ~T0 @X0 0 ef1`*F3116 ]
 "346
 [v _EUSART_Receive_ISR `(v ~T0 @X0 0 ef ]
 "3490 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1828.h
@@ -36,10 +36,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RCREG `Vuc ~T0 @X0 0 e@409 ]
 "100 mcc_generated_files/mcc.h
 [v _Get_Device_Addr `(uc ~T0 @X0 0 ef ]
-"28 mcc_generated_files/time_ctrl.h
+"40 mcc_generated_files/time_ctrl.h
 [v _stopTimeCtrl `(v ~T0 @X0 0 ef ]
-"27
+"39
 [v _startTimeCtrl `(v ~T0 @X0 0 ef ]
+"41
+[v _testTimeCtrl `(v ~T0 @X0 0 ef1`uc ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -2976,15 +2978,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pin_manager.h: 289: void PIN_MANAGER_Initialize (void);
 [; ;pin_manager.h: 301: void PIN_MANAGER_IOC(void);
 [; ;interrupt_manager.h: 109: void interrupt INTERRUPT_InterruptManager(void);
-[; ;time_ctrl.h: 20: extern uint16_t timeCtrlValue[8][4];
-[; ;time_ctrl.h: 21: extern uint8_t timeCtrlStartFlag;
-[; ;time_ctrl.h: 22: extern uint8_t timeCtrlOvertimeMask;
-[; ;time_ctrl.h: 23: extern uint8_t IQRPreSta[8];
-[; ;time_ctrl.h: 24: extern uint8_t IQRSta[8];
-[; ;time_ctrl.h: 26: void tempCtrlProcess(void);
-[; ;time_ctrl.h: 27: void startTimeCtrl(void);
-[; ;time_ctrl.h: 28: void stopTimeCtrl(void);
-[; ;time_ctrl.h: 29: void getTimeData(void);
+[; ;time_ctrl.h: 28: extern uint16_t timeCtrlValue[8][4];
+[; ;time_ctrl.h: 29: extern uint8_t timeCtrlStartFlag;
+[; ;time_ctrl.h: 30: extern uint8_t timeCtrlOvertimeMask;
+[; ;time_ctrl.h: 31: extern uint8_t IQRPreSta[8];
+[; ;time_ctrl.h: 32: extern uint8_t IQRSta[8];
+[; ;time_ctrl.h: 33: extern uint8_t testTimeCtrlFlag;
+[; ;time_ctrl.h: 34: extern uint8_t testTimeCtrlOvertimeMask;
+[; ;time_ctrl.h: 35: extern uint8_t testIQRNum;
+[; ;time_ctrl.h: 37: void tempCtrlProcess(void);
+[; ;time_ctrl.h: 38: void testTimeCtrlProcess(uint8_t IQRNum);
+[; ;time_ctrl.h: 39: void startTimeCtrl(void);
+[; ;time_ctrl.h: 40: void stopTimeCtrl(void);
+[; ;time_ctrl.h: 41: void testTimeCtrl(uint8_t iqr_num);
+[; ;time_ctrl.h: 42: void getTimeData(void);
 [; ;tmr0.h: 107: void TMR0_Initialize(void);
 [; ;tmr0.h: 228: void TMR0_ISR(void);
 [; ;tmr0.h: 246: void TMR0_CallBack(void);
@@ -3001,10 +3008,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart.h: 83: extern uint8_t eusartRxOvertimeMask;
 [; ;eusart.h: 84: extern uint8_t EusartRxLenth;
 "89 mcc_generated_files/eusart.h
-[v _EUSART_TxDefaultInterruptHandler `*F3094 ~T0 @X0 1 e ]
+[v _EUSART_TxDefaultInterruptHandler `*F3101 ~T0 @X0 1 e ]
 [; ;eusart.h: 89: void (*EUSART_TxDefaultInterruptHandler)(void);
 "90
-[v _EUSART_RxDefaultInterruptHandler `*F3097 ~T0 @X0 1 e ]
+[v _EUSART_RxDefaultInterruptHandler `*F3104 ~T0 @X0 1 e ]
 [; ;eusart.h: 90: void (*EUSART_RxDefaultInterruptHandler)(void);
 [; ;eusart.h: 112: void EUSART_Initialize(void);
 [; ;eusart.h: 346: void EUSART_Receive_ISR(void);
@@ -3103,12 +3110,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 362 ]
 }
 "223
-[v _EUSART_SetRxInterruptHandler `(v ~T0 @X0 1 ef1`*F3109 ]
+[v _EUSART_SetRxInterruptHandler `(v ~T0 @X0 1 ef1`*F3116 ]
 {
 [; ;eusart.c: 223: void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void)){
 [e :U _EUSART_SetRxInterruptHandler ]
-[v F3117 `(v ~T0 @X0 0 tf ]
-[v _interruptHandler `*F3117 ~T0 @X0 1 r1 ]
+[v F3124 `(v ~T0 @X0 0 tf ]
+[v _interruptHandler `*F3124 ~T0 @X0 1 r1 ]
 [f ]
 [; ;eusart.c: 224: EUSART_RxDefaultInterruptHandler = interruptHandler;
 "224
@@ -3168,22 +3175,37 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _startTimeCtrl ..  ]
 "245
 }
-[e :U 371 ]
+[; ;eusart.c: 245: }
+[e $U 372  ]
 "246
+[e :U 371 ]
+[; ;eusart.c: 246: else if(eusartRxBuffer[3] >= 0x21 && eusartRxBuffer[3] <= 0x28)
+[e $ ! && >= -> *U + &U _eusartRxBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _eusartRxBuffer `ui `ux `i -> 33 `i <= -> *U + &U _eusartRxBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _eusartRxBuffer `ui `ux `i -> 40 `i 373  ]
+[; ;eusart.c: 247: {
+"247
+{
+[; ;eusart.c: 248: testTimeCtrl(eusartRxBuffer[3] - 0x20);
+"248
+[e ( _testTimeCtrl (1 -> - -> *U + &U _eusartRxBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _eusartRxBuffer `ui `ux `i -> 32 `i `uc ]
+"249
+}
+[e :U 373 ]
+"250
+[e :U 372 ]
 [e :U 370 ]
 }
 [e :U 368 ]
-"247
+"251
 }
 [e :U 367 ]
-"248
+"252
 }
 [e :U 366 ]
-[; ;eusart.c: 245: }
-[; ;eusart.c: 246: }
-[; ;eusart.c: 247: }
-[; ;eusart.c: 248: }
 [; ;eusart.c: 249: }
-"249
+[; ;eusart.c: 250: }
+[; ;eusart.c: 251: }
+[; ;eusart.c: 252: }
+[; ;eusart.c: 253: }
+"253
 [e :UE 365 ]
 }

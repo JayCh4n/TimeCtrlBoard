@@ -33,13 +33,17 @@
 [v _Get_Device_Addr Get_Device_Addr `(uc  1 e 1 0 ]
 "57 C:\Users\Sumson\Documents\GitHub\TimeCtrlBoardV1R0\TimeCtrlBoardV1R0.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
-"9 C:\Users\Sumson\Documents\GitHub\TimeCtrlBoardV1R0\TimeCtrlBoardV1R0.X\mcc_generated_files/time_ctrl.c
+"12 C:\Users\Sumson\Documents\GitHub\TimeCtrlBoardV1R0\TimeCtrlBoardV1R0.X\mcc_generated_files/time_ctrl.c
 [v _getTimeData getTimeData `(v  1 e 1 0 ]
-"25
+"28
 [v _startTimeCtrl startTimeCtrl `(v  1 e 1 0 ]
-"32
+"35
 [v _stopTimeCtrl stopTimeCtrl `(v  1 e 1 0 ]
-"46
+"49
+[v _testTimeCtrl testTimeCtrl `(v  1 e 1 0 ]
+"63
+[v _testTimeCtrlProcess testTimeCtrlProcess `(v  1 e 1 0 ]
+"94
 [v _tempCtrlProcess tempCtrlProcess `(v  1 e 1 0 ]
 "64 C:\Users\Sumson\Documents\GitHub\TimeCtrlBoardV1R0\TimeCtrlBoardV1R0.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
@@ -47,9 +51,9 @@
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
 "123
 [v _TMR0_CallBack TMR0_CallBack `(v  1 e 1 0 ]
-"166
+"176
 [v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
-"170
+"180
 [v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
 [s S130 . 1 `uc 1 IOCIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
@@ -136,7 +140,7 @@
 [v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
 "2052
 [v _LATA LATA `VEuc  1 e 1 @268 ]
-[s S386 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S394 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -144,8 +148,8 @@
 `uc 1 LATA5 1 0 :1:5 
 ]
 "2067
-[u S393 . 1 `S386 1 . 1 0 ]
-[v _LATAbits LATAbits `VES393  1 e 1 @268 ]
+[u S401 . 1 `S394 1 . 1 0 ]
+[v _LATAbits LATAbits `VES401  1 e 1 @268 ]
 "2097
 [v _LATB LATB `VEuc  1 e 1 @269 ]
 "2136
@@ -170,7 +174,7 @@
 [v _SPBRGH SPBRGH `VEuc  1 e 1 @412 ]
 "3366
 [v _RCSTA RCSTA `VEuc  1 e 1 @413 ]
-[s S331 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S334 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -180,8 +184,8 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "3383
-[u S340 . 1 `S331 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES340  1 e 1 @413 ]
+[u S343 . 1 `S334 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES343  1 e 1 @413 ]
 "3428
 [v _TXSTA TXSTA `VEuc  1 e 1 @414 ]
 "3490
@@ -212,6 +216,12 @@
 [v _IQRPreSta IQRPreSta `[8]uc  1 e 8 0 ]
 "7
 [v _IQRSta IQRSta `[8]uc  1 e 8 0 ]
+"8
+[v _testTimeCtrlFlag testTimeCtrlFlag `uc  1 e 1 0 ]
+"9
+[v _testTimeCtrlOvertimeMask testTimeCtrlOvertimeMask `uc  1 e 1 0 ]
+"10
+[v _testIQRNum testIQRNum `uc  1 e 1 0 ]
 "58 C:\Users\Sumson\Documents\GitHub\TimeCtrlBoardV1R0\TimeCtrlBoardV1R0.X\mcc_generated_files/tmr0.c
 [v _timer0ReloadVal timer0ReloadVal `VEuc  1 e 1 0 ]
 "59
@@ -219,16 +229,30 @@
 "49 C:\Users\Sumson\Documents\GitHub\TimeCtrlBoardV1R0\TimeCtrlBoardV1R0.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"84
+"90
 } 0
-"46 C:\Users\Sumson\Documents\GitHub\TimeCtrlBoardV1R0\TimeCtrlBoardV1R0.X\mcc_generated_files/time_ctrl.c
+"63 C:\Users\Sumson\Documents\GitHub\TimeCtrlBoardV1R0\TimeCtrlBoardV1R0.X\mcc_generated_files/time_ctrl.c
+[v _testTimeCtrlProcess testTimeCtrlProcess `(v  1 e 1 0 ]
+{
+[v testTimeCtrlProcess@IQRNum IQRNum `uc  1 a 1 wreg ]
+[v testTimeCtrlProcess@IQRNum IQRNum `uc  1 a 1 wreg ]
+"65
+[v testTimeCtrlProcess@timeCnt timeCnt `ui  1 s 2 timeCnt ]
+[v testTimeCtrlProcess@IQRSta IQRSta `uc  1 s 1 IQRSta ]
+"67
+[v testTimeCtrlProcess@PreIQRSta PreIQRSta `uc  1 s 1 PreIQRSta ]
+"69
+[v testTimeCtrlProcess@IQRNum IQRNum `uc  1 a 1 6 ]
+"92
+} 0
+"94
 [v _tempCtrlProcess tempCtrlProcess `(v  1 e 1 0 ]
 {
-"48
+"96
 [v tempCtrlProcess@i i `uc  1 a 1 4 ]
-"49
+"97
 [v tempCtrlProcess@timeCnt timeCnt `[8]ui  1 s 16 timeCnt ]
-"86
+"134
 } 0
 "50 C:\Users\Sumson\Documents\GitHub\TimeCtrlBoardV1R0\TimeCtrlBoardV1R0.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -245,11 +269,11 @@
 {
 "85
 } 0
-"166
+"176
 [v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
 {
 [v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 2 ]
-"168
+"178
 } 0
 "57 C:\Users\Sumson\Documents\GitHub\TimeCtrlBoardV1R0\TimeCtrlBoardV1R0.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
@@ -275,29 +299,41 @@
 "228
 [v _EUSART_Deal EUSART_Deal `(v  1 e 1 0 ]
 {
-"249
+"253
 } 0
-"32 C:\Users\Sumson\Documents\GitHub\TimeCtrlBoardV1R0\TimeCtrlBoardV1R0.X\mcc_generated_files/time_ctrl.c
+"49 C:\Users\Sumson\Documents\GitHub\TimeCtrlBoardV1R0\TimeCtrlBoardV1R0.X\mcc_generated_files/time_ctrl.c
+[v _testTimeCtrl testTimeCtrl `(v  1 e 1 0 ]
+{
+[v testTimeCtrl@IQRNum IQRNum `uc  1 a 1 wreg ]
+"51
+[v testTimeCtrl@i i `uc  1 a 1 3 ]
+"49
+[v testTimeCtrl@IQRNum IQRNum `uc  1 a 1 wreg ]
+"53
+[v testTimeCtrl@IQRNum IQRNum `uc  1 a 1 2 ]
+"61
+} 0
+"35
 [v _stopTimeCtrl stopTimeCtrl `(v  1 e 1 0 ]
 {
-"34
+"37
 [v stopTimeCtrl@i i `uc  1 a 1 4 ]
-"44
+"47
 } 0
-"25
+"28
 [v _startTimeCtrl startTimeCtrl `(v  1 e 1 0 ]
 {
-"30
+"33
 } 0
-"9
+"12
 [v _getTimeData getTimeData `(v  1 e 1 0 ]
 {
-"11
+"14
 [v getTimeData@j j `uc  1 a 1 4 ]
 [v getTimeData@i i `uc  1 a 1 3 ]
-"12
+"15
 [v getTimeData@cnt cnt `uc  1 a 1 2 ]
-"23
+"26
 } 0
 "75 C:\Users\Sumson\Documents\GitHub\TimeCtrlBoardV1R0\TimeCtrlBoardV1R0.X\mcc_generated_files/mcc.c
 [v _Get_Device_Addr Get_Device_Addr `(uc  1 e 1 0 ]
@@ -325,12 +361,14 @@
 [v TMR0_CallBack@timeCrlCnt timeCrlCnt `uc  1 s 1 timeCrlCnt ]
 "128
 [v TMR0_CallBack@preEusartRxCount preEusartRxCount `uc  1 s 1 preEusartRxCount ]
-"164
+"129
+[v TMR0_CallBack@testTimeCtrlCnt testTimeCtrlCnt `uc  1 s 1 testTimeCtrlCnt ]
+"174
 } 0
-"170
+"180
 [v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
 {
-"173
+"183
 } 0
 "199 C:\Users\Sumson\Documents\GitHub\TimeCtrlBoardV1R0\TimeCtrlBoardV1R0.X\mcc_generated_files/eusart.c
 [v _EUSART_Receive_ISR EUSART_Receive_ISR `(v  1 e 1 0 ]
