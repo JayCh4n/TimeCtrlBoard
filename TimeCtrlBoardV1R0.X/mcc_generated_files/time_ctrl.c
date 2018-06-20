@@ -5,6 +5,9 @@ uint8_t timeCtrlStartFlag = 0;        //?????????? 0???  1???
 uint8_t timeCtrlOvertimeMask = 0;     //???????????  10ms
 uint8_t IQRPreSta[8] = {3,3,3,3,3,3,3,3};   //????????
 uint8_t IQRSta[8] = {0};      //?????? ??8??? 0?T1  1?T2  2:T3 3:T4
+uint8_t testTimeCtrlFlag = 0;
+uint8_t testTimeCtrlOvertimeMask = 0;
+uint8_t testIQRNum = 0;
 
 void getTimeData(void)
 {
@@ -40,6 +43,51 @@ void stopTimeCtrl(void)
         IQRSta[i] = 0;
         IQRPreSta[i] = 3;
         LATC &= ~(1<<i);
+    }
+}
+
+void testTimeCtrl(uint8_t IQRNum)
+{
+    uint8_t i;
+
+    testIQRNum = IQRNum;
+
+    for(i=0; i<4; i++)
+    {
+        timeCtrlValue[IQRNum - 1][i] = eusartRxBuffer[i * 2 + 5];
+        timeCtrlValue[IQRNum - 1][i] = (timeCtrlValue[IQRNum - 1][i] << 8) | eusartRxBuffer[i * 2 + 6];
+    }
+    testTimeCtrlFlag = 1; 
+}
+
+void testTimeCtrlProcess(uint8_t IQRNum)
+{
+    static uint16_t timeCnt = 0;
+    static uint8_t IQRSta = 0;
+    static uint8_t PreIQRSta = 3;
+    
+    if(IQRSta != PreIQRSta)
+    {
+        timeCnt = timeCtrlValue[IQRNum - 1][IQRSta];
+        PreIQRSta = IQRSta;
+    }
+
+    if(--timeCnt == 0)
+    {
+        if(IQRSta%2 == 0)
+        {
+            LATC |= 1 << (IQRNum - 1);
+        }
+        else if(IQRSta%2 == 1)
+        {
+            LATC &= ~(1 << (IQRNum - 1));
+        }
+
+        if(++IQRSta >= 4)
+        {
+            IQRSta = 0;
+            testTimeCtrlFlag = 0;
+        }
     }
 }
 

@@ -126,7 +126,8 @@ void TMR0_CallBack(void)
     static uint8_t eusartRXOvertimeCnt = 0;                        //串口接收超时计数    50ms没有数据接收，则认为一个数据包接收完成
     static uint8_t timeCrlCnt = 0;                                 //???????? 10ms  ???????
     static uint8_t preEusartRxCount = 0;
-    
+    static uint8_t testTimeCtrlCnt = 0;
+
     if(timeCtrlStartFlag)
     {
         if(++timeCrlCnt >= 10)
@@ -136,6 +137,15 @@ void TMR0_CallBack(void)
         }
     }
     
+    if(testTimeCtrlFlag)
+    {
+        if(++testTimeCtrlCnt >= 10)
+        {
+            testTimeCtrlCnt = 0;
+            testTimeCtrlOvertimeMask = 1;
+        }
+    }
+
     /*???????? ?????*/
     if(eusartRxCount != preEusartRxCount)
     {

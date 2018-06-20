@@ -243,11 +243,14 @@ void EUSART_Deal(void)
                 {
                     startTimeCtrl();
                 }
+                else if(eusartRxBuffer[3] >= TEST_QIR1 && eusartRxBuffer[3] <= TEST_QIR8)
+                {
+                    testTimeCtrl(eusartRxBuffer[3] - 0x20);
+                }
             }    
         }
     }
 }
-
 
 /**
   End of File

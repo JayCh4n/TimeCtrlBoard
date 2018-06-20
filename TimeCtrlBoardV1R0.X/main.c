@@ -80,6 +80,12 @@ void main(void)
             tempCtrlProcess();
             timeCtrlOvertimeMask = 0;
         }
+
+        if(testTimeCtrlOvertimeMask)
+        {
+            testTimeCtrlProcess(testIQRNum);
+            testTimeCtrlOvertimeMask = 0;
+        }
     }
 }
 /**
