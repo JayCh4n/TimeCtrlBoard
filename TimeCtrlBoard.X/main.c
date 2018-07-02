@@ -77,15 +77,24 @@ void main(void)
         
         if(timeCtrlOvertimeMask)
         {
-            tempCtrlProcess();
-            timeCtrlOvertimeMask = 0;
+            if(!SIGNAL_GetValue() && timeCtrlStartFlag == 1)
+            {
+                LED_SetLow();
+                tempCtrlProcess();
+                timeCtrlOvertimeMask = 0;
+            }
+            else if(SIGNAL_GetValue() && timeCtrlStartFlag == 1)
+            {
+                stopTimeCtrl();
+                timeCtrlStartFlag = 1;
+            }
         }
 
-        if(testTimeCtrlOvertimeMask)
-        {
-            testTimeCtrlProcess(testIQRNum);
-            testTimeCtrlOvertimeMask = 0;
-        }
+//        if(testTimeCtrlOvertimeMask)
+//        {
+//            testTimeCtrlProcess(testIQRNum);
+//            testTimeCtrlOvertimeMask = 0;
+//        }
     }
 }
 /**

@@ -137,14 +137,14 @@ void TMR0_CallBack(void)
         }
     }
     
-    if(testTimeCtrlFlag)
-    {
-        if(++testTimeCtrlCnt >= 10)
-        {
-            testTimeCtrlCnt = 0;
-            testTimeCtrlOvertimeMask = 1;
-        }
-    }
+//    if(testTimeCtrlFlag)
+//    {
+//        if(++testTimeCtrlCnt >= 10)
+//        {
+//            testTimeCtrlCnt = 0;
+//            testTimeCtrlOvertimeMask = 1;
+//        }
+//    }
 
     /*???????? ?????*/
     if(eusartRxCount != preEusartRxCount)
@@ -156,7 +156,7 @@ void TMR0_CallBack(void)
     {
         if(eusartRxCount != 0)
         {
-            if(++eusartRXOvertimeCnt >= 20)
+            if(++eusartRXOvertimeCnt >= 2)
             {
                 eusartRXOvertimeCnt = 0;
                 EusartRxLenth = eusartRxCount;

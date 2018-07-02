@@ -247,6 +247,10 @@ void EUSART_Deal(void)
                 {
                     testTimeCtrl(eusartRxBuffer[3] - 0x20);
                 }
+                else if(eusartRxBuffer[3] == TIME_CTRL_WORK)
+                {
+                    workTimeCtrl();
+                }
             }    
         }
     }

@@ -2950,9 +2950,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pin_manager.c: 78: ANSELA = 0x12;
 "78
 [e = _ANSELA -> -> 18 `i `uc ]
-[; ;pin_manager.c: 83: WPUB = 0x00;
+[; ;pin_manager.c: 83: WPUB = 0x50;
 "83
-[e = _WPUB -> -> 0 `i `uc ]
+[e = _WPUB -> -> 80 `i `uc ]
 [; ;pin_manager.c: 84: WPUA = 0x01;
 "84
 [e = _WPUA -> -> 1 `i `uc ]
