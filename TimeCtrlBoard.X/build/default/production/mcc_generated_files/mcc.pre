@@ -4087,12 +4087,15 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
-# 29 "mcc_generated_files/time_ctrl.h"
+# 30 "mcc_generated_files/time_ctrl.h"
 extern uint16_t timeCtrlValue[8][4];
 extern uint8_t timeCtrlStartFlag;
 extern uint8_t timeCtrlOvertimeMask;
 extern uint8_t IQRPreSta[8];
 extern uint8_t IQRSta[8];
+extern uint8_t timeCtrlMode;
+extern uint8_t timeCtrlEnableSignal;
+extern uint8_t readSignalflag;
 
 
 

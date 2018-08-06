@@ -69,6 +69,22 @@ void main(void)
     while (1)
     {
         // Add your application code
+
+        if(timeCtrlMode == 'A')
+        {
+            timeCtrlEnableSignal = !SIGNAL_GetValue();
+        }
+        else if(timeCtrlMode == 'B')
+        {
+            if(readSignalflag)
+            {
+                if((timeCtrlEnableSignal = !SIGNAL_GetValue()))
+                {
+                    readSignalflag = 0;
+                }
+            }
+        }
+        
         if (eusartRxOvertimeMask)
         {
             eusartRxOvertimeMask = 0;
@@ -76,17 +92,18 @@ void main(void)
         }
         
         if(timeCtrlOvertimeMask)
-        {
-            if(!SIGNAL_GetValue() && timeCtrlStartFlag == 1)
+        {   
+            if(timeCtrlEnableSignal && (timeCtrlStartFlag == 1))
             {
                 LED_SetLow();
                 tempCtrlProcess();
                 timeCtrlOvertimeMask = 0;
             }
-            else if(SIGNAL_GetValue() && timeCtrlStartFlag == 1)
+            else if(!timeCtrlEnableSignal && (timeCtrlStartFlag == 1))
             {
                 stopTimeCtrl();
                 timeCtrlStartFlag = 1;
+                readSignalflag = 1;
             }
         }
 

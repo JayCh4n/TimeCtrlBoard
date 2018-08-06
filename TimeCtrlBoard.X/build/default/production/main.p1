@@ -1,6 +1,6 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[v F3075 `(v ~T0 @X0 0 tf ]
 [v F3078 `(v ~T0 @X0 0 tf ]
+[v F3081 `(v ~T0 @X0 0 tf ]
 [p mainexit ]
 "72 mcc_generated_files/mcc.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
@@ -15,12 +15,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S25 . . . ]
 "372
 [v _INTCONbits `VS25 ~T0 @X0 0 e@11 ]
-"83 mcc_generated_files/eusart.h
-[v _eusartRxOvertimeMask `uc ~T0 @X0 0 e ]
-"388
-[v _EUSART_Deal `(v ~T0 @X0 0 ef ]
-"31 mcc_generated_files/time_ctrl.h
-[v _timeCtrlOvertimeMask `uc ~T0 @X0 0 e ]
+"35 mcc_generated_files/time_ctrl.h
+[v _timeCtrlMode `uc ~T0 @X0 0 e ]
+"36
+[v _timeCtrlEnableSignal `uc ~T0 @X0 0 e ]
 "433 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1828.h
 [s S29 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S29 . RA0 RA1 RA2 RA3 RA4 RA5 ]
@@ -29,7 +27,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S28 . . ]
 "442
 [v _PORTAbits `VS28 ~T0 @X0 0 e@12 ]
-"30 mcc_generated_files/time_ctrl.h
+"37 mcc_generated_files/time_ctrl.h
+[v _readSignalflag `uc ~T0 @X0 0 e ]
+"83 mcc_generated_files/eusart.h
+[v _eusartRxOvertimeMask `uc ~T0 @X0 0 e ]
+"388
+[v _EUSART_Deal `(v ~T0 @X0 0 ef ]
+"32 mcc_generated_files/time_ctrl.h
+[v _timeCtrlOvertimeMask `uc ~T0 @X0 0 e ]
+"31
 [v _timeCtrlStartFlag `uc ~T0 @X0 0 e ]
 "2058 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1828.h
 [s S105 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -39,9 +45,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S104 . . ]
 "2067
 [v _LATAbits `VS104 ~T0 @X0 0 e@268 ]
-"38 mcc_generated_files/time_ctrl.h
+"42 mcc_generated_files/time_ctrl.h
 [v _tempCtrlProcess `(v ~T0 @X0 0 ef ]
-"42
+"46
 [v _stopTimeCtrl `(v ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
@@ -2979,27 +2985,30 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
 [; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
 [; ;stdio.h: 195: extern int printf(const char *, ...);
-[; ;time_ctrl.h: 29: extern uint16_t timeCtrlValue[8][4];
-[; ;time_ctrl.h: 30: extern uint8_t timeCtrlStartFlag;
-[; ;time_ctrl.h: 31: extern uint8_t timeCtrlOvertimeMask;
-[; ;time_ctrl.h: 32: extern uint8_t IQRPreSta[8];
-[; ;time_ctrl.h: 33: extern uint8_t IQRSta[8];
-[; ;time_ctrl.h: 38: void tempCtrlProcess(void);
-[; ;time_ctrl.h: 40: void workTimeCtrl(void);
-[; ;time_ctrl.h: 41: void startTimeCtrl(void);
-[; ;time_ctrl.h: 42: void stopTimeCtrl(void);
-[; ;time_ctrl.h: 43: void testTimeCtrl(uint8_t iqr_num);
-[; ;time_ctrl.h: 44: void getTimeData(void);
+[; ;time_ctrl.h: 30: extern uint16_t timeCtrlValue[8][4];
+[; ;time_ctrl.h: 31: extern uint8_t timeCtrlStartFlag;
+[; ;time_ctrl.h: 32: extern uint8_t timeCtrlOvertimeMask;
+[; ;time_ctrl.h: 33: extern uint8_t IQRPreSta[8];
+[; ;time_ctrl.h: 34: extern uint8_t IQRSta[8];
+[; ;time_ctrl.h: 35: extern uint8_t timeCtrlMode;
+[; ;time_ctrl.h: 36: extern uint8_t timeCtrlEnableSignal;
+[; ;time_ctrl.h: 37: extern uint8_t readSignalflag;
+[; ;time_ctrl.h: 42: void tempCtrlProcess(void);
+[; ;time_ctrl.h: 44: void workTimeCtrl(void);
+[; ;time_ctrl.h: 45: void startTimeCtrl(void);
+[; ;time_ctrl.h: 46: void stopTimeCtrl(void);
+[; ;time_ctrl.h: 47: void testTimeCtrl(uint8_t iqr_num);
+[; ;time_ctrl.h: 48: void getTimeData(void);
 [; ;eusart.h: 80: extern volatile uint8_t eusartTxBufferRemaining;
 [; ;eusart.h: 81: extern uint8_t eusartRxBuffer[75];
 [; ;eusart.h: 82: extern uint8_t eusartRxCount;
 [; ;eusart.h: 83: extern uint8_t eusartRxOvertimeMask;
 [; ;eusart.h: 84: extern uint8_t EusartRxLenth;
 "89 mcc_generated_files/eusart.h
-[v _EUSART_TxDefaultInterruptHandler `*F3075 ~T0 @X0 1 e ]
+[v _EUSART_TxDefaultInterruptHandler `*F3078 ~T0 @X0 1 e ]
 [; ;eusart.h: 89: void (*EUSART_TxDefaultInterruptHandler)(void);
 "90
-[v _EUSART_RxDefaultInterruptHandler `*F3078 ~T0 @X0 1 e ]
+[v _EUSART_RxDefaultInterruptHandler `*F3081 ~T0 @X0 1 e ]
 [; ;eusart.h: 90: void (*EUSART_RxDefaultInterruptHandler)(void);
 [; ;eusart.h: 112: void EUSART_Initialize(void);
 [; ;eusart.h: 346: void EUSART_Receive_ISR(void);
@@ -3040,81 +3049,132 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 70: {
 "70
 {
-[; ;main.c: 72: if (eusartRxOvertimeMask)
-"72
-[e $ ! != -> _eusartRxOvertimeMask `i -> -> -> 0 `i `uc `i 365  ]
-[; ;main.c: 73: {
+[; ;main.c: 73: if(timeCtrlMode == 'A')
 "73
-{
-[; ;main.c: 74: eusartRxOvertimeMask = 0;
+[e $ ! == -> _timeCtrlMode `ui -> 65 `ui 365  ]
+[; ;main.c: 74: {
 "74
-[e = _eusartRxOvertimeMask -> -> 0 `i `uc ]
-[; ;main.c: 75: EUSART_Deal();
+{
+[; ;main.c: 75: timeCtrlEnableSignal = !PORTAbits.RA0;
 "75
-[e ( _EUSART_Deal ..  ]
+[e = _timeCtrlEnableSignal -> -> ! != -> . . _PORTAbits 0 0 `i -> -> -> 0 `i `Vuc `i `i `uc ]
 "76
 }
-[e :U 365 ]
 [; ;main.c: 76: }
-[; ;main.c: 78: if(timeCtrlOvertimeMask)
+[e $U 366  ]
+"77
+[e :U 365 ]
+[; ;main.c: 77: else if(timeCtrlMode == 'B')
+[e $ ! == -> _timeCtrlMode `ui -> 66 `ui 367  ]
+[; ;main.c: 78: {
 "78
-[e $ ! != -> _timeCtrlOvertimeMask `i -> -> -> 0 `i `uc `i 366  ]
-[; ;main.c: 79: {
+{
+[; ;main.c: 79: if(readSignalflag)
 "79
-{
-[; ;main.c: 80: if(!PORTAbits.RA0 && timeCtrlStartFlag == 1)
+[e $ ! != -> _readSignalflag `i -> -> -> 0 `i `uc `i 368  ]
+[; ;main.c: 80: {
 "80
-[e $ ! && ! != -> . . _PORTAbits 0 0 `i -> -> -> 0 `i `Vuc `i == -> _timeCtrlStartFlag `i -> 1 `i 367  ]
-[; ;main.c: 81: {
-"81
 {
-[; ;main.c: 82: do { LATAbits.LATA2 = 0; } while(0);
+[; ;main.c: 81: if((timeCtrlEnableSignal = !PORTAbits.RA0))
+"81
+[e $ ! != -> = _timeCtrlEnableSignal -> -> ! != -> . . _PORTAbits 0 0 `i -> -> -> 0 `i `Vuc `i `i `uc `i -> -> -> 0 `i `uc `i 369  ]
+[; ;main.c: 82: {
 "82
+{
+[; ;main.c: 83: readSignalflag = 0;
+"83
+[e = _readSignalflag -> -> 0 `i `uc ]
+"84
+}
+[e :U 369 ]
+"85
+}
+[e :U 368 ]
+"86
+}
+[e :U 367 ]
+"88
+[e :U 366 ]
+[; ;main.c: 84: }
+[; ;main.c: 85: }
+[; ;main.c: 86: }
+[; ;main.c: 88: if (eusartRxOvertimeMask)
+[e $ ! != -> _eusartRxOvertimeMask `i -> -> -> 0 `i `uc `i 370  ]
+[; ;main.c: 89: {
+"89
+{
+[; ;main.c: 90: eusartRxOvertimeMask = 0;
+"90
+[e = _eusartRxOvertimeMask -> -> 0 `i `uc ]
+[; ;main.c: 91: EUSART_Deal();
+"91
+[e ( _EUSART_Deal ..  ]
+"92
+}
 [e :U 370 ]
+[; ;main.c: 92: }
+[; ;main.c: 94: if(timeCtrlOvertimeMask)
+"94
+[e $ ! != -> _timeCtrlOvertimeMask `i -> -> -> 0 `i `uc `i 371  ]
+[; ;main.c: 95: {
+"95
+{
+[; ;main.c: 96: if(timeCtrlEnableSignal && (timeCtrlStartFlag == 1))
+"96
+[e $ ! && != -> _timeCtrlEnableSignal `i -> -> -> 0 `i `uc `i == -> _timeCtrlStartFlag `i -> 1 `i 372  ]
+[; ;main.c: 97: {
+"97
+{
+[; ;main.c: 98: do { LATAbits.LATA2 = 0; } while(0);
+"98
+[e :U 375 ]
 {
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
 }
-[e :U 369 ]
-[; ;main.c: 83: tempCtrlProcess();
-"83
+[e :U 374 ]
+[; ;main.c: 99: tempCtrlProcess();
+"99
 [e ( _tempCtrlProcess ..  ]
-[; ;main.c: 84: timeCtrlOvertimeMask = 0;
-"84
+[; ;main.c: 100: timeCtrlOvertimeMask = 0;
+"100
 [e = _timeCtrlOvertimeMask -> -> 0 `i `uc ]
-"85
+"101
 }
-[; ;main.c: 85: }
-[e $U 371  ]
-"86
-[e :U 367 ]
-[; ;main.c: 86: else if(PORTAbits.RA0 && timeCtrlStartFlag == 1)
-[e $ ! && != -> . . _PORTAbits 0 0 `i -> -> -> 0 `i `Vuc `i == -> _timeCtrlStartFlag `i -> 1 `i 372  ]
-[; ;main.c: 87: {
-"87
-{
-[; ;main.c: 88: stopTimeCtrl();
-"88
-[e ( _stopTimeCtrl ..  ]
-[; ;main.c: 89: timeCtrlStartFlag = 1;
-"89
-[e = _timeCtrlStartFlag -> -> 1 `i `uc ]
-"90
-}
+[; ;main.c: 101: }
+[e $U 376  ]
+"102
 [e :U 372 ]
-"91
-[e :U 371 ]
+[; ;main.c: 102: else if(!timeCtrlEnableSignal && (timeCtrlStartFlag == 1))
+[e $ ! && ! != -> _timeCtrlEnableSignal `i -> -> -> 0 `i `uc `i == -> _timeCtrlStartFlag `i -> 1 `i 377  ]
+[; ;main.c: 103: {
+"103
+{
+[; ;main.c: 104: stopTimeCtrl();
+"104
+[e ( _stopTimeCtrl ..  ]
+[; ;main.c: 105: timeCtrlStartFlag = 1;
+"105
+[e = _timeCtrlStartFlag -> -> 1 `i `uc ]
+[; ;main.c: 106: readSignalflag = 1;
+"106
+[e = _readSignalflag -> -> 1 `i `uc ]
+"107
 }
-[e :U 366 ]
-"98
+[e :U 377 ]
+"108
+[e :U 376 ]
+}
+[e :U 371 ]
+"115
 }
 [e :U 362 ]
 "69
 [e $U 363  ]
 [e :U 364 ]
-[; ;main.c: 90: }
-[; ;main.c: 91: }
-[; ;main.c: 98: }
-[; ;main.c: 99: }
-"99
+[; ;main.c: 107: }
+[; ;main.c: 108: }
+[; ;main.c: 115: }
+[; ;main.c: 116: }
+"116
 [e :UE 361 ]
 }

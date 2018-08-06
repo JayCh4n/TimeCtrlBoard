@@ -33,17 +33,17 @@
 [v _Get_Device_Addr Get_Device_Addr `(uc  1 e 1 0 ]
 "57 C:\Users\Sumson\Documents\GitHub\TimeCtrlBoard\TimeCtrlBoard.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
-"13 C:\Users\Sumson\Documents\GitHub\TimeCtrlBoard\TimeCtrlBoard.X\mcc_generated_files/time_ctrl.c
+"16 C:\Users\Sumson\Documents\GitHub\TimeCtrlBoard\TimeCtrlBoard.X\mcc_generated_files/time_ctrl.c
 [v _getTimeData getTimeData `(v  1 e 1 0 ]
-"29
+"32
 [v _workTimeCtrl workTimeCtrl `(v  1 e 1 0 ]
-"46
+"50
 [v _startTimeCtrl startTimeCtrl `(v  1 e 1 0 ]
-"53
+"57
 [v _stopTimeCtrl stopTimeCtrl `(v  1 e 1 0 ]
-"69
+"74
 [v _testTimeCtrl testTimeCtrl `(v  1 e 1 0 ]
-"120
+"127
 [v _tempCtrlProcess tempCtrlProcess `(v  1 e 1 0 ]
 "64 C:\Users\Sumson\Documents\GitHub\TimeCtrlBoard\TimeCtrlBoard.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
@@ -72,7 +72,7 @@
 ]
 [u S144 . 1 `S130 1 . 1 0 `S139 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES144  1 e 1 @11 ]
-[s S469 . 1 `uc 1 RA0 1 0 :1:0 
+[s S472 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -80,8 +80,8 @@
 `uc 1 RA5 1 0 :1:5 
 ]
 "442
-[u S476 . 1 `S469 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES476  1 e 1 @12 ]
+[u S479 . 1 `S472 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES479  1 e 1 @12 ]
 [s S45 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 RB4 1 0 :1:4 
 `uc 1 RB5 1 0 :1:5 
@@ -150,7 +150,7 @@
 [v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
 "2052
 [v _LATA LATA `VEuc  1 e 1 @268 ]
-[s S396 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S397 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -158,8 +158,8 @@
 `uc 1 LATA5 1 0 :1:5 
 ]
 "2067
-[u S403 . 1 `S396 1 . 1 0 ]
-[v _LATAbits LATAbits `VES403  1 e 1 @268 ]
+[u S404 . 1 `S397 1 . 1 0 ]
+[v _LATAbits LATAbits `VES404  1 e 1 @268 ]
 "2097
 [v _LATB LATB `VEuc  1 e 1 @269 ]
 "2136
@@ -228,6 +228,12 @@
 [v _IQRSta IQRSta `[8]uc  1 e 8 0 ]
 "11
 [v _testIQRSta testIQRSta `[8]uc  1 e 8 0 ]
+"12
+[v _timeCtrlMode timeCtrlMode `uc  1 e 1 0 ]
+"13
+[v _timeCtrlEnableSignal timeCtrlEnableSignal `uc  1 e 1 0 ]
+"14
+[v _readSignalflag readSignalflag `uc  1 e 1 0 ]
 "58 C:\Users\Sumson\Documents\GitHub\TimeCtrlBoard\TimeCtrlBoard.X\mcc_generated_files/tmr0.c
 [v _timer0ReloadVal timer0ReloadVal `VEuc  1 e 1 0 ]
 "59
@@ -235,16 +241,16 @@
 "49 C:\Users\Sumson\Documents\GitHub\TimeCtrlBoard\TimeCtrlBoard.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"99
+"116
 } 0
-"120 C:\Users\Sumson\Documents\GitHub\TimeCtrlBoard\TimeCtrlBoard.X\mcc_generated_files/time_ctrl.c
+"127 C:\Users\Sumson\Documents\GitHub\TimeCtrlBoard\TimeCtrlBoard.X\mcc_generated_files/time_ctrl.c
 [v _tempCtrlProcess tempCtrlProcess `(v  1 e 1 0 ]
 {
-"122
+"129
 [v tempCtrlProcess@i i `uc  1 a 1 4 ]
-"123
+"130
 [v tempCtrlProcess@timeCnt timeCnt `[8]ui  1 s 16 timeCnt ]
-"159
+"171
 } 0
 "50 C:\Users\Sumson\Documents\GitHub\TimeCtrlBoard\TimeCtrlBoard.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -291,45 +297,45 @@
 "228
 [v _EUSART_Deal EUSART_Deal `(v  1 e 1 0 ]
 {
-"257
+"261
 } 0
-"29 C:\Users\Sumson\Documents\GitHub\TimeCtrlBoard\TimeCtrlBoard.X\mcc_generated_files/time_ctrl.c
+"32 C:\Users\Sumson\Documents\GitHub\TimeCtrlBoard\TimeCtrlBoard.X\mcc_generated_files/time_ctrl.c
 [v _workTimeCtrl workTimeCtrl `(v  1 e 1 0 ]
 {
-"31
+"34
 [v workTimeCtrl@i i `uc  1 a 1 4 ]
-"44
+"48
 } 0
-"69
+"74
 [v _testTimeCtrl testTimeCtrl `(v  1 e 1 0 ]
 {
 [v testTimeCtrl@IQRNum IQRNum `uc  1 a 1 wreg ]
 [v testTimeCtrl@IQRNum IQRNum `uc  1 a 1 wreg ]
-"71
+"76
 [v testTimeCtrl@IQRNum IQRNum `uc  1 a 1 4 ]
-"87
+"92
 } 0
-"46
+"50
 [v _startTimeCtrl startTimeCtrl `(v  1 e 1 0 ]
 {
-"51
+"55
 } 0
-"53
+"57
 [v _stopTimeCtrl stopTimeCtrl `(v  1 e 1 0 ]
 {
-"55
+"59
 [v stopTimeCtrl@i i `uc  1 a 1 4 ]
-"67
+"72
 } 0
-"13
+"16
 [v _getTimeData getTimeData `(v  1 e 1 0 ]
 {
-"15
+"18
 [v getTimeData@j j `uc  1 a 1 4 ]
 [v getTimeData@i i `uc  1 a 1 3 ]
-"16
+"19
 [v getTimeData@cnt cnt `uc  1 a 1 2 ]
-"27
+"30
 } 0
 "75 C:\Users\Sumson\Documents\GitHub\TimeCtrlBoard\TimeCtrlBoard.X\mcc_generated_files/mcc.c
 [v _Get_Device_Addr Get_Device_Addr `(uc  1 e 1 0 ]

@@ -13,7 +13,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _LATAbits `VS104 ~T0 @X0 0 e@268 ]
 "2136
 [v _LATC `Vuc ~T0 @X0 0 e@270 ]
-"42 mcc_generated_files/time_ctrl.h
+"46 mcc_generated_files/time_ctrl.h
 [v _stopTimeCtrl `(v ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
@@ -2977,17 +2977,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart.h: 366: void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void));
 [; ;eusart.h: 386: void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
 [; ;eusart.h: 388: void EUSART_Deal(void);
-[; ;time_ctrl.h: 29: extern uint16_t timeCtrlValue[8][4];
-[; ;time_ctrl.h: 30: extern uint8_t timeCtrlStartFlag;
-[; ;time_ctrl.h: 31: extern uint8_t timeCtrlOvertimeMask;
-[; ;time_ctrl.h: 32: extern uint8_t IQRPreSta[8];
-[; ;time_ctrl.h: 33: extern uint8_t IQRSta[8];
-[; ;time_ctrl.h: 38: void tempCtrlProcess(void);
-[; ;time_ctrl.h: 40: void workTimeCtrl(void);
-[; ;time_ctrl.h: 41: void startTimeCtrl(void);
-[; ;time_ctrl.h: 42: void stopTimeCtrl(void);
-[; ;time_ctrl.h: 43: void testTimeCtrl(uint8_t iqr_num);
-[; ;time_ctrl.h: 44: void getTimeData(void);
+[; ;time_ctrl.h: 30: extern uint16_t timeCtrlValue[8][4];
+[; ;time_ctrl.h: 31: extern uint8_t timeCtrlStartFlag;
+[; ;time_ctrl.h: 32: extern uint8_t timeCtrlOvertimeMask;
+[; ;time_ctrl.h: 33: extern uint8_t IQRPreSta[8];
+[; ;time_ctrl.h: 34: extern uint8_t IQRSta[8];
+[; ;time_ctrl.h: 35: extern uint8_t timeCtrlMode;
+[; ;time_ctrl.h: 36: extern uint8_t timeCtrlEnableSignal;
+[; ;time_ctrl.h: 37: extern uint8_t readSignalflag;
+[; ;time_ctrl.h: 42: void tempCtrlProcess(void);
+[; ;time_ctrl.h: 44: void workTimeCtrl(void);
+[; ;time_ctrl.h: 45: void startTimeCtrl(void);
+[; ;time_ctrl.h: 46: void stopTimeCtrl(void);
+[; ;time_ctrl.h: 47: void testTimeCtrl(uint8_t iqr_num);
+[; ;time_ctrl.h: 48: void getTimeData(void);
 [v F3100 `ui ~T0 @X0 -> 4 `i t ]
 "3 mcc_generated_files/time_ctrl.c
 [v _timeCtrlValue `F3100 ~T0 @X0 -> 8 `i e ]
@@ -3035,385 +3038,422 @@ Version 3.2 HI-TECH Software Intermediate Code
 ..
 ]
 [; ;time_ctrl.c: 11: uint8_t testIQRSta[8] = {0};
+"12
+[v _timeCtrlMode `uc ~T0 @X0 1 e ]
+[i _timeCtrlMode
+-> -> 65 `ui `uc
+]
+[; ;time_ctrl.c: 12: uint8_t timeCtrlMode = 'A';
 "13
-[v _getTimeData `(v ~T0 @X0 1 ef ]
+[v _timeCtrlEnableSignal `uc ~T0 @X0 1 e ]
+[i _timeCtrlEnableSignal
+-> -> 0 `i `uc
+]
+[; ;time_ctrl.c: 13: uint8_t timeCtrlEnableSignal = 0;
 "14
+[v _readSignalflag `uc ~T0 @X0 1 e ]
+[i _readSignalflag
+-> -> 0 `i `uc
+]
+[; ;time_ctrl.c: 14: uint8_t readSignalflag = 0;
+"16
+[v _getTimeData `(v ~T0 @X0 1 ef ]
+"17
 {
-[; ;time_ctrl.c: 13: void getTimeData(void)
-[; ;time_ctrl.c: 14: {
+[; ;time_ctrl.c: 16: void getTimeData(void)
+[; ;time_ctrl.c: 17: {
 [e :U _getTimeData ]
 [f ]
-"15
+"18
 [v _i `uc ~T0 @X0 1 a ]
 [v _j `uc ~T0 @X0 1 a ]
-"16
+"19
 [v _cnt `uc ~T0 @X0 1 a ]
-[; ;time_ctrl.c: 15: uint8_t i, j;
-[; ;time_ctrl.c: 16: uint8_t cnt = 0;
+[; ;time_ctrl.c: 18: uint8_t i, j;
+[; ;time_ctrl.c: 19: uint8_t cnt = 0;
 [e = _cnt -> -> 0 `i `uc ]
-[; ;time_ctrl.c: 17: for(i=0; i<8; i++)
-"17
+[; ;time_ctrl.c: 20: for(i=0; i<8; i++)
+"20
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 8 `i 362  ]
 [e $U 363  ]
-"18
+"21
 [e :U 362 ]
-[; ;time_ctrl.c: 18: {
+[; ;time_ctrl.c: 21: {
 {
-[; ;time_ctrl.c: 19: for(j=0; j<4; j++)
-"19
+[; ;time_ctrl.c: 22: for(j=0; j<4; j++)
+"22
 {
 [e = _j -> -> 0 `i `uc ]
 [e $ < -> _j `i -> 4 `i 365  ]
 [e $U 366  ]
-"20
-[e :U 365 ]
-[; ;time_ctrl.c: 20: {
-{
-[; ;time_ctrl.c: 21: timeCtrlValue[i][j] = eusartRxBuffer[cnt+5];
-"21
-[e = *U + &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux `ui `ux -> *U + &U _eusartRxBuffer * -> -> + -> _cnt `i -> 5 `i `ui `ux -> -> # *U &U _eusartRxBuffer `ui `ux `ui ]
-[; ;time_ctrl.c: 22: timeCtrlValue[i][j] = (timeCtrlValue[i][j] << 8)
-[; ;time_ctrl.c: 23: | eusartRxBuffer[cnt+6];
 "23
-[e = *U + &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux `ui `ux | << *U + &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux `ui `ux -> 8 `i -> *U + &U _eusartRxBuffer * -> -> + -> _cnt `i -> 6 `i `ui `ux -> -> # *U &U _eusartRxBuffer `ui `ux `ui ]
-[; ;time_ctrl.c: 24: cnt += 2;
+[e :U 365 ]
+[; ;time_ctrl.c: 23: {
+{
+[; ;time_ctrl.c: 24: timeCtrlValue[i][j] = eusartRxBuffer[cnt+5];
 "24
+[e = *U + &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux `ui `ux -> *U + &U _eusartRxBuffer * -> -> + -> _cnt `i -> 5 `i `ui `ux -> -> # *U &U _eusartRxBuffer `ui `ux `ui ]
+[; ;time_ctrl.c: 25: timeCtrlValue[i][j] = (timeCtrlValue[i][j] << 8)
+[; ;time_ctrl.c: 26: | eusartRxBuffer[cnt+6];
+"26
+[e = *U + &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux `ui `ux | << *U + &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux `ui `ux -> 8 `i -> *U + &U _eusartRxBuffer * -> -> + -> _cnt `i -> 6 `i `ui `ux -> -> # *U &U _eusartRxBuffer `ui `ux `ui ]
+[; ;time_ctrl.c: 27: cnt += 2;
+"27
 [e =+ _cnt -> -> 2 `i `uc ]
-"25
+"28
 }
-"19
+"22
 [e ++ _j -> -> 1 `i `uc ]
 [e $ < -> _j `i -> 4 `i 365  ]
 [e :U 366 ]
-"25
+"28
 }
-"26
+"29
 }
-"17
+"20
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 8 `i 362  ]
 [e :U 363 ]
-"26
+"29
 }
-[; ;time_ctrl.c: 25: }
-[; ;time_ctrl.c: 26: }
-[; ;time_ctrl.c: 27: }
-"27
+[; ;time_ctrl.c: 28: }
+[; ;time_ctrl.c: 29: }
+[; ;time_ctrl.c: 30: }
+"30
 [e :UE 361 ]
 }
-"29
+"32
 [v _workTimeCtrl `(v ~T0 @X0 1 ef ]
-"30
+"33
 {
-[; ;time_ctrl.c: 29: void workTimeCtrl(void)
-[; ;time_ctrl.c: 30: {
+[; ;time_ctrl.c: 32: void workTimeCtrl(void)
+[; ;time_ctrl.c: 33: {
 [e :U _workTimeCtrl ]
 [f ]
-"31
-[v _i `uc ~T0 @X0 1 a ]
-[; ;time_ctrl.c: 31: uint8_t i;
-[; ;time_ctrl.c: 33: timeCtrlStartFlag = 0;
-"33
-[e = _timeCtrlStartFlag -> -> 0 `i `uc ]
-[; ;time_ctrl.c: 34: do { LATAbits.LATA2 = 0; } while(0);
 "34
+[v _i `uc ~T0 @X0 1 a ]
+[; ;time_ctrl.c: 34: uint8_t i;
+[; ;time_ctrl.c: 36: timeCtrlStartFlag = 0;
+"36
+[e = _timeCtrlStartFlag -> -> 0 `i `uc ]
+[; ;time_ctrl.c: 37: readSignalflag = 0;
+"37
+[e = _readSignalflag -> -> 0 `i `uc ]
+[; ;time_ctrl.c: 38: do { LATAbits.LATA2 = 0; } while(0);
+"38
 [e :U 371 ]
 {
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
 }
 [e :U 370 ]
-[; ;time_ctrl.c: 36: for(i=0; i<8; i++)
-"36
+[; ;time_ctrl.c: 40: for(i=0; i<8; i++)
+"40
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 8 `i 372  ]
 [e $U 373  ]
-"37
+"41
 [e :U 372 ]
-[; ;time_ctrl.c: 37: {
+[; ;time_ctrl.c: 41: {
 {
-[; ;time_ctrl.c: 38: IQRSta[i] = 0;
-"38
-[e = *U + &U _IQRSta * -> _i `ux -> -> # *U &U _IQRSta `ui `ux -> -> 0 `i `uc ]
-[; ;time_ctrl.c: 39: testIQRSta[i] = 0;
-"39
-[e = *U + &U _testIQRSta * -> _i `ux -> -> # *U &U _testIQRSta `ui `ux -> -> 0 `i `uc ]
-[; ;time_ctrl.c: 40: IQRPreSta[i] = 3;
-"40
-[e = *U + &U _IQRPreSta * -> _i `ux -> -> # *U &U _IQRPreSta `ui `ux -> -> 3 `i `uc ]
-[; ;time_ctrl.c: 42: LATC |= 1 << i;
+[; ;time_ctrl.c: 42: IQRSta[i] = 0;
 "42
-[e =| _LATC -> << -> 1 `i _i `uc ]
+[e = *U + &U _IQRSta * -> _i `ux -> -> # *U &U _IQRSta `ui `ux -> -> 0 `i `uc ]
+[; ;time_ctrl.c: 43: testIQRSta[i] = 0;
 "43
+[e = *U + &U _testIQRSta * -> _i `ux -> -> # *U &U _testIQRSta `ui `ux -> -> 0 `i `uc ]
+[; ;time_ctrl.c: 44: IQRPreSta[i] = 3;
+"44
+[e = *U + &U _IQRPreSta * -> _i `ux -> -> # *U &U _IQRPreSta `ui `ux -> -> 3 `i `uc ]
+[; ;time_ctrl.c: 46: LATC |= 1 << i;
+"46
+[e =| _LATC -> << -> 1 `i _i `uc ]
+"47
 }
-"36
+"40
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 8 `i 372  ]
 [e :U 373 ]
-"43
+"47
 }
-[; ;time_ctrl.c: 43: }
-[; ;time_ctrl.c: 44: }
-"44
+[; ;time_ctrl.c: 47: }
+[; ;time_ctrl.c: 48: }
+"48
 [e :UE 368 ]
 }
-"46
+"50
 [v _startTimeCtrl `(v ~T0 @X0 1 ef ]
-"47
+"51
 {
-[; ;time_ctrl.c: 46: void startTimeCtrl(void)
-[; ;time_ctrl.c: 47: {
+[; ;time_ctrl.c: 50: void startTimeCtrl(void)
+[; ;time_ctrl.c: 51: {
 [e :U _startTimeCtrl ]
 [f ]
-[; ;time_ctrl.c: 48: getTimeData();
-"48
+[; ;time_ctrl.c: 52: getTimeData();
+"52
 [e ( _getTimeData ..  ]
-[; ;time_ctrl.c: 49: stopTimeCtrl();
-"49
+[; ;time_ctrl.c: 53: stopTimeCtrl();
+"53
 [e ( _stopTimeCtrl ..  ]
-[; ;time_ctrl.c: 50: timeCtrlStartFlag = 1;
-"50
+[; ;time_ctrl.c: 54: timeCtrlStartFlag = 1;
+"54
 [e = _timeCtrlStartFlag -> -> 1 `i `uc ]
-[; ;time_ctrl.c: 51: }
-"51
+[; ;time_ctrl.c: 55: }
+"55
 [e :UE 375 ]
 }
-"53
+"57
 [v _stopTimeCtrl `(v ~T0 @X0 1 ef ]
-"54
+"58
 {
-[; ;time_ctrl.c: 53: void stopTimeCtrl(void)
-[; ;time_ctrl.c: 54: {
+[; ;time_ctrl.c: 57: void stopTimeCtrl(void)
+[; ;time_ctrl.c: 58: {
 [e :U _stopTimeCtrl ]
 [f ]
-"55
+"59
 [v _i `uc ~T0 @X0 1 a ]
-[; ;time_ctrl.c: 55: uint8_t i;
-[; ;time_ctrl.c: 56: timeCtrlStartFlag = 0;
-"56
+[; ;time_ctrl.c: 59: uint8_t i;
+[; ;time_ctrl.c: 60: timeCtrlStartFlag = 0;
+"60
 [e = _timeCtrlStartFlag -> -> 0 `i `uc ]
-[; ;time_ctrl.c: 58: do { LATAbits.LATA2 = 1; } while(0);
-"58
+[; ;time_ctrl.c: 61: readSignalflag = 0;
+"61
+[e = _readSignalflag -> -> 0 `i `uc ]
+[; ;time_ctrl.c: 63: do { LATAbits.LATA2 = 1; } while(0);
+"63
 [e :U 379 ]
 {
 [e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
 }
 [e :U 378 ]
-[; ;time_ctrl.c: 60: for(i=0; i<8; i++)
-"60
+[; ;time_ctrl.c: 65: for(i=0; i<8; i++)
+"65
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 8 `i 380  ]
 [e $U 381  ]
-"61
-[e :U 380 ]
-[; ;time_ctrl.c: 61: {
-{
-[; ;time_ctrl.c: 62: IQRSta[i] = 0;
-"62
-[e = *U + &U _IQRSta * -> _i `ux -> -> # *U &U _IQRSta `ui `ux -> -> 0 `i `uc ]
-[; ;time_ctrl.c: 63: testIQRSta[i] = 0;
-"63
-[e = *U + &U _testIQRSta * -> _i `ux -> -> # *U &U _testIQRSta `ui `ux -> -> 0 `i `uc ]
-[; ;time_ctrl.c: 64: IQRPreSta[i] = 3;
-"64
-[e = *U + &U _IQRPreSta * -> _i `ux -> -> # *U &U _IQRPreSta `ui `ux -> -> 3 `i `uc ]
-[; ;time_ctrl.c: 65: LATC &= ~(1<<i);
-"65
-[e =& _LATC -> ~ << -> 1 `i _i `uc ]
 "66
+[e :U 380 ]
+[; ;time_ctrl.c: 66: {
+{
+[; ;time_ctrl.c: 67: IQRSta[i] = 0;
+"67
+[e = *U + &U _IQRSta * -> _i `ux -> -> # *U &U _IQRSta `ui `ux -> -> 0 `i `uc ]
+[; ;time_ctrl.c: 68: testIQRSta[i] = 0;
+"68
+[e = *U + &U _testIQRSta * -> _i `ux -> -> # *U &U _testIQRSta `ui `ux -> -> 0 `i `uc ]
+[; ;time_ctrl.c: 69: IQRPreSta[i] = 3;
+"69
+[e = *U + &U _IQRPreSta * -> _i `ux -> -> # *U &U _IQRPreSta `ui `ux -> -> 3 `i `uc ]
+[; ;time_ctrl.c: 70: LATC &= ~(1<<i);
+"70
+[e =& _LATC -> ~ << -> 1 `i _i `uc ]
+"71
 }
-"60
+"65
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 8 `i 380  ]
 [e :U 381 ]
-"66
+"71
 }
-[; ;time_ctrl.c: 66: }
-[; ;time_ctrl.c: 67: }
-"67
+[; ;time_ctrl.c: 71: }
+[; ;time_ctrl.c: 72: }
+"72
 [e :UE 376 ]
 }
-"69
-[v _testTimeCtrl `(v ~T0 @X0 1 ef1`uc ]
-"70
-{
-[; ;time_ctrl.c: 69: void testTimeCtrl(uint8_t IQRNum)
-[; ;time_ctrl.c: 70: {
-[e :U _testTimeCtrl ]
-"69
-[v _IQRNum `uc ~T0 @X0 1 r1 ]
-"70
-[f ]
-[; ;time_ctrl.c: 71: testIQRSta[IQRNum - 1] ^= 0x01;
-"71
-[e =^ *U + &U _testIQRSta * -> -> - -> _IQRNum `i -> 1 `i `ui `ux -> -> # *U &U _testIQRSta `ui `ux -> -> 1 `i `uc ]
-[; ;time_ctrl.c: 73: if(testIQRSta[IQRNum - 1])
-"73
-[e $ ! != -> *U + &U _testIQRSta * -> -> - -> _IQRNum `i -> 1 `i `ui `ux -> -> # *U &U _testIQRSta `ui `ux `i -> -> -> 0 `i `uc `i 384  ]
-[; ;time_ctrl.c: 74: LATC |= 1 << (IQRNum - 1);
 "74
+[v _testTimeCtrl `(v ~T0 @X0 1 ef1`uc ]
+"75
+{
+[; ;time_ctrl.c: 74: void testTimeCtrl(uint8_t IQRNum)
+[; ;time_ctrl.c: 75: {
+[e :U _testTimeCtrl ]
+"74
+[v _IQRNum `uc ~T0 @X0 1 r1 ]
+"75
+[f ]
+[; ;time_ctrl.c: 76: testIQRSta[IQRNum - 1] ^= 0x01;
+"76
+[e =^ *U + &U _testIQRSta * -> -> - -> _IQRNum `i -> 1 `i `ui `ux -> -> # *U &U _testIQRSta `ui `ux -> -> 1 `i `uc ]
+[; ;time_ctrl.c: 78: if(testIQRSta[IQRNum - 1])
+"78
+[e $ ! != -> *U + &U _testIQRSta * -> -> - -> _IQRNum `i -> 1 `i `ui `ux -> -> # *U &U _testIQRSta `ui `ux `i -> -> -> 0 `i `uc `i 384  ]
+[; ;time_ctrl.c: 79: LATC |= 1 << (IQRNum - 1);
+"79
 [e =| _LATC -> << -> 1 `i - -> _IQRNum `i -> 1 `i `uc ]
 [e $U 385  ]
-"75
+"80
 [e :U 384 ]
-[; ;time_ctrl.c: 75: else
-[; ;time_ctrl.c: 76: LATC &= ~(1<<(IQRNum - 1));
-"76
+[; ;time_ctrl.c: 80: else
+[; ;time_ctrl.c: 81: LATC &= ~(1<<(IQRNum - 1));
+"81
 [e =& _LATC -> ~ << -> 1 `i - -> _IQRNum `i -> 1 `i `uc ]
 [e :U 385 ]
-[; ;time_ctrl.c: 87: }
-"87
+[; ;time_ctrl.c: 92: }
+"92
 [e :UE 383 ]
 }
-"120
+"127
 [v _tempCtrlProcess `(v ~T0 @X0 1 ef ]
-"121
+"128
 {
-[; ;time_ctrl.c: 120: void tempCtrlProcess(void)
-[; ;time_ctrl.c: 121: {
+[; ;time_ctrl.c: 127: void tempCtrlProcess(void)
+[; ;time_ctrl.c: 128: {
 [e :U _tempCtrlProcess ]
 [f ]
-"122
+"129
 [v _i `uc ~T0 @X0 1 a ]
-"123
-[v F3131 `ui ~T0 @X0 -> 8 `i s timeCnt ]
-[i F3131
+"130
+[v F3134 `ui ~T0 @X0 -> 8 `i s timeCnt ]
+[i F3134
 :U ..
 -> -> 0 `i `ui
 ..
 ]
-[; ;time_ctrl.c: 122: uint8_t i;
-[; ;time_ctrl.c: 123: static uint16_t timeCnt[8] = {0};
-[; ;time_ctrl.c: 125: for(i=0; i<8; i++)
-"125
+[; ;time_ctrl.c: 129: uint8_t i;
+[; ;time_ctrl.c: 130: static uint16_t timeCnt[8] = {0};
+[; ;time_ctrl.c: 132: for(i=0; i<8; i++)
+"132
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 8 `i 387  ]
 [e $U 388  ]
-"126
-[e :U 387 ]
-[; ;time_ctrl.c: 126: {
-{
-[; ;time_ctrl.c: 127: if(IQRPreSta[i] != IQRSta[i])
-"127
-[e $ ! != -> *U + &U _IQRPreSta * -> _i `ux -> -> # *U &U _IQRPreSta `ui `ux `i -> *U + &U _IQRSta * -> _i `ux -> -> # *U &U _IQRSta `ui `ux `i 390  ]
-[; ;time_ctrl.c: 128: {
-"128
-{
-[; ;time_ctrl.c: 129: switch(IQRSta[i])
-"129
-[e $U 392  ]
-[; ;time_ctrl.c: 130: {
-"130
-{
-[; ;time_ctrl.c: 131: case 0: timeCnt[i] = timeCtrlValue[i][0]; break;
-"131
-[e :U 393 ]
-[e = *U + &U F3131 * -> _i `ux -> -> # *U &U F3131 `ui `ux *U + &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux `ui `ux ]
-[e $U 391  ]
-[; ;time_ctrl.c: 132: case 1: timeCnt[i] = timeCtrlValue[i][1]; break;
-"132
-[e :U 394 ]
-[e = *U + &U F3131 * -> _i `ux -> -> # *U &U F3131 `ui `ux *U + &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux `ui `ux ]
-[e $U 391  ]
-[; ;time_ctrl.c: 133: case 2: timeCnt[i] = timeCtrlValue[i][2]; break;
 "133
-[e :U 395 ]
-[e = *U + &U F3131 * -> _i `ux -> -> # *U &U F3131 `ui `ux *U + &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux `ui `ux ]
-[e $U 391  ]
-[; ;time_ctrl.c: 134: case 3: timeCnt[i] = timeCtrlValue[i][3]; break;
+[e :U 387 ]
+[; ;time_ctrl.c: 133: {
+{
+[; ;time_ctrl.c: 134: if(IQRPreSta[i] != IQRSta[i])
 "134
-[e :U 396 ]
-[e = *U + &U F3131 * -> _i `ux -> -> # *U &U F3131 `ui `ux *U + &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux * -> -> -> 3 `i `ui `ux -> -> # *U &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux `ui `ux ]
-[e $U 391  ]
-[; ;time_ctrl.c: 135: default: break;
+[e $ ! != -> *U + &U _IQRPreSta * -> _i `ux -> -> # *U &U _IQRPreSta `ui `ux `i -> *U + &U _IQRSta * -> _i `ux -> -> # *U &U _IQRSta `ui `ux `i 390  ]
+[; ;time_ctrl.c: 135: {
 "135
+{
+[; ;time_ctrl.c: 136: switch(IQRSta[i])
+"136
+[e $U 392  ]
+[; ;time_ctrl.c: 137: {
+"137
+{
+[; ;time_ctrl.c: 138: case 0: timeCnt[i] = timeCtrlValue[i][0]; break;
+"138
+[e :U 393 ]
+[e = *U + &U F3134 * -> _i `ux -> -> # *U &U F3134 `ui `ux *U + &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux `ui `ux ]
+[e $U 391  ]
+[; ;time_ctrl.c: 139: case 1: timeCnt[i] = timeCtrlValue[i][1]; break;
+"139
+[e :U 394 ]
+[e = *U + &U F3134 * -> _i `ux -> -> # *U &U F3134 `ui `ux *U + &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux `ui `ux ]
+[e $U 391  ]
+[; ;time_ctrl.c: 140: case 2: timeCnt[i] = timeCtrlValue[i][2]; break;
+"140
+[e :U 395 ]
+[e = *U + &U F3134 * -> _i `ux -> -> # *U &U F3134 `ui `ux *U + &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux `ui `ux ]
+[e $U 391  ]
+[; ;time_ctrl.c: 141: case 3: timeCnt[i] = timeCtrlValue[i][3]; break;
+"141
+[e :U 396 ]
+[e = *U + &U F3134 * -> _i `ux -> -> # *U &U F3134 `ui `ux *U + &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux * -> -> -> 3 `i `ui `ux -> -> # *U &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux `ui `ux ]
+[e $U 391  ]
+[; ;time_ctrl.c: 142: default: break;
+"142
 [e :U 397 ]
 [e $U 391  ]
-"136
+"143
 }
-[; ;time_ctrl.c: 136: }
+[; ;time_ctrl.c: 143: }
 [e $U 391  ]
-"129
+"136
 [e :U 392 ]
 [e [\ *U + &U _IQRSta * -> _i `ux -> -> # *U &U _IQRSta `ui `ux , $ -> -> 0 `i `uc 393
  , $ -> -> 1 `i `uc 394
  , $ -> -> 2 `i `uc 395
  , $ -> -> 3 `i `uc 396
  397 ]
-"136
-[e :U 391 ]
-[; ;time_ctrl.c: 138: IQRPreSta[i] = IQRSta[i];
-"138
-[e = *U + &U _IQRPreSta * -> _i `ux -> -> # *U &U _IQRPreSta `ui `ux *U + &U _IQRSta * -> _i `ux -> -> # *U &U _IQRSta `ui `ux ]
-"139
-}
-[e :U 390 ]
-[; ;time_ctrl.c: 139: }
-[; ;time_ctrl.c: 141: if(--timeCnt[i] == 0)
-"141
-[e $ ! == =- *U + &U F3131 * -> _i `ux -> -> # *U &U F3131 `ui `ux -> -> 1 `i `ui -> -> 0 `i `ui 398  ]
-[; ;time_ctrl.c: 142: {
-"142
-{
-[; ;time_ctrl.c: 143: if(IQRSta[i]%2 == 0)
 "143
-[e $ ! == % -> *U + &U _IQRSta * -> _i `ux -> -> # *U &U _IQRSta `ui `ux `i -> 2 `i -> 0 `i 399  ]
-[; ;time_ctrl.c: 144: {
-"144
-{
-[; ;time_ctrl.c: 145: LATC |= 1 << i;
+[e :U 391 ]
+[; ;time_ctrl.c: 145: IQRPreSta[i] = IQRSta[i];
 "145
-[e =| _LATC -> << -> 1 `i _i `uc ]
+[e = *U + &U _IQRPreSta * -> _i `ux -> -> # *U &U _IQRPreSta `ui `ux *U + &U _IQRSta * -> _i `ux -> -> # *U &U _IQRSta `ui `ux ]
 "146
 }
+[e :U 390 ]
 [; ;time_ctrl.c: 146: }
-[e $U 400  ]
-"147
-[e :U 399 ]
-[; ;time_ctrl.c: 147: else if(IQRSta[i]%2 == 1)
-[e $ ! == % -> *U + &U _IQRSta * -> _i `ux -> -> # *U &U _IQRSta `ui `ux `i -> 2 `i -> 1 `i 401  ]
-[; ;time_ctrl.c: 148: {
+[; ;time_ctrl.c: 148: if(--timeCnt[i] == 0)
 "148
-{
-[; ;time_ctrl.c: 149: LATC &= ~(1<<i);
+[e $ ! == =- *U + &U F3134 * -> _i `ux -> -> # *U &U F3134 `ui `ux -> -> 1 `i `ui -> -> 0 `i `ui 398  ]
+[; ;time_ctrl.c: 149: {
 "149
-[e =& _LATC -> ~ << -> 1 `i _i `uc ]
-"150
-}
-[e :U 401 ]
-"152
-[e :U 400 ]
-[; ;time_ctrl.c: 150: }
-[; ;time_ctrl.c: 152: if(++IQRSta[i] >= 4)
-[e $ ! >= -> =+ *U + &U _IQRSta * -> _i `ux -> -> # *U &U _IQRSta `ui `ux -> -> 1 `i `uc `i -> 4 `i 402  ]
-[; ;time_ctrl.c: 153: {
-"153
 {
-[; ;time_ctrl.c: 154: IQRSta[i] = 3;
+[; ;time_ctrl.c: 150: if(IQRSta[i]%2 == 0)
+"150
+[e $ ! == % -> *U + &U _IQRSta * -> _i `ux -> -> # *U &U _IQRSta `ui `ux `i -> 2 `i -> 0 `i 399  ]
+[; ;time_ctrl.c: 151: {
+"151
+{
+[; ;time_ctrl.c: 152: LATC |= 1 << i;
+"152
+[e =| _LATC -> << -> 1 `i _i `uc ]
+"153
+}
+[; ;time_ctrl.c: 153: }
+[e $U 400  ]
 "154
-[e = *U + &U _IQRSta * -> _i `ux -> -> # *U &U _IQRSta `ui `ux -> -> 3 `i `uc ]
+[e :U 399 ]
+[; ;time_ctrl.c: 154: else if(IQRSta[i]%2 == 1)
+[e $ ! == % -> *U + &U _IQRSta * -> _i `ux -> -> # *U &U _IQRSta `ui `ux `i -> 2 `i -> 1 `i 401  ]
+[; ;time_ctrl.c: 155: {
 "155
-}
-[e :U 402 ]
+{
+[; ;time_ctrl.c: 156: LATC &= ~(1<<i);
 "156
-}
-[e :U 398 ]
+[e =& _LATC -> ~ << -> 1 `i _i `uc ]
 "157
 }
-"125
+[e :U 401 ]
+"159
+[e :U 400 ]
+[; ;time_ctrl.c: 157: }
+[; ;time_ctrl.c: 159: if(++IQRSta[i] >= 4)
+[e $ ! >= -> =+ *U + &U _IQRSta * -> _i `ux -> -> # *U &U _IQRSta `ui `ux -> -> 1 `i `uc `i -> 4 `i 402  ]
+[; ;time_ctrl.c: 160: {
+"160
+{
+[; ;time_ctrl.c: 161: IQRSta[i] = 3;
+"161
+[e = *U + &U _IQRSta * -> _i `ux -> -> # *U &U _IQRSta `ui `ux -> -> 3 `i `uc ]
+[; ;time_ctrl.c: 162: if(timeCtrlMode == 'B')
+"162
+[e $ ! == -> _timeCtrlMode `ui -> 66 `ui 403  ]
+[; ;time_ctrl.c: 163: {
+"163
+{
+[; ;time_ctrl.c: 164: readSignalflag = 1;
+"164
+[e = _readSignalflag -> -> 1 `i `uc ]
+"165
+}
+[e :U 403 ]
+"167
+}
+[e :U 402 ]
+"168
+}
+[e :U 398 ]
+"169
+}
+"132
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 8 `i 387  ]
 [e :U 388 ]
-"157
+"169
 }
-[; ;time_ctrl.c: 155: }
-[; ;time_ctrl.c: 156: }
-[; ;time_ctrl.c: 157: }
-[; ;time_ctrl.c: 159: }
-"159
+[; ;time_ctrl.c: 165: }
+[; ;time_ctrl.c: 167: }
+[; ;time_ctrl.c: 168: }
+[; ;time_ctrl.c: 169: }
+[; ;time_ctrl.c: 171: }
+"171
 [e :UE 386 ]
 }
