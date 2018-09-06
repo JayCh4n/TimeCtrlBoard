@@ -4087,18 +4087,19 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
-# 28 "mcc_generated_files/time_ctrl.h"
+# 29 "mcc_generated_files/time_ctrl.h"
 extern uint16_t timeCtrlValue[8][4];
 extern uint8_t timeCtrlStartFlag;
 extern uint8_t timeCtrlOvertimeMask;
 extern uint8_t IQRPreSta[8];
 extern uint8_t IQRSta[8];
-extern uint8_t testTimeCtrlFlag;
-extern uint8_t testTimeCtrlOvertimeMask;
-extern uint8_t testIQRNum;
+
+
+
 
 void tempCtrlProcess(void);
-void testTimeCtrlProcess(uint8_t IQRNum);
+
+void workTimeCtrl(void);
 void startTimeCtrl(void);
 void stopTimeCtrl(void);
 void testTimeCtrl(uint8_t iqr_num);
@@ -4183,15 +4184,20 @@ EUSART_Deal();
 
 if(timeCtrlOvertimeMask)
 {
+if(!PORTAbits.RA0 && timeCtrlStartFlag == 1)
+{
+do { LATAbits.LATA2 = 0; } while(0);
 tempCtrlProcess();
 timeCtrlOvertimeMask = 0;
 }
-
-if(testTimeCtrlOvertimeMask)
+else if(PORTAbits.RA0 && timeCtrlStartFlag == 1)
 {
-testTimeCtrlProcess(testIQRNum);
-testTimeCtrlOvertimeMask = 0;
+stopTimeCtrl();
+timeCtrlStartFlag = 1;
 }
+}
+
+# 98
 }
 }
 
