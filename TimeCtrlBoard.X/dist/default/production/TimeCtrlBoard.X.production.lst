@@ -1,7 +1,11 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.45 build -152302408 
+<<<<<<< HEAD
                                                                                                Mon Aug 06 17:58:01 2018
+=======
+                                                                                               Mon Jul 02 16:07:11 2018
+>>>>>>> master
 
 Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160504
      1                           	processor	16F1828
@@ -1145,6 +1149,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1131  0214                     	;# 
   1132  0215                     	;# 
   1133  0215                     	;# 
+<<<<<<< HEAD
   1134  0215                     	;# 
   1135  0215                     	;# 
   1136  0216                     	;# 
@@ -3801,20 +3806,2566 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   3786  007E                     btemp	set	126	;btemp
   3787  007E                     int$flags	set	126
   3788  007E                     wtemp0	set	126
+=======
+  1134  0216                     	;# 
+  1135  0216                     	;# 
+  1136  0217                     	;# 
+  1137  0217                     	;# 
+  1138  0291                     	;# 
+  1139  0291                     	;# 
+  1140  0292                     	;# 
+  1141  0293                     	;# 
+  1142  0294                     	;# 
+  1143  0295                     	;# 
+  1144  0295                     	;# 
+  1145  0296                     	;# 
+  1146  0298                     	;# 
+  1147  0298                     	;# 
+  1148  0299                     	;# 
+  1149  029A                     	;# 
+  1150  029B                     	;# 
+  1151  029C                     	;# 
+  1152  029D                     	;# 
+  1153  029E                     	;# 
+  1154  029E                     	;# 
+  1155  0311                     	;# 
+  1156  0311                     	;# 
+  1157  0312                     	;# 
+  1158  0313                     	;# 
+  1159  0318                     	;# 
+  1160  0318                     	;# 
+  1161  0319                     	;# 
+  1162  031A                     	;# 
+  1163  038C                     	;# 
+  1164  038D                     	;# 
+  1165  038E                     	;# 
+  1166  0391                     	;# 
+  1167  0392                     	;# 
+  1168  0393                     	;# 
+  1169  0394                     	;# 
+  1170  0395                     	;# 
+  1171  0396                     	;# 
+  1172  039A                     	;# 
+  1173  039C                     	;# 
+  1174  039D                     	;# 
+  1175  039E                     	;# 
+  1176  039F                     	;# 
+  1177  0415                     	;# 
+  1178  0416                     	;# 
+  1179  0417                     	;# 
+  1180  041C                     	;# 
+  1181  041D                     	;# 
+  1182  041E                     	;# 
+  1183  0FE4                     	;# 
+  1184  0FE5                     	;# 
+  1185  0FE6                     	;# 
+  1186  0FE7                     	;# 
+  1187  0FE8                     	;# 
+  1188  0FE9                     	;# 
+  1189  0FEA                     	;# 
+  1190  0FEB                     	;# 
+  1191  0FED                     	;# 
+  1192  0FEE                     	;# 
+  1193  0FEF                     	;# 
+  1194                           
+  1195                           	psect	idataBANK0
+  1196  0338                     __pidataBANK0:	
+  1197                           
+  1198                           ;initializer for _IQRPreSta
+  1199  0338  3403               	retlw	3
+  1200  0339  3403               	retlw	3
+  1201  033A  3403               	retlw	3
+  1202  033B  3403               	retlw	3
+  1203  033C  3403               	retlw	3
+  1204  033D  3403               	retlw	3
+  1205  033E  3403               	retlw	3
+  1206  033F  3403               	retlw	3
+  1207                           
+  1208                           	psect	nvBANK0
+  1209  005C                     __pnvBANK0:	
+  1210  005C                     _TMR0_InterruptHandler:	
+  1211  005C                     	ds	2
+  1212  005E                     _EUSART_RxDefaultInterruptHandler:	
+  1213  005E                     	ds	2
+  1214  0060                     _timer0ReloadVal:	
+  1215  0060                     	ds	1
+  1216  000C                     _PORTAbits	set	12
+  1217  0015                     _TMR0	set	21
+  1218  0011                     _PIR1bits	set	17
+  1219  000B                     _INTCONbits	set	11
+  1220  000D                     _PORTBbits	set	13
+  1221  0095                     _OPTION_REG	set	149
+  1222  0091                     _PIE1bits	set	145
+  1223  0095                     _OPTION_REGbits	set	149
+  1224  008E                     _TRISC	set	142
+  1225  008D                     _TRISB	set	141
+  1226  008C                     _TRISA	set	140
+  1227  0097                     _WDTCON	set	151
+  1228  0098                     _OSCTUNE	set	152
+  1229  0099                     _OSCCON	set	153
+  1230  010C                     _LATAbits	set	268
+  1231  011E                     _APFCON1	set	286
+  1232  011D                     _APFCON0	set	285
+  1233  010E                     _LATC	set	270
+  1234  010D                     _LATB	set	269
+  1235  010C                     _LATA	set	268
+  1236  0116                     _BORCON	set	278
+  1237  0199                     _RCREG	set	409
+  1238  019D                     _RCSTAbits	set	413
+  1239  019C                     _SPBRGH	set	412
+  1240  019B                     _SPBRGL	set	411
+  1241  019E                     _TXSTA	set	414
+  1242  019D                     _RCSTA	set	413
+  1243  019F                     _BAUDCON	set	415
+  1244  018C                     _ANSELA	set	396
+  1245  018D                     _ANSELB	set	397
+  1246  018E                     _ANSELC	set	398
+  1247  020E                     _WPUC	set	526
+  1248  020C                     _WPUA	set	524
+  1249  020D                     _WPUB	set	525
+  1250                           
+  1251                           ; #config settings
+  1252  0000                     
+  1253                           	psect	cinit
+  1254  0029                     start_initialization:	
+  1255  0029                     __initialization:	
+  1256                           
+  1257                           ; Initialize objects allocated to BANK0
+  1258  0029  3038               	movlw	low __pidataBANK0
+  1259  002A  0084               	movwf	4
+  1260  002B  3083               	movlw	(high __pidataBANK0)| (0+128)
+  1261  002C  0085               	movwf	5
+  1262  002D  3054               	movlw	low __pdataBANK0
+  1263  002E  0086               	movwf	6
+  1264  002F  3000               	movlw	high __pdataBANK0
+  1265  0030  0087               	movwf	7
+  1266  0031  3008               	movlw	8
+  1267  0032  3183  2356  3180   	fcall	init_ram
+  1268                           
+  1269                           ; Clear objects allocated to COMMON
+  1270  0035  01F7               	clrf	__pbssCOMMON& (0+127)
+  1271  0036  01F8               	clrf	(__pbssCOMMON+1)& (0+127)
+  1272  0037  01F9               	clrf	(__pbssCOMMON+2)& (0+127)
+  1273  0038  01FA               	clrf	(__pbssCOMMON+3)& (0+127)
+  1274                           
+  1275                           ; Clear objects allocated to BANK0
+  1276  0039  3020               	movlw	low __pbssBANK0
+  1277  003A  0084               	movwf	4
+  1278  003B  3000               	movlw	high __pbssBANK0
+  1279  003C  0085               	movwf	5
+  1280  003D  3027               	movlw	39
+  1281  003E  3183  235C  3180   	fcall	clear_ram0
+  1282                           
+  1283                           ; Clear objects allocated to BANK1
+  1284  0041  30A0               	movlw	low __pbssBANK1
+  1285  0042  0084               	movwf	4
+  1286  0043  3000               	movlw	high __pbssBANK1
+  1287  0044  0085               	movwf	5
+  1288  0045  3040               	movlw	64
+  1289  0046  3183  235C  3180   	fcall	clear_ram0
+  1290                           
+  1291                           ; Clear objects allocated to BANK2
+  1292  0049  3020               	movlw	low __pbssBANK2
+  1293  004A  0084               	movwf	4
+  1294  004B  3001               	movlw	high __pbssBANK2
+  1295  004C  0085               	movwf	5
+  1296  004D  304B               	movlw	75
+  1297  004E  3183  235C         	fcall	clear_ram0
+  1298  0050                     end_of_initialization:	
+  1299                           ;End of C runtime variable initialization code
+  1300                           
+  1301  0050                     __end_of__initialization:	
+  1302  0050  107E               	bcf	int$flags,0	;clear compiler interrupt flag (level 1)
+  1303  0051  0020               	movlb	0
+  1304  0052  3182  2A95         	ljmp	_main	;jump to C main() function
+  1305                           
+  1306                           	psect	bssCOMMON
+  1307  0077                     __pbssCOMMON:	
+  1308  0077                     _EusartRxLenth:	
+  1309  0077                     	ds	1
+  1310  0078                     _eusartRxCount:	
+  1311  0078                     	ds	1
+  1312  0079                     _timeCtrlOvertimeMask:	
+  1313  0079                     	ds	1
+  1314  007A                     _timeCtrlStartFlag:	
+  1315  007A                     	ds	1
+  1316                           
+  1317                           	psect	bssBANK0
+  1318  0020                     __pbssBANK0:	
+  1319  0020                     tempCtrlProcess@timeCnt:	
+  1320  0020                     	ds	16
+  1321  0030                     _testIQRSta:	
+  1322  0030                     	ds	8
+  1323  0038                     _IQRSta:	
+  1324  0038                     	ds	8
+  1325  0040                     _EUSART_TxDefaultInterruptHandler:	
+  1326  0040                     	ds	2
+  1327  0042                     TMR0_CallBack@testTimeCtrlCnt:	
+  1328  0042                     	ds	1
+  1329  0043                     TMR0_CallBack@preEusartRxCount:	
+  1330  0043                     	ds	1
+  1331  0044                     TMR0_CallBack@timeCrlCnt:	
+  1332  0044                     	ds	1
+  1333  0045                     TMR0_CallBack@eusartRXOvertimeCnt:	
+  1334  0045                     	ds	1
+  1335  0046                     _eusartRxOvertimeMask:	
+  1336  0046                     	ds	1
+  1337                           
+  1338                           	psect	dataBANK0
+  1339  0054                     __pdataBANK0:	
+  1340  0054                     _IQRPreSta:	
+  1341  0054                     	ds	8
+  1342                           
+  1343                           	psect	bssBANK1
+  1344  00A0                     __pbssBANK1:	
+  1345  00A0                     _timeCtrlValue:	
+  1346  00A0                     	ds	64
+  1347                           
+  1348                           	psect	bssBANK2
+  1349  0120                     __pbssBANK2:	
+  1350  0120                     _eusartRxBuffer:	
+  1351  0120                     	ds	75
+  1352                           
+  1353                           	psect	inittext
+  1354  0356                     init_ram:	
+  1355  0356  00FE               	movwf	126
+  1356  0357                     initloop:	
+  1357  0357  0012               	moviw fsr0++
+  1358  0358  001E               	movwi fsr1++
+  1359  0359  0BFE               	decfsz	126,f
+  1360  035A  2B57               	goto	initloop
+  1361  035B  3400               	retlw	0
+  1362                           
+  1363                           	psect	clrtext
+  1364  035C                     clear_ram0:	
+  1365                           ;	Called with FSR0 containing the base address, and
+  1366                           ;	WREG with the size to clear
+  1367                           
+  1368  035C  0064               	clrwdt	;clear the watchdog before getting into this loop
+  1369  035D                     clrloop0:	
+  1370  035D  0180               	clrf	0	;clear RAM location pointed to by FSR
+  1371  035E  3101               	addfsr 0,1
+  1372  035F  0B89               	decfsz	9,f	;Have we reached the end of clearing yet?
+  1373  0360  2B5D               	goto	clrloop0	;have we reached the end yet?
+  1374  0361  3400               	retlw	0	;all done for this memory range, return
+  1375                           
+  1376                           	psect	cstackCOMMON
+  1377  0070                     __pcstackCOMMON:	
+  1378  0070                     ?_PIN_MANAGER_Initialize:	
+  1379  0070                     ?_OSCILLATOR_Initialize:	
+  1380                           ; 1 bytes @ 0x0
+  1381                           
+  1382  0070                     ?_WDT_Initialize:	
+  1383                           ; 1 bytes @ 0x0
+  1384                           
+  1385  0070                     ?_TMR0_Initialize:	
+  1386                           ; 1 bytes @ 0x0
+  1387                           
+  1388  0070                     ?_EUSART_Initialize:	
+  1389                           ; 1 bytes @ 0x0
+  1390                           
+  1391  0070                     ?_TMR0_ISR:	
+  1392                           ; 1 bytes @ 0x0
+  1393                           
+  1394  0070                     ?_TMR0_DefaultInterruptHandler:	
+  1395                           ; 1 bytes @ 0x0
+  1396                           
+  1397  0070                     ??_TMR0_DefaultInterruptHandler:	
+  1398                           ; 1 bytes @ 0x0
+  1399                           
+  1400  0070                     ?_TMR0_CallBack:	
+  1401                           ; 1 bytes @ 0x0
+  1402                           
+  1403  0070                     ??_TMR0_CallBack:	
+  1404                           ; 1 bytes @ 0x0
+  1405                           
+  1406  0070                     ?_EUSART_Receive_ISR:	
+  1407                           ; 1 bytes @ 0x0
+  1408                           
+  1409  0070                     ??_EUSART_Receive_ISR:	
+  1410                           ; 1 bytes @ 0x0
+  1411                           
+  1412  0070                     ?_stopTimeCtrl:	
+  1413                           ; 1 bytes @ 0x0
+  1414                           
+  1415  0070                     ?_startTimeCtrl:	
+  1416                           ; 1 bytes @ 0x0
+  1417                           
+  1418  0070                     ?_testTimeCtrl:	
+  1419                           ; 1 bytes @ 0x0
+  1420                           
+  1421  0070                     ?_workTimeCtrl:	
+  1422                           ; 1 bytes @ 0x0
+  1423                           
+  1424  0070                     ?_SYSTEM_Initialize:	
+  1425                           ; 1 bytes @ 0x0
+  1426                           
+  1427  0070                     ?_Get_Device_Addr:	
+  1428                           ; 1 bytes @ 0x0
+  1429                           
+  1430  0070                     ?_INTERRUPT_InterruptManager:	
+  1431                           ; 1 bytes @ 0x0
+  1432                           
+  1433  0070                     ?_EUSART_Deal:	
+  1434                           ; 1 bytes @ 0x0
+  1435                           
+  1436  0070                     ?_getTimeData:	
+  1437                           ; 1 bytes @ 0x0
+  1438                           
+  1439  0070                     ?_tempCtrlProcess:	
+  1440                           ; 1 bytes @ 0x0
+  1441                           
+  1442  0070                     ?_main:	
+  1443                           ; 1 bytes @ 0x0
+  1444                           
+  1445                           
+  1446                           ; 1 bytes @ 0x0
+  1447  0070                     	ds	1
+  1448  0071                     ??_TMR0_ISR:	
+  1449  0071                     ??_INTERRUPT_InterruptManager:	
+  1450                           ; 1 bytes @ 0x1
+  1451                           
+  1452                           
+  1453                           ; 1 bytes @ 0x1
+  1454  0071                     	ds	1
+  1455  0072                     ??_PIN_MANAGER_Initialize:	
+  1456  0072                     ??_OSCILLATOR_Initialize:	
+  1457                           ; 1 bytes @ 0x2
+  1458                           
+  1459  0072                     ??_WDT_Initialize:	
+  1460                           ; 1 bytes @ 0x2
+  1461                           
+  1462  0072                     ?_TMR0_SetInterruptHandler:	
+  1463                           ; 1 bytes @ 0x2
+  1464                           
+  1465  0072                     ?_EUSART_SetRxInterruptHandler:	
+  1466                           ; 1 bytes @ 0x2
+  1467                           
+  1468  0072                     ??_stopTimeCtrl:	
+  1469                           ; 1 bytes @ 0x2
+  1470                           
+  1471  0072                     ??_testTimeCtrl:	
+  1472                           ; 1 bytes @ 0x2
+  1473                           
+  1474  0072                     ??_workTimeCtrl:	
+  1475                           ; 1 bytes @ 0x2
+  1476                           
+  1477  0072                     ??_Get_Device_Addr:	
+  1478                           ; 1 bytes @ 0x2
+  1479                           
+  1480  0072                     ??_tempCtrlProcess:	
+  1481                           ; 1 bytes @ 0x2
+  1482                           
+  1483  0072                     getTimeData@cnt:	
+  1484                           ; 1 bytes @ 0x2
+  1485                           
+  1486  0072                     TMR0_SetInterruptHandler@InterruptHandler:	
+  1487                           ; 1 bytes @ 0x2
+  1488                           
+  1489  0072                     EUSART_SetRxInterruptHandler@interruptHandler:	
+  1490                           ; 2 bytes @ 0x2
+  1491                           
+  1492                           
+  1493                           ; 2 bytes @ 0x2
+  1494  0072                     	ds	1
+  1495  0073                     Get_Device_Addr@device_addr:	
+  1496  0073                     getTimeData@i:	
+  1497                           ; 1 bytes @ 0x3
+  1498                           
+  1499                           
+  1500                           ; 1 bytes @ 0x3
+  1501  0073                     	ds	1
+  1502  0074                     ??_TMR0_Initialize:	
+  1503  0074                     ??_EUSART_Initialize:	
+  1504                           ; 1 bytes @ 0x4
+  1505                           
+  1506  0074                     ??_TMR0_SetInterruptHandler:	
+  1507                           ; 1 bytes @ 0x4
+  1508                           
+  1509  0074                     ??_EUSART_SetRxInterruptHandler:	
+  1510                           ; 1 bytes @ 0x4
+  1511                           
+  1512  0074                     getTimeData@j:	
+  1513                           ; 1 bytes @ 0x4
+  1514                           
+  1515  0074                     workTimeCtrl@i:	
+  1516                           ; 1 bytes @ 0x4
+  1517                           
+  1518  0074                     stopTimeCtrl@i:	
+  1519                           ; 1 bytes @ 0x4
+  1520                           
+  1521  0074                     testTimeCtrl@IQRNum:	
+  1522                           ; 1 bytes @ 0x4
+  1523                           
+  1524  0074                     tempCtrlProcess@i:	
+  1525                           ; 1 bytes @ 0x4
+  1526                           
+  1527                           
+  1528                           ; 1 bytes @ 0x4
+  1529  0074                     	ds	1
+  1530  0075                     ??_startTimeCtrl:	
+  1531  0075                     ??_SYSTEM_Initialize:	
+  1532                           ; 1 bytes @ 0x5
+  1533                           
+  1534  0075                     ??_EUSART_Deal:	
+  1535                           ; 1 bytes @ 0x5
+  1536                           
+  1537                           
+  1538                           ; 1 bytes @ 0x5
+  1539  0075                     	ds	2
+  1540  0077                     ??_main:	
+  1541                           
+  1542                           	psect	cstackBANK0
+  1543  0047                     __pcstackBANK0:	
+  1544                           ; 1 bytes @ 0x7
+  1545                           
+  1546  0047                     ??_getTimeData:	
+  1547                           
+  1548                           ; 1 bytes @ 0x0
+  1549  0047                     	ds	13
+  1550                           
+  1551                           	psect	maintext
+  1552  0295                     __pmaintext:	
+  1553 ;;
+  1554 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+  1555 ;;
+  1556 ;; *************** function _main *****************
+  1557 ;; Defined at:
+  1558 ;;		line 49 in file "main.c"
+  1559 ;; Parameters:    Size  Location     Type
+  1560 ;;		None
+  1561 ;; Auto vars:     Size  Location     Type
+  1562 ;;		None
+  1563 ;; Return value:  Size  Location     Type
+  1564 ;;                  1    wreg      void 
+  1565 ;; Registers used:
+  1566 ;;		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
+  1567 ;; Tracked objects:
+  1568 ;;		On entry : B1F/0
+  1569 ;;		On exit  : 0/0
+  1570 ;;		Unchanged: 0/0
+  1571 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1572 ;;      Params:         0       0       0       0
+  1573 ;;      Locals:         0       0       0       0
+  1574 ;;      Temps:          0       0       0       0
+  1575 ;;      Totals:         0       0       0       0
+  1576 ;;Total ram usage:        0 bytes
+  1577 ;; Hardware stack levels required when called:    7
+  1578 ;; This function calls:
+  1579 ;;		_EUSART_Deal
+  1580 ;;		_SYSTEM_Initialize
+  1581 ;;		_stopTimeCtrl
+  1582 ;;		_tempCtrlProcess
+  1583 ;; This function is called by:
+  1584 ;;		Startup code after reset
+  1585 ;; This function uses a non-reentrant model
+  1586 ;;
+  1587                           
+  1588                           
+  1589                           ;psect for function _main
+  1590  0295                     _main:	
+  1591                           
+  1592                           ;main.c: 52: SYSTEM_Initialize();
+  1593                           
+  1594                           ;incstack = 0
+  1595                           ; Regs used in _main: [wreg-fsr1h+status,2+status,0+pclath+cstack]
+  1596  0295  3183  231A  3182   	fcall	_SYSTEM_Initialize
+  1597                           
+  1598                           ;main.c: 58: (INTCONbits.GIE = 1);
+  1599  0298  178B               	bsf	11,7	;volatile
+  1600                           
+  1601                           ;main.c: 61: (INTCONbits.PEIE = 1);
+  1602  0299  170B               	bsf	11,6	;volatile
+  1603  029A                     l1356:	
+  1604                           ;main.c: 69: while (1)
+  1605                           
+  1606                           
+  1607                           ;main.c: 70: {
+  1608                           ;main.c: 72: if (eusartRxOvertimeMask)
+  1609  029A  0020               	movlb	0	; select bank0
+  1610  029B  0846               	movf	_eusartRxOvertimeMask,w
+  1611  029C  1903               	btfsc	3,2
+  1612  029D  2AA2               	goto	l1362
+  1613                           
+  1614                           ;main.c: 73: {
+  1615                           ;main.c: 74: eusartRxOvertimeMask = 0;
+  1616  029E  01C6               	clrf	_eusartRxOvertimeMask
+  1617                           
+  1618                           ;main.c: 75: EUSART_Deal();
+  1619  029F  3181  2196  3182   	fcall	_EUSART_Deal
+  1620  02A2                     l1362:	
+  1621                           
+  1622                           ;main.c: 76: }
+  1623                           ;main.c: 78: if(timeCtrlOvertimeMask)
+  1624  02A2  0879               	movf	_timeCtrlOvertimeMask,w
+  1625  02A3  1903               	btfsc	3,2
+  1626  02A4  2A9A               	goto	l1356
+  1627                           
+  1628                           ;main.c: 79: {
+  1629                           ;main.c: 80: if(!PORTAbits.RA0 && timeCtrlStartFlag == 1)
+  1630  02A5  0020               	movlb	0	; select bank0
+  1631  02A6  180C               	btfsc	12,0	;volatile
+  1632  02A7  2AB2               	goto	l327
+  1633  02A8  037A               	decf	_timeCtrlStartFlag,w
+  1634  02A9  1D03               	btfss	3,2
+  1635  02AA  2AB2               	goto	l327
+  1636                           
+  1637                           ;main.c: 81: {
+  1638                           ;main.c: 82: do { LATAbits.LATA2 = 0; } while(0);
+  1639  02AB  0022               	movlb	2	; select bank2
+  1640  02AC  110C               	bcf	12,2	;volatile
+  1641                           
+  1642                           ;main.c: 83: tempCtrlProcess();
+  1643  02AD  3180  2054  3182   	fcall	_tempCtrlProcess
+  1644                           
+  1645                           ;main.c: 84: timeCtrlOvertimeMask = 0;
+  1646  02B0  01F9               	clrf	_timeCtrlOvertimeMask
+  1647                           
+  1648                           ;main.c: 85: }
+  1649  02B1  2A9A               	goto	l1356
+  1650  02B2                     l327:	
+  1651                           
+  1652                           ;main.c: 86: else if(PORTAbits.RA0 && timeCtrlStartFlag == 1)
+  1653  02B2  1C0C               	btfss	12,0	;volatile
+  1654  02B3  2A9A               	goto	l1356
+  1655  02B4  037A               	decf	_timeCtrlStartFlag,w
+  1656  02B5  1D03               	btfss	3,2
+  1657  02B6  2A9A               	goto	l1356
+  1658                           
+  1659                           ;main.c: 87: {
+  1660                           ;main.c: 88: stopTimeCtrl();
+  1661  02B7  3182  2240  3182   	fcall	_stopTimeCtrl
+  1662                           
+  1663                           ;main.c: 89: timeCtrlStartFlag = 1;
+  1664  02BA  01FA               	clrf	_timeCtrlStartFlag
+  1665  02BB  0AFA               	incf	_timeCtrlStartFlag,f
+  1666  02BC  2A9A               	goto	l1356
+  1667  02BD                     __end_of_main:	
+  1668                           
+  1669                           	psect	text1
+  1670  0054                     __ptext1:	
+  1671 ;; *************** function _tempCtrlProcess *****************
+  1672 ;; Defined at:
+  1673 ;;		line 120 in file "mcc_generated_files/time_ctrl.c"
+  1674 ;; Parameters:    Size  Location     Type
+  1675 ;;		None
+  1676 ;; Auto vars:     Size  Location     Type
+  1677 ;;  i               1    4[COMMON] unsigned char 
+  1678 ;; Return value:  Size  Location     Type
+  1679 ;;                  1    wreg      void 
+  1680 ;; Registers used:
+  1681 ;;		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0
+  1682 ;; Tracked objects:
+  1683 ;;		On entry : 0/0
+  1684 ;;		On exit  : 0/0
+  1685 ;;		Unchanged: 0/0
+  1686 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1687 ;;      Params:         0       0       0       0
+  1688 ;;      Locals:         1       0       0       0
+  1689 ;;      Temps:          2       0       0       0
+  1690 ;;      Totals:         3       0       0       0
+  1691 ;;Total ram usage:        3 bytes
+  1692 ;; Hardware stack levels used:    1
+  1693 ;; Hardware stack levels required when called:    4
+  1694 ;; This function calls:
+  1695 ;;		Nothing
+  1696 ;; This function is called by:
+  1697 ;;		_main
+  1698 ;; This function uses a non-reentrant model
+  1699 ;;
+  1700                           
+  1701                           
+  1702                           ;psect for function _tempCtrlProcess
+  1703  0054                     _tempCtrlProcess:	
+  1704                           
+  1705                           ;time_ctrl.c: 122: uint8_t i;
+  1706                           ;time_ctrl.c: 123: static uint16_t timeCnt[8] = {0};
+  1707                           ;time_ctrl.c: 125: for(i=0; i<8; i++)
+  1708                           
+  1709                           ;incstack = 0
+  1710                           ; Regs used in _tempCtrlProcess: [wreg-fsr1h+status,2+status,0]
+  1711  0054  01F4               	clrf	tempCtrlProcess@i
+  1712  0055                     L1:	
+  1713  0055  3008               	movlw	8
+  1714  0056  0274               	subwf	tempCtrlProcess@i,w
+  1715  0057  1803               	btfsc	3,0
+  1716  0058  0008               	return
+  1717                           
+  1718                           ;time_ctrl.c: 126: {
+  1719                           ;time_ctrl.c: 127: if(IQRPreSta[i] != IQRSta[i])
+  1720  0059  0874               	movf	tempCtrlProcess@i,w
+  1721  005A  3E38               	addlw	(low (_IQRSta| 0))& (0+255)
+  1722  005B  0086               	movwf	6
+  1723  005C  0187               	clrf	7
+  1724  005D  0874               	movf	tempCtrlProcess@i,w
+  1725  005E  3E54               	addlw	(low (_IQRPreSta| 0))& (0+255)
+  1726  005F  0084               	movwf	4
+  1727  0060  0185               	clrf	5
+  1728  0061  0800               	movf	0,w
+  1729  0062  0601               	xorwf	1,w
+  1730  0063  1D03               	btfss	3,2
+  1731  0064  28B9               	goto	l1314
+  1732  0065  28D7               	goto	l282
+  1733  0066                     l1304:	
+  1734                           ;time_ctrl.c: 130: {
+  1735                           ;time_ctrl.c: 131: case 0: timeCnt[i] = timeCtrlValue[i][0]; break;
+  1736                           
+  1737                           ;time_ctrl.c: 128: {
+  1738                           ;time_ctrl.c: 129: switch(IQRSta[i])
+  1739                           
+  1740  0066  0874               	movf	tempCtrlProcess@i,w
+  1741  0067  00F2               	movwf	??_tempCtrlProcess
+  1742  0068  3002               	movlw	2
+  1743  0069                     u855:	
+  1744  0069  35F2               	lslf	??_tempCtrlProcess,f
+  1745  006A  3EFF               	addlw	-1
+  1746  006B  1D03               	skipz
+  1747  006C  2869               	goto	u855
+  1748  006D  3572               	lslf	??_tempCtrlProcess,w
+  1749  006E  3EA0               	addlw	(low (_timeCtrlValue| 0))& (0+255)
+  1750  006F  0086               	movwf	6
+  1751  0070  0187               	clrf	7
+  1752  0071  3574               	lslf	tempCtrlProcess@i,w
+  1753  0072  3E20               	addlw	(low (tempCtrlProcess@timeCnt| 0))& (0+255)
+  1754  0073  0084               	movwf	4
+  1755  0074  0185               	clrf	5
+  1756  0075  3F40               	moviw [0]fsr1
+  1757  0076  3F80               	movwi [0]fsr0
+  1758  0077  3F41               	moviw [1]fsr1
+  1759  0078  3F81               	movwi [1]fsr0
+  1760  0079  28CB               	goto	l1316
+  1761  007A                     l1306:	
+  1762                           ;time_ctrl.c: 132: case 1: timeCnt[i] = timeCtrlValue[i][1]; break;
+  1763                           
+  1764  007A  0874               	movf	tempCtrlProcess@i,w
+  1765  007B  00F2               	movwf	??_tempCtrlProcess
+  1766  007C  3002               	movlw	2
+  1767  007D                     u865:	
+  1768  007D  35F2               	lslf	??_tempCtrlProcess,f
+  1769  007E  3EFF               	addlw	-1
+  1770  007F  1D03               	skipz
+  1771  0080  287D               	goto	u865
+  1772  0081  3572               	lslf	??_tempCtrlProcess,w
+  1773  0082  3E02               	addlw	2
+  1774  0083  3EA0               	addlw	(low (_timeCtrlValue| 0))& (0+255)
+  1775  0084  0086               	movwf	6
+  1776  0085  0187               	clrf	7
+  1777  0086  3574               	lslf	tempCtrlProcess@i,w
+  1778  0087  3E20               	addlw	(low (tempCtrlProcess@timeCnt| 0))& (0+255)
+  1779  0088  0084               	movwf	4
+  1780  0089  0185               	clrf	5
+  1781  008A  3F40               	moviw [0]fsr1
+  1782  008B  3F80               	movwi [0]fsr0
+  1783  008C  3F41               	moviw [1]fsr1
+  1784  008D  3F81               	movwi [1]fsr0
+  1785  008E  28CB               	goto	l1316
+  1786  008F                     l1308:	
+  1787                           ;time_ctrl.c: 133: case 2: timeCnt[i] = timeCtrlValue[i][2]; break;
+  1788                           
+  1789  008F  0874               	movf	tempCtrlProcess@i,w
+  1790  0090  00F2               	movwf	??_tempCtrlProcess
+  1791  0091  3002               	movlw	2
+  1792  0092                     u875:	
+  1793  0092  35F2               	lslf	??_tempCtrlProcess,f
+  1794  0093  3EFF               	addlw	-1
+  1795  0094  1D03               	skipz
+  1796  0095  2892               	goto	u875
+  1797  0096  3572               	lslf	??_tempCtrlProcess,w
+  1798  0097  3E04               	addlw	4
+  1799  0098  3EA0               	addlw	(low (_timeCtrlValue| 0))& (0+255)
+  1800  0099  0086               	movwf	6
+  1801  009A  0187               	clrf	7
+  1802  009B  3574               	lslf	tempCtrlProcess@i,w
+  1803  009C  3E20               	addlw	(low (tempCtrlProcess@timeCnt| 0))& (0+255)
+  1804  009D  0084               	movwf	4
+  1805  009E  0185               	clrf	5
+  1806  009F  3F40               	moviw [0]fsr1
+  1807  00A0  3F80               	movwi [0]fsr0
+  1808  00A1  3F41               	moviw [1]fsr1
+  1809  00A2  3F81               	movwi [1]fsr0
+  1810  00A3  28CB               	goto	l1316
+  1811  00A4                     l1310:	
+  1812                           ;time_ctrl.c: 134: case 3: timeCnt[i] = timeCtrlValue[i][3]; break;
+  1813                           
+  1814  00A4  0874               	movf	tempCtrlProcess@i,w
+  1815  00A5  00F2               	movwf	??_tempCtrlProcess
+  1816  00A6  3002               	movlw	2
+  1817  00A7                     u885:	
+  1818  00A7  35F2               	lslf	??_tempCtrlProcess,f
+  1819  00A8  3EFF               	addlw	-1
+  1820  00A9  1D03               	skipz
+  1821  00AA  28A7               	goto	u885
+  1822  00AB  3572               	lslf	??_tempCtrlProcess,w
+  1823  00AC  3E06               	addlw	6
+  1824  00AD  3EA0               	addlw	(low (_timeCtrlValue| 0))& (0+255)
+  1825  00AE  0086               	movwf	6
+  1826  00AF  0187               	clrf	7
+  1827  00B0  3574               	lslf	tempCtrlProcess@i,w
+  1828  00B1  3E20               	addlw	(low (tempCtrlProcess@timeCnt| 0))& (0+255)
+  1829  00B2  0084               	movwf	4
+  1830  00B3  0185               	clrf	5
+  1831  00B4  3F40               	moviw [0]fsr1
+  1832  00B5  3F80               	movwi [0]fsr0
+  1833  00B6  3F41               	moviw [1]fsr1
+  1834  00B7  3F81               	movwi [1]fsr0
+  1835                           
+  1836                           ;time_ctrl.c: 136: }
+  1837                           
+  1838                           ;time_ctrl.c: 135: default: break;
+  1839  00B8  28CB               	goto	l1316
+  1840  00B9                     l1314:	
+  1841  00B9  0874               	movf	tempCtrlProcess@i,w
+  1842  00BA  3E38               	addlw	(low (_IQRSta| 0))& (0+255)
+  1843  00BB  0086               	movwf	6
+  1844  00BC  0187               	clrf	7
+  1845  00BD  0801               	movf	1,w
+  1846                           
+  1847                           ; Switch size 1, requested type "space"
+  1848                           ; Number of cases is 4, Range of values is 0 to 3
+  1849                           ; switch strategies available:
+  1850                           ; Name         Instructions Cycles
+  1851                           ; simple_byte           13     7 (average)
+  1852                           ; direct_byte           14     6 (fixed)
+  1853                           ; jumptable            260     6 (fixed)
+  1854                           ;	Chosen strategy is simple_byte
+  1855  00BE  3A00               	xorlw	0	; case 0
+  1856  00BF  1903               	skipnz
+  1857  00C0  2866               	goto	l1304
+  1858  00C1  3A01               	xorlw	1	; case 1
+  1859  00C2  1903               	skipnz
+  1860  00C3  287A               	goto	l1306
+  1861  00C4  3A03               	xorlw	3	; case 2
+  1862  00C5  1903               	skipnz
+  1863  00C6  288F               	goto	l1308
+  1864  00C7  3A01               	xorlw	1	; case 3
+  1865  00C8  1903               	skipnz
+  1866  00C9  28A4               	goto	l1310
+  1867  00CA  28CB               	goto	l1316
+  1868  00CB                     l1316:	
+  1869                           
+  1870                           ;time_ctrl.c: 138: IQRPreSta[i] = IQRSta[i];
+  1871  00CB  0874               	movf	tempCtrlProcess@i,w
+  1872  00CC  3E38               	addlw	(low (_IQRSta| 0))& (0+255)
+  1873  00CD  0086               	movwf	6
+  1874  00CE  0187               	clrf	7
+  1875  00CF  0801               	movf	1,w
+  1876  00D0  00F2               	movwf	??_tempCtrlProcess
+  1877  00D1  0874               	movf	tempCtrlProcess@i,w
+  1878  00D2  3E54               	addlw	(low (_IQRPreSta| 0))& (0+255)
+  1879  00D3  0086               	movwf	6
+  1880  00D4  0187               	clrf	7
+  1881  00D5  0872               	movf	??_tempCtrlProcess,w
+  1882  00D6  0081               	movwf	1
+  1883  00D7                     l282:	
+  1884                           
+  1885                           ;time_ctrl.c: 139: }
+  1886                           ;time_ctrl.c: 141: if(--timeCnt[i] == 0)
+  1887  00D7  3574               	lslf	tempCtrlProcess@i,w
+  1888  00D8  3E20               	addlw	(low (tempCtrlProcess@timeCnt| 0))& (0+255)
+  1889  00D9  0086               	movwf	6
+  1890  00DA  0187               	clrf	7
+  1891  00DB  3001               	movlw	1
+  1892  00DC  0281               	subwf	1,f
+  1893  00DD  3141               	addfsr 1,1
+  1894  00DE  3000               	movlw	0
+  1895  00DF  3B81               	subwfb	1,f
+  1896  00E0  317F               	addfsr 1,-1
+  1897  00E1  0016               	moviw fsr1++
+  1898  00E2  0401               	iorwf	1,w
+  1899  00E3  1D03               	btfss	3,2
+  1900  00E4  291F               	goto	l1330
+  1901                           
+  1902                           ;time_ctrl.c: 142: {
+  1903                           ;time_ctrl.c: 143: if(IQRSta[i]%2 == 0)
+  1904  00E5  0874               	movf	tempCtrlProcess@i,w
+  1905  00E6  3E38               	addlw	(low (_IQRSta| 0))& (0+255)
+  1906  00E7  0086               	movwf	6
+  1907  00E8  0187               	clrf	7
+  1908  00E9  1801               	btfsc	1,0
+  1909  00EA  28F8               	goto	l1322
+  1910                           
+  1911                           ;time_ctrl.c: 144: {
+  1912                           ;time_ctrl.c: 145: LATC |= 1 << i;
+  1913  00EB  3001               	movlw	1
+  1914  00EC  00F2               	movwf	??_tempCtrlProcess
+  1915  00ED  0A74               	incf	tempCtrlProcess@i,w
+  1916  00EE  28F0               	goto	u914
+  1917  00EF                     u915:	
+  1918  00EF  35F2               	lslf	??_tempCtrlProcess,f
+  1919  00F0                     u914:	
+  1920  00F0  0B89               	decfsz	9,f
+  1921  00F1  28EF               	goto	u915
+  1922  00F2  0872               	movf	??_tempCtrlProcess,w
+  1923  00F3  00F3               	movwf	??_tempCtrlProcess+1
+  1924  00F4  0873               	movf	??_tempCtrlProcess+1,w
+  1925  00F5  0022               	movlb	2	; select bank2
+  1926  00F6  048E               	iorwf	14,f	;volatile
+  1927                           
+  1928                           ;time_ctrl.c: 146: }
+  1929  00F7  290B               	goto	l1326
+  1930  00F8                     l1322:	
+  1931                           
+  1932                           ;time_ctrl.c: 147: else if(IQRSta[i]%2 == 1)
+  1933  00F8  0874               	movf	tempCtrlProcess@i,w
+  1934  00F9  3E38               	addlw	(low (_IQRSta| 0))& (0+255)
+  1935  00FA  0086               	movwf	6
+  1936  00FB  0187               	clrf	7
+  1937  00FC  1C01               	btfss	1,0
+  1938  00FD  290B               	goto	l1326
+  1939                           
+  1940                           ;time_ctrl.c: 148: {
+  1941                           ;time_ctrl.c: 149: LATC &= ~(1<<i);
+  1942  00FE  3001               	movlw	1
+  1943  00FF  00F2               	movwf	??_tempCtrlProcess
+  1944  0100  0A74               	incf	tempCtrlProcess@i,w
+  1945  0101  2903               	goto	u934
+  1946  0102                     u935:	
+  1947  0102  35F2               	lslf	??_tempCtrlProcess,f
+  1948  0103                     u934:	
+  1949  0103  0B89               	decfsz	9,f
+  1950  0104  2902               	goto	u935
+  1951  0105  0872               	movf	??_tempCtrlProcess,w
+  1952  0106  3AFF               	xorlw	255
+  1953  0107  00F3               	movwf	??_tempCtrlProcess+1
+  1954  0108  0873               	movf	??_tempCtrlProcess+1,w
+  1955  0109  0022               	movlb	2	; select bank2
+  1956  010A  058E               	andwf	14,f	;volatile
+  1957  010B                     l1326:	
+  1958                           
+  1959                           ;time_ctrl.c: 150: }
+  1960                           ;time_ctrl.c: 152: if(++IQRSta[i] >= 4)
+  1961  010B  3001               	movlw	1
+  1962  010C  00F2               	movwf	??_tempCtrlProcess
+  1963  010D  0874               	movf	tempCtrlProcess@i,w
+  1964  010E  3E38               	addlw	(low (_IQRSta| 0))& (0+255)
+  1965  010F  0086               	movwf	6
+  1966  0110  0187               	clrf	7
+  1967  0111  0872               	movf	??_tempCtrlProcess,w
+  1968  0112  0781               	addwf	1,f
+  1969  0113  3004               	movlw	4
+  1970  0114  0201               	subwf	1,w
+  1971  0115  1C03               	skipc
+  1972  0116  291F               	goto	l1330
+  1973                           
+  1974                           ;time_ctrl.c: 153: {
+  1975                           ;time_ctrl.c: 154: IQRSta[i] = 3;
+  1976  0117  3003               	movlw	3
+  1977  0118  00F2               	movwf	??_tempCtrlProcess
+  1978  0119  0874               	movf	tempCtrlProcess@i,w
+  1979  011A  3E38               	addlw	(low (_IQRSta| 0))& (0+255)
+  1980  011B  0086               	movwf	6
+  1981  011C  0187               	clrf	7
+  1982  011D  0872               	movf	??_tempCtrlProcess,w
+  1983  011E  0081               	movwf	1
+  1984  011F                     l1330:	
+  1985  011F  3001               	movlw	1
+  1986  0120  00F2               	movwf	??_tempCtrlProcess
+  1987  0121  0872               	movf	??_tempCtrlProcess,w
+  1988  0122  07F4               	addwf	tempCtrlProcess@i,f
+  1989  0123  2855               	goto	L1
+  1990  0124                     __end_of_tempCtrlProcess:	
+  1991                           
+  1992                           	psect	text2
+  1993  031A                     __ptext2:	
+  1994 ;; *************** function _SYSTEM_Initialize *****************
+  1995 ;; Defined at:
+  1996 ;;		line 50 in file "mcc_generated_files/mcc.c"
+  1997 ;; Parameters:    Size  Location     Type
+  1998 ;;		None
+  1999 ;; Auto vars:     Size  Location     Type
+  2000 ;;		None
+  2001 ;; Return value:  Size  Location     Type
+  2002 ;;                  1    wreg      void 
+  2003 ;; Registers used:
+  2004 ;;		wreg, status,2, status,0, pclath, cstack
+  2005 ;; Tracked objects:
+  2006 ;;		On entry : 0/0
+  2007 ;;		On exit  : 0/0
+  2008 ;;		Unchanged: 0/0
+  2009 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2010 ;;      Params:         0       0       0       0
+  2011 ;;      Locals:         0       0       0       0
+  2012 ;;      Temps:          0       0       0       0
+  2013 ;;      Totals:         0       0       0       0
+  2014 ;;Total ram usage:        0 bytes
+  2015 ;; Hardware stack levels used:    1
+  2016 ;; Hardware stack levels required when called:    6
+  2017 ;; This function calls:
+  2018 ;;		_EUSART_Initialize
+  2019 ;;		_OSCILLATOR_Initialize
+  2020 ;;		_PIN_MANAGER_Initialize
+  2021 ;;		_TMR0_Initialize
+  2022 ;;		_WDT_Initialize
+  2023 ;; This function is called by:
+  2024 ;;		_main
+  2025 ;; This function uses a non-reentrant model
+  2026 ;;
+  2027                           
+  2028                           
+  2029                           ;psect for function _SYSTEM_Initialize
+  2030  031A                     _SYSTEM_Initialize:	
+  2031                           
+  2032                           ;mcc.c: 52: PIN_MANAGER_Initialize();
+  2033                           
+  2034                           ;incstack = 0
+  2035                           ; Regs used in _SYSTEM_Initialize: [wreg+status,2+status,0+pclath+cstack]
+  2036  031A  3182  22BD  3183   	fcall	_PIN_MANAGER_Initialize
+  2037                           
+  2038                           ;mcc.c: 53: OSCILLATOR_Initialize();
+  2039  031D  3183  2348  3183   	fcall	_OSCILLATOR_Initialize
+  2040                           
+  2041                           ;mcc.c: 54: WDT_Initialize();
+  2042  0320  3183  236E  3183   	fcall	_WDT_Initialize
+  2043                           
+  2044                           ;mcc.c: 55: TMR0_Initialize();
+  2045  0323  3182  22F2  3183   	fcall	_TMR0_Initialize
+  2046                           
+  2047                           ;mcc.c: 56: EUSART_Initialize();
+  2048  0326  3182  22D9         	fcall	_EUSART_Initialize
+  2049  0328  0008               	return
+  2050  0329                     __end_of_SYSTEM_Initialize:	
+  2051                           
+  2052                           	psect	text3
+  2053  036E                     __ptext3:	
+  2054 ;; *************** function _WDT_Initialize *****************
+  2055 ;; Defined at:
+  2056 ;;		line 69 in file "mcc_generated_files/mcc.c"
+  2057 ;; Parameters:    Size  Location     Type
+  2058 ;;		None
+  2059 ;; Auto vars:     Size  Location     Type
+  2060 ;;		None
+  2061 ;; Return value:  Size  Location     Type
+  2062 ;;                  1    wreg      void 
+  2063 ;; Registers used:
+  2064 ;;		wreg
+  2065 ;; Tracked objects:
+  2066 ;;		On entry : 0/0
+  2067 ;;		On exit  : 0/0
+  2068 ;;		Unchanged: 0/0
+  2069 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2070 ;;      Params:         0       0       0       0
+  2071 ;;      Locals:         0       0       0       0
+  2072 ;;      Temps:          0       0       0       0
+  2073 ;;      Totals:         0       0       0       0
+  2074 ;;Total ram usage:        0 bytes
+  2075 ;; Hardware stack levels used:    1
+  2076 ;; Hardware stack levels required when called:    4
+  2077 ;; This function calls:
+  2078 ;;		Nothing
+  2079 ;; This function is called by:
+  2080 ;;		_SYSTEM_Initialize
+  2081 ;; This function uses a non-reentrant model
+  2082 ;;
+  2083                           
+  2084                           
+  2085                           ;psect for function _WDT_Initialize
+  2086  036E                     _WDT_Initialize:	
+  2087                           
+  2088                           ;mcc.c: 72: WDTCON = 0x16;
+  2089                           
+  2090                           ;incstack = 0
+  2091                           ; Regs used in _WDT_Initialize: [wreg]
+  2092  036E  3016               	movlw	22
+  2093  036F  0021               	movlb	1	; select bank1
+  2094  0370  0097               	movwf	23	;volatile
+  2095  0371  0008               	return
+  2096  0372                     __end_of_WDT_Initialize:	
+  2097                           
+  2098                           	psect	text4
+  2099  02F2                     __ptext4:	
+  2100 ;; *************** function _TMR0_Initialize *****************
+  2101 ;; Defined at:
+  2102 ;;		line 64 in file "mcc_generated_files/tmr0.c"
+  2103 ;; Parameters:    Size  Location     Type
+  2104 ;;		None
+  2105 ;; Auto vars:     Size  Location     Type
+  2106 ;;		None
+  2107 ;; Return value:  Size  Location     Type
+  2108 ;;                  1    wreg      void 
+  2109 ;; Registers used:
+  2110 ;;		wreg, status,2, status,0, pclath, cstack
+  2111 ;; Tracked objects:
+  2112 ;;		On entry : 0/0
+  2113 ;;		On exit  : 0/0
+  2114 ;;		Unchanged: 0/0
+  2115 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2116 ;;      Params:         0       0       0       0
+  2117 ;;      Locals:         0       0       0       0
+  2118 ;;      Temps:          1       0       0       0
+  2119 ;;      Totals:         1       0       0       0
+  2120 ;;Total ram usage:        1 bytes
+  2121 ;; Hardware stack levels used:    1
+  2122 ;; Hardware stack levels required when called:    5
+  2123 ;; This function calls:
+  2124 ;;		_TMR0_SetInterruptHandler
+  2125 ;; This function is called by:
+  2126 ;;		_SYSTEM_Initialize
+  2127 ;; This function uses a non-reentrant model
+  2128 ;;
+  2129                           
+  2130                           
+  2131                           ;psect for function _TMR0_Initialize
+  2132  02F2                     _TMR0_Initialize:	
+  2133                           
+  2134                           ;tmr0.c: 69: OPTION_REG = (uint8_t)((OPTION_REG & 0xC0) | 0xD4 & 0x3F);
+  2135                           
+  2136                           ;incstack = 0
+  2137                           ; Regs used in _TMR0_Initialize: [wreg+status,2+status,0+pclath+cstack]
+  2138  02F2  0021               	movlb	1	; select bank1
+  2139  02F3  0815               	movf	21,w	;volatile
+  2140  02F4  39C0               	andlw	192
+  2141  02F5  3814               	iorlw	20
+  2142  02F6  0095               	movwf	21	;volatile
+  2143                           
+  2144                           ;tmr0.c: 72: TMR0 = 0x83;
+  2145  02F7  3083               	movlw	131
+  2146  02F8  0020               	movlb	0	; select bank0
+  2147  02F9  0095               	movwf	21	;volatile
+  2148                           
+  2149                           ;tmr0.c: 75: timer0ReloadVal= 131;
+  2150  02FA  3083               	movlw	131
+  2151  02FB  00F4               	movwf	??_TMR0_Initialize
+  2152  02FC  0874               	movf	??_TMR0_Initialize,w
+  2153  02FD  00E0               	movwf	_timer0ReloadVal	;volatile
+  2154                           
+  2155                           ;tmr0.c: 78: INTCONbits.TMR0IF = 0;
+  2156  02FE  110B               	bcf	11,2	;volatile
+  2157                           
+  2158                           ;tmr0.c: 81: INTCONbits.TMR0IE = 1;
+  2159  02FF  168B               	bsf	11,5	;volatile
+  2160                           
+  2161                           ;tmr0.c: 84: TMR0_SetInterruptHandler(TMR0_DefaultInterruptHandler);
+  2162  0300  3072               	movlw	low _TMR0_DefaultInterruptHandler
+  2163  0301  00F2               	movwf	TMR0_SetInterruptHandler@InterruptHandler
+  2164  0302  3003               	movlw	high _TMR0_DefaultInterruptHandler
+  2165  0303  00F3               	movwf	TMR0_SetInterruptHandler@InterruptHandler+1
+  2166  0304  3183  2362         	fcall	_TMR0_SetInterruptHandler
+  2167  0306  0008               	return
+  2168  0307                     __end_of_TMR0_Initialize:	
+  2169                           
+  2170                           	psect	text5
+  2171  0362                     __ptext5:	
+  2172 ;; *************** function _TMR0_SetInterruptHandler *****************
+  2173 ;; Defined at:
+  2174 ;;		line 176 in file "mcc_generated_files/tmr0.c"
+  2175 ;; Parameters:    Size  Location     Type
+  2176 ;;  InterruptHan    2    2[COMMON] PTR FTN()void 
+  2177 ;;		 -> TMR0_DefaultInterruptHandler(1), 
+  2178 ;; Auto vars:     Size  Location     Type
+  2179 ;;		None
+  2180 ;; Return value:  Size  Location     Type
+  2181 ;;                  1    wreg      void 
+  2182 ;; Registers used:
+  2183 ;;		wreg
+  2184 ;; Tracked objects:
+  2185 ;;		On entry : 0/0
+  2186 ;;		On exit  : 0/0
+  2187 ;;		Unchanged: 0/0
+  2188 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2189 ;;      Params:         2       0       0       0
+  2190 ;;      Locals:         0       0       0       0
+  2191 ;;      Temps:          0       0       0       0
+  2192 ;;      Totals:         2       0       0       0
+  2193 ;;Total ram usage:        2 bytes
+  2194 ;; Hardware stack levels used:    1
+  2195 ;; Hardware stack levels required when called:    4
+  2196 ;; This function calls:
+  2197 ;;		Nothing
+  2198 ;; This function is called by:
+  2199 ;;		_TMR0_Initialize
+  2200 ;; This function uses a non-reentrant model
+  2201 ;;
+  2202                           
+  2203                           
+  2204                           ;psect for function _TMR0_SetInterruptHandler
+  2205  0362                     _TMR0_SetInterruptHandler:	
+  2206                           
+  2207                           ;tmr0.c: 177: TMR0_InterruptHandler = InterruptHandler;
+  2208                           
+  2209                           ;incstack = 0
+  2210                           ; Regs used in _TMR0_SetInterruptHandler: [wreg]
+  2211  0362  0873               	movf	TMR0_SetInterruptHandler@InterruptHandler+1,w
+  2212  0363  0020               	movlb	0	; select bank0
+  2213  0364  00DD               	movwf	_TMR0_InterruptHandler+1
+  2214  0365  0872               	movf	TMR0_SetInterruptHandler@InterruptHandler,w
+  2215  0366  00DC               	movwf	_TMR0_InterruptHandler
+  2216  0367  0008               	return
+  2217  0368                     __end_of_TMR0_SetInterruptHandler:	
+  2218                           
+  2219                           	psect	text6
+  2220  02BD                     __ptext6:	
+  2221 ;; *************** function _PIN_MANAGER_Initialize *****************
+  2222 ;; Defined at:
+  2223 ;;		line 57 in file "mcc_generated_files/pin_manager.c"
+  2224 ;; Parameters:    Size  Location     Type
+  2225 ;;		None
+  2226 ;; Auto vars:     Size  Location     Type
+  2227 ;;		None
+  2228 ;; Return value:  Size  Location     Type
+  2229 ;;                  1    wreg      void 
+  2230 ;; Registers used:
+  2231 ;;		wreg, status,2
+  2232 ;; Tracked objects:
+  2233 ;;		On entry : 0/0
+  2234 ;;		On exit  : 0/0
+  2235 ;;		Unchanged: 0/0
+  2236 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2237 ;;      Params:         0       0       0       0
+  2238 ;;      Locals:         0       0       0       0
+  2239 ;;      Temps:          0       0       0       0
+  2240 ;;      Totals:         0       0       0       0
+  2241 ;;Total ram usage:        0 bytes
+  2242 ;; Hardware stack levels used:    1
+  2243 ;; Hardware stack levels required when called:    4
+  2244 ;; This function calls:
+  2245 ;;		Nothing
+  2246 ;; This function is called by:
+  2247 ;;		_SYSTEM_Initialize
+  2248 ;; This function uses a non-reentrant model
+  2249 ;;
+  2250                           
+  2251                           
+  2252                           ;psect for function _PIN_MANAGER_Initialize
+  2253  02BD                     _PIN_MANAGER_Initialize:	
+  2254                           
+  2255                           ;pin_manager.c: 62: LATA = 0x04;
+  2256                           
+  2257                           ;incstack = 0
+  2258                           ; Regs used in _PIN_MANAGER_Initialize: [wreg+status,2]
+  2259  02BD  3004               	movlw	4
+  2260  02BE  0022               	movlb	2	; select bank2
+  2261  02BF  008C               	movwf	12	;volatile
+  2262                           
+  2263                           ;pin_manager.c: 63: LATB = 0x00;
+  2264  02C0  018D               	clrf	13	;volatile
+  2265                           
+  2266                           ;pin_manager.c: 64: LATC = 0x00;
+  2267  02C1  018E               	clrf	14	;volatile
+  2268                           
+  2269                           ;pin_manager.c: 69: TRISA = 0x3B;
+  2270  02C2  303B               	movlw	59
+  2271  02C3  0021               	movlb	1	; select bank1
+  2272  02C4  008C               	movwf	12	;volatile
+  2273                           
+  2274                           ;pin_manager.c: 70: TRISB = 0xF0;
+  2275  02C5  30F0               	movlw	240
+  2276  02C6  008D               	movwf	13	;volatile
+  2277                           
+  2278                           ;pin_manager.c: 71: TRISC = 0x00;
+  2279  02C7  018E               	clrf	14	;volatile
+  2280                           
+  2281                           ;pin_manager.c: 76: ANSELC = 0x00;
+  2282  02C8  0023               	movlb	3	; select bank3
+  2283  02C9  018E               	clrf	14	;volatile
+  2284                           
+  2285                           ;pin_manager.c: 77: ANSELB = 0x00;
+  2286  02CA  018D               	clrf	13	;volatile
+  2287                           
+  2288                           ;pin_manager.c: 78: ANSELA = 0x12;
+  2289  02CB  3012               	movlw	18
+  2290  02CC  008C               	movwf	12	;volatile
+  2291                           
+  2292                           ;pin_manager.c: 83: WPUB = 0x50;
+  2293  02CD  3050               	movlw	80
+  2294  02CE  0024               	movlb	4	; select bank4
+  2295  02CF  008D               	movwf	13	;volatile
+  2296                           
+  2297                           ;pin_manager.c: 84: WPUA = 0x01;
+  2298  02D0  3001               	movlw	1
+  2299  02D1  008C               	movwf	12	;volatile
+  2300                           
+  2301                           ;pin_manager.c: 85: WPUC = 0x00;
+  2302  02D2  018E               	clrf	14	;volatile
+  2303                           
+  2304                           ;pin_manager.c: 86: OPTION_REGbits.nWPUEN = 0;
+  2305  02D3  0021               	movlb	1	; select bank1
+  2306  02D4  1395               	bcf	21,7	;volatile
+  2307                           
+  2308                           ;pin_manager.c: 95: APFCON0 = 0x00;
+  2309  02D5  0022               	movlb	2	; select bank2
+  2310  02D6  019D               	clrf	29	;volatile
+  2311                           
+  2312                           ;pin_manager.c: 96: APFCON1 = 0x00;
+  2313  02D7  019E               	clrf	30	;volatile
+  2314  02D8  0008               	return
+  2315  02D9                     __end_of_PIN_MANAGER_Initialize:	
+  2316                           
+  2317                           	psect	text7
+  2318  0348                     __ptext7:	
+  2319 ;; *************** function _OSCILLATOR_Initialize *****************
+  2320 ;; Defined at:
+  2321 ;;		line 59 in file "mcc_generated_files/mcc.c"
+  2322 ;; Parameters:    Size  Location     Type
+  2323 ;;		None
+  2324 ;; Auto vars:     Size  Location     Type
+  2325 ;;		None
+  2326 ;; Return value:  Size  Location     Type
+  2327 ;;                  1    wreg      void 
+  2328 ;; Registers used:
+  2329 ;;		wreg, status,2
+  2330 ;; Tracked objects:
+  2331 ;;		On entry : 0/0
+  2332 ;;		On exit  : 0/0
+  2333 ;;		Unchanged: 0/0
+  2334 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2335 ;;      Params:         0       0       0       0
+  2336 ;;      Locals:         0       0       0       0
+  2337 ;;      Temps:          0       0       0       0
+  2338 ;;      Totals:         0       0       0       0
+  2339 ;;Total ram usage:        0 bytes
+  2340 ;; Hardware stack levels used:    1
+  2341 ;; Hardware stack levels required when called:    4
+  2342 ;; This function calls:
+  2343 ;;		Nothing
+  2344 ;; This function is called by:
+  2345 ;;		_SYSTEM_Initialize
+  2346 ;; This function uses a non-reentrant model
+  2347 ;;
+  2348                           
+  2349                           
+  2350                           ;psect for function _OSCILLATOR_Initialize
+  2351  0348                     _OSCILLATOR_Initialize:	
+  2352                           
+  2353                           ;mcc.c: 62: OSCCON = 0x7A;
+  2354                           
+  2355                           ;incstack = 0
+  2356                           ; Regs used in _OSCILLATOR_Initialize: [wreg+status,2]
+  2357  0348  307A               	movlw	122
+  2358  0349  0021               	movlb	1	; select bank1
+  2359  034A  0099               	movwf	25	;volatile
+  2360                           
+  2361                           ;mcc.c: 64: OSCTUNE = 0x00;
+  2362  034B  0198               	clrf	24	;volatile
+  2363                           
+  2364                           ;mcc.c: 66: BORCON = 0x00;
+  2365  034C  0022               	movlb	2	; select bank2
+  2366  034D  0196               	clrf	22	;volatile
+  2367  034E  0008               	return
+  2368  034F                     __end_of_OSCILLATOR_Initialize:	
+  2369                           
+  2370                           	psect	text8
+  2371  02D9                     __ptext8:	
+  2372 ;; *************** function _EUSART_Initialize *****************
+  2373 ;; Defined at:
+  2374 ;;		line 74 in file "mcc_generated_files/eusart.c"
+  2375 ;; Parameters:    Size  Location     Type
+  2376 ;;		None
+  2377 ;; Auto vars:     Size  Location     Type
+  2378 ;;		None
+  2379 ;; Return value:  Size  Location     Type
+  2380 ;;                  1    wreg      void 
+  2381 ;; Registers used:
+  2382 ;;		wreg, status,2, status,0, pclath, cstack
+  2383 ;; Tracked objects:
+  2384 ;;		On entry : 0/0
+  2385 ;;		On exit  : 0/0
+  2386 ;;		Unchanged: 0/0
+  2387 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2388 ;;      Params:         0       0       0       0
+  2389 ;;      Locals:         0       0       0       0
+  2390 ;;      Temps:          0       0       0       0
+  2391 ;;      Totals:         0       0       0       0
+  2392 ;;Total ram usage:        0 bytes
+  2393 ;; Hardware stack levels used:    1
+  2394 ;; Hardware stack levels required when called:    5
+  2395 ;; This function calls:
+  2396 ;;		_EUSART_SetRxInterruptHandler
+  2397 ;; This function is called by:
+  2398 ;;		_SYSTEM_Initialize
+  2399 ;; This function uses a non-reentrant model
+  2400 ;;
+  2401                           
+  2402                           
+  2403                           ;psect for function _EUSART_Initialize
+  2404  02D9                     _EUSART_Initialize:	
+  2405                           
+  2406                           ;eusart.c: 77: PIE1bits.RCIE = 0;
+  2407                           
+  2408                           ;incstack = 0
+  2409                           ; Regs used in _EUSART_Initialize: [wreg+status,2+status,0+pclath+cstack]
+  2410  02D9  0021               	movlb	1	; select bank1
+  2411  02DA  1291               	bcf	17,5	;volatile
+  2412                           
+  2413                           ;eusart.c: 78: EUSART_SetRxInterruptHandler(EUSART_Receive_ISR);
+  2414  02DB  3007               	movlw	low _EUSART_Receive_ISR
+  2415  02DC  00F2               	movwf	EUSART_SetRxInterruptHandler@interruptHandler
+  2416  02DD  3003               	movlw	high _EUSART_Receive_ISR
+  2417  02DE  00F3               	movwf	EUSART_SetRxInterruptHandler@interruptHandler+1
+  2418  02DF  3183  2368         	fcall	_EUSART_SetRxInterruptHandler
+  2419                           
+  2420                           ;eusart.c: 79: PIE1bits.TXIE = 0;
+  2421  02E1  0021               	movlb	1	; select bank1
+  2422  02E2  1211               	bcf	17,4	;volatile
+  2423                           
+  2424                           ;eusart.c: 84: BAUDCON = 0x08;
+  2425  02E3  3008               	movlw	8
+  2426  02E4  0023               	movlb	3	; select bank3
+  2427  02E5  009F               	movwf	31	;volatile
+  2428                           
+  2429                           ;eusart.c: 87: RCSTA = 0x90;
+  2430  02E6  3090               	movlw	144
+  2431  02E7  009D               	movwf	29	;volatile
+  2432                           
+  2433                           ;eusart.c: 90: TXSTA = 0x24;
+  2434  02E8  3024               	movlw	36
+  2435  02E9  009E               	movwf	30	;volatile
+  2436                           
+  2437                           ;eusart.c: 93: SPBRGL = 0xA0;
+  2438  02EA  30A0               	movlw	160
+  2439  02EB  009B               	movwf	27	;volatile
+  2440                           
+  2441                           ;eusart.c: 96: SPBRGH = 0x01;
+  2442  02EC  3001               	movlw	1
+  2443  02ED  009C               	movwf	28	;volatile
+  2444                           
+  2445                           ;eusart.c: 106: eusartRxCount = 0;
+  2446  02EE  01F8               	clrf	_eusartRxCount
+  2447                           
+  2448                           ;eusart.c: 109: PIE1bits.RCIE = 1;
+  2449  02EF  0021               	movlb	1	; select bank1
+  2450  02F0  1691               	bsf	17,5	;volatile
+  2451  02F1  0008               	return
+  2452  02F2                     __end_of_EUSART_Initialize:	
+  2453                           
+  2454                           	psect	text9
+  2455  0368                     __ptext9:	
+  2456 ;; *************** function _EUSART_SetRxInterruptHandler *****************
+  2457 ;; Defined at:
+  2458 ;;		line 223 in file "mcc_generated_files/eusart.c"
+  2459 ;; Parameters:    Size  Location     Type
+  2460 ;;  interruptHan    2    2[COMMON] PTR FTN()void 
+  2461 ;;		 -> EUSART_Receive_ISR(1), 
+  2462 ;; Auto vars:     Size  Location     Type
+  2463 ;;		None
+  2464 ;; Return value:  Size  Location     Type
+  2465 ;;                  1    wreg      void 
+  2466 ;; Registers used:
+  2467 ;;		wreg
+  2468 ;; Tracked objects:
+  2469 ;;		On entry : 0/0
+  2470 ;;		On exit  : 0/0
+  2471 ;;		Unchanged: 0/0
+  2472 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2473 ;;      Params:         2       0       0       0
+  2474 ;;      Locals:         0       0       0       0
+  2475 ;;      Temps:          0       0       0       0
+  2476 ;;      Totals:         2       0       0       0
+  2477 ;;Total ram usage:        2 bytes
+  2478 ;; Hardware stack levels used:    1
+  2479 ;; Hardware stack levels required when called:    4
+  2480 ;; This function calls:
+  2481 ;;		Nothing
+  2482 ;; This function is called by:
+  2483 ;;		_EUSART_Initialize
+  2484 ;; This function uses a non-reentrant model
+  2485 ;;
+  2486                           
+  2487                           
+  2488                           ;psect for function _EUSART_SetRxInterruptHandler
+  2489  0368                     _EUSART_SetRxInterruptHandler:	
+  2490                           
+  2491                           ;eusart.c: 224: EUSART_RxDefaultInterruptHandler = interruptHandler;
+  2492                           
+  2493                           ;incstack = 0
+  2494                           ; Regs used in _EUSART_SetRxInterruptHandler: [wreg]
+  2495  0368  0873               	movf	EUSART_SetRxInterruptHandler@interruptHandler+1,w
+  2496  0369  0020               	movlb	0	; select bank0
+  2497  036A  00DF               	movwf	_EUSART_RxDefaultInterruptHandler+1
+  2498  036B  0872               	movf	EUSART_SetRxInterruptHandler@interruptHandler,w
+  2499  036C  00DE               	movwf	_EUSART_RxDefaultInterruptHandler
+  2500  036D  0008               	return
+  2501  036E                     __end_of_EUSART_SetRxInterruptHandler:	
+  2502                           
+  2503                           	psect	text10
+  2504  0196                     __ptext10:	
+  2505 ;; *************** function _EUSART_Deal *****************
+  2506 ;; Defined at:
+  2507 ;;		line 228 in file "mcc_generated_files/eusart.c"
+  2508 ;; Parameters:    Size  Location     Type
+  2509 ;;		None
+  2510 ;; Auto vars:     Size  Location     Type
+  2511 ;;		None
+  2512 ;; Return value:  Size  Location     Type
+  2513 ;;                  1    wreg      void 
+  2514 ;; Registers used:
+  2515 ;;		wreg, fsr1l, fsr1h, status,2, status,0, pclath, cstack
+  2516 ;; Tracked objects:
+  2517 ;;		On entry : 0/0
+  2518 ;;		On exit  : 0/0
+  2519 ;;		Unchanged: 0/0
+  2520 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2521 ;;      Params:         0       0       0       0
+  2522 ;;      Locals:         0       0       0       0
+  2523 ;;      Temps:          2       0       0       0
+  2524 ;;      Totals:         2       0       0       0
+  2525 ;;Total ram usage:        2 bytes
+  2526 ;; Hardware stack levels used:    1
+  2527 ;; Hardware stack levels required when called:    6
+  2528 ;; This function calls:
+  2529 ;;		_Get_Device_Addr
+  2530 ;;		_startTimeCtrl
+  2531 ;;		_stopTimeCtrl
+  2532 ;;		_testTimeCtrl
+  2533 ;;		_workTimeCtrl
+  2534 ;; This function is called by:
+  2535 ;;		_main
+  2536 ;; This function uses a non-reentrant model
+  2537 ;;
+  2538                           
+  2539                           
+  2540                           ;psect for function _EUSART_Deal
+  2541  0196                     _EUSART_Deal:	
+  2542                           
+  2543                           ;eusart.c: 231: if(eusartRxBuffer[0] == 0xA5 && eusartRxBuffer[1] == 0x5A)
+  2544                           
+  2545                           ;incstack = 0
+  2546                           ; Regs used in _EUSART_Deal: [wreg+fsr1l+fsr1h+status,2+status,0+pclath+cstack]
+  2547  0196  30A5               	movlw	165
+  2548  0197  0022               	movlb	2	; select bank2
+  2549  0198  0620               	xorwf	_eusartRxBuffer^(0+256),w
+  2550  0199  1D03               	btfss	3,2
+  2551  019A  0008               	return
+  2552  019B  305A               	movlw	90
+  2553  019C  0621               	xorwf	(_eusartRxBuffer^(0+256)+1),w
+  2554  019D  1D03               	btfss	3,2
+  2555  019E  0008               	return
+  2556                           
+  2557                           ;eusart.c: 232: {
+  2558                           ;eusart.c: 234: if(eusartRxBuffer[2] == EusartRxLenth-5)
+  2559  019F  0877               	movf	_EusartRxLenth,w
+  2560  01A0  3EFB               	addlw	251
+  2561  01A1  00F5               	movwf	??_EUSART_Deal
+  2562  01A2  30FF               	movlw	255
+  2563  01A3  1803               	skipnc
+  2564  01A4  3000               	movlw	0
+  2565  01A5  00F6               	movwf	??_EUSART_Deal+1
+  2566  01A6  0822               	movf	(_eusartRxBuffer^(0+256)+2),w
+  2567  01A7  0675               	xorwf	??_EUSART_Deal,w
+  2568  01A8  0476               	iorwf	??_EUSART_Deal+1,w
+  2569  01A9  1D03               	skipz
+  2570  01AA  0008               	return
+  2571                           
+  2572                           ;eusart.c: 235: {
+  2573                           ;eusart.c: 236: if(eusartRxBuffer[4] == Get_Device_Addr())
+  2574  01AB  3183  2329  3181   	fcall	_Get_Device_Addr
+  2575  01AE  0022               	movlb	2	; select bank2
+  2576  01AF  0624               	xorwf	(_eusartRxBuffer^(0+256)+4),w
+  2577  01B0  1D03               	skipz
+  2578  01B1  0008               	return
+  2579                           
+  2580                           ;eusart.c: 237: {
+  2581                           ;eusart.c: 238: if(eusartRxBuffer[3] == 0x1C)
+  2582  01B2  301C               	movlw	28
+  2583  01B3  0623               	xorwf	(_eusartRxBuffer^(0+256)+3),w
+  2584  01B4  1D03               	btfss	3,2
+  2585  01B5  29B9               	goto	l1280
+  2586                           
+  2587                           ;eusart.c: 239: {
+  2588                           ;eusart.c: 240: stopTimeCtrl();
+  2589  01B6  3182  2240         	fcall	_stopTimeCtrl
+  2590                           
+  2591                           ;eusart.c: 241: }
+  2592  01B8  0008               	return
+  2593  01B9                     l1280:	
+  2594                           
+  2595                           ;eusart.c: 242: else if(eusartRxBuffer[3] == 0x1D)
+  2596  01B9  301D               	movlw	29
+  2597  01BA  0022               	movlb	2	; select bank2
+  2598  01BB  0623               	xorwf	(_eusartRxBuffer^(0+256)+3),w
+  2599  01BC  1D03               	btfss	3,2
+  2600  01BD  29C1               	goto	l1284
+  2601                           
+  2602                           ;eusart.c: 243: {
+  2603                           ;eusart.c: 244: startTimeCtrl();
+  2604  01BE  3183  2340         	fcall	_startTimeCtrl
+  2605                           
+  2606                           ;eusart.c: 245: }
+  2607  01C0  0008               	return
+  2608  01C1                     l1284:	
+  2609                           
+  2610                           ;eusart.c: 246: else if(eusartRxBuffer[3] >= 0x21 && eusartRxBuffer[3] <= 0x28)
+  2611  01C1  3021               	movlw	33
+  2612  01C2  0022               	movlb	2	; select bank2
+  2613  01C3  0223               	subwf	(_eusartRxBuffer^(0+256)+3),w
+  2614  01C4  1C03               	skipc
+  2615  01C5  29CF               	goto	l1290
+  2616  01C6  3029               	movlw	41
+  2617  01C7  0223               	subwf	(_eusartRxBuffer^(0+256)+3),w
+  2618  01C8  1803               	skipnc
+  2619  01C9  29CF               	goto	l1290
+  2620                           
+  2621                           ;eusart.c: 247: {
+  2622                           ;eusart.c: 248: testTimeCtrl(eusartRxBuffer[3] - 0x20);
+  2623  01CA  0823               	movf	(_eusartRxBuffer^(0+256)+3),w
+  2624  01CB  3EE0               	addlw	224
+  2625  01CC  3182  220F         	fcall	_testTimeCtrl
+  2626                           
+  2627                           ;eusart.c: 249: }
+  2628  01CE  0008               	return
+  2629  01CF                     l1290:	
+  2630                           
+  2631                           ;eusart.c: 250: else if(eusartRxBuffer[3] == 0x4E)
+  2632  01CF  304E               	movlw	78
+  2633  01D0  0022               	movlb	2	; select bank2
+  2634  01D1  0623               	xorwf	(_eusartRxBuffer^(0+256)+3),w
+  2635  01D2  1D03               	btfss	3,2
+  2636  01D3  0008               	return
+  2637                           
+  2638                           ;eusart.c: 251: {
+  2639                           ;eusart.c: 252: workTimeCtrl();
+  2640  01D4  3182  226B         	fcall	_workTimeCtrl
+  2641  01D6  0008               	return
+  2642  01D7                     __end_of_EUSART_Deal:	
+  2643                           
+  2644                           	psect	text11
+  2645  026B                     __ptext11:	
+  2646 ;; *************** function _workTimeCtrl *****************
+  2647 ;; Defined at:
+  2648 ;;		line 29 in file "mcc_generated_files/time_ctrl.c"
+  2649 ;; Parameters:    Size  Location     Type
+  2650 ;;		None
+  2651 ;; Auto vars:     Size  Location     Type
+  2652 ;;  i               1    4[COMMON] unsigned char 
+  2653 ;; Return value:  Size  Location     Type
+  2654 ;;                  1    wreg      void 
+  2655 ;; Registers used:
+  2656 ;;		wreg, fsr1l, fsr1h, status,2, status,0
+  2657 ;; Tracked objects:
+  2658 ;;		On entry : 0/0
+  2659 ;;		On exit  : 0/0
+  2660 ;;		Unchanged: 0/0
+  2661 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2662 ;;      Params:         0       0       0       0
+  2663 ;;      Locals:         1       0       0       0
+  2664 ;;      Temps:          2       0       0       0
+  2665 ;;      Totals:         3       0       0       0
+  2666 ;;Total ram usage:        3 bytes
+  2667 ;; Hardware stack levels used:    1
+  2668 ;; Hardware stack levels required when called:    4
+  2669 ;; This function calls:
+  2670 ;;		Nothing
+  2671 ;; This function is called by:
+  2672 ;;		_EUSART_Deal
+  2673 ;; This function uses a non-reentrant model
+  2674 ;;
+  2675                           
+  2676                           
+  2677                           ;psect for function _workTimeCtrl
+  2678  026B                     _workTimeCtrl:	
+  2679                           
+  2680                           ;time_ctrl.c: 31: uint8_t i;
+  2681                           ;time_ctrl.c: 33: timeCtrlStartFlag = 0;
+  2682                           
+  2683                           ;incstack = 0
+  2684                           ; Regs used in _workTimeCtrl: [wreg+fsr1l+fsr1h+status,2+status,0]
+  2685  026B  01FA               	clrf	_timeCtrlStartFlag
+  2686                           
+  2687                           ;time_ctrl.c: 34: do { LATAbits.LATA2 = 0; } while(0);
+  2688  026C  0022               	movlb	2	; select bank2
+  2689  026D  110C               	bcf	12,2	;volatile
+  2690                           
+  2691                           ;time_ctrl.c: 36: for(i=0; i<8; i++)
+  2692  026E  01F4               	clrf	workTimeCtrl@i
+  2693  026F                     L2:	
+  2694  026F  3008               	movlw	8
+  2695  0270  0274               	subwf	workTimeCtrl@i,w
+  2696  0271  1803               	btfsc	3,0
+  2697  0272  0008               	return
+  2698                           
+  2699                           ;time_ctrl.c: 37: {
+  2700                           ;time_ctrl.c: 38: IQRSta[i] = 0;
+  2701  0273  0874               	movf	workTimeCtrl@i,w
+  2702  0274  3E38               	addlw	(low (_IQRSta| 0))& (0+255)
+  2703  0275  0086               	movwf	6
+  2704  0276  0187               	clrf	7
+  2705  0277  0181               	clrf	1
+  2706                           
+  2707                           ;time_ctrl.c: 39: testIQRSta[i] = 0;
+  2708  0278  0874               	movf	workTimeCtrl@i,w
+  2709  0279  3E30               	addlw	(low (_testIQRSta| 0))& (0+255)
+  2710  027A  0086               	movwf	6
+  2711  027B  0187               	clrf	7
+  2712  027C  0181               	clrf	1
+  2713                           
+  2714                           ;time_ctrl.c: 40: IQRPreSta[i] = 3;
+  2715  027D  3003               	movlw	3
+  2716  027E  00F2               	movwf	??_workTimeCtrl
+  2717  027F  0874               	movf	workTimeCtrl@i,w
+  2718  0280  3E54               	addlw	(low (_IQRPreSta| 0))& (0+255)
+  2719  0281  0086               	movwf	6
+  2720  0282  0187               	clrf	7
+  2721  0283  0872               	movf	??_workTimeCtrl,w
+  2722  0284  0081               	movwf	1
+  2723                           
+  2724                           ;time_ctrl.c: 42: LATC |= 1 << i;
+  2725  0285  3001               	movlw	1
+  2726  0286  00F2               	movwf	??_workTimeCtrl
+  2727  0287  0A74               	incf	workTimeCtrl@i,w
+  2728  0288  2A8A               	goto	u714
+  2729  0289                     u715:	
+  2730  0289  35F2               	lslf	??_workTimeCtrl,f
+  2731  028A                     u714:	
+  2732  028A  0B89               	decfsz	9,f
+  2733  028B  2A89               	goto	u715
+  2734  028C  0872               	movf	??_workTimeCtrl,w
+  2735  028D  00F3               	movwf	??_workTimeCtrl+1
+  2736  028E  0873               	movf	??_workTimeCtrl+1,w
+  2737  028F  048E               	iorwf	14,f	;volatile
+  2738  0290  3001               	movlw	1
+  2739  0291  00F2               	movwf	??_workTimeCtrl
+  2740  0292  0872               	movf	??_workTimeCtrl,w
+  2741  0293  07F4               	addwf	workTimeCtrl@i,f
+  2742  0294  2A6F               	goto	L2
+  2743  0295                     __end_of_workTimeCtrl:	
+  2744                           
+  2745                           	psect	text12
+  2746  020F                     __ptext12:	
+  2747 ;; *************** function _testTimeCtrl *****************
+  2748 ;; Defined at:
+  2749 ;;		line 69 in file "mcc_generated_files/time_ctrl.c"
+  2750 ;; Parameters:    Size  Location     Type
+  2751 ;;  IQRNum          1    wreg     unsigned char 
+  2752 ;; Auto vars:     Size  Location     Type
+  2753 ;;  IQRNum          1    4[COMMON] unsigned char 
+  2754 ;; Return value:  Size  Location     Type
+  2755 ;;                  1    wreg      void 
+  2756 ;; Registers used:
+  2757 ;;		wreg, fsr1l, fsr1h, status,2, status,0
+  2758 ;; Tracked objects:
+  2759 ;;		On entry : 0/0
+  2760 ;;		On exit  : 0/0
+  2761 ;;		Unchanged: 0/0
+  2762 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2763 ;;      Params:         0       0       0       0
+  2764 ;;      Locals:         1       0       0       0
+  2765 ;;      Temps:          2       0       0       0
+  2766 ;;      Totals:         3       0       0       0
+  2767 ;;Total ram usage:        3 bytes
+  2768 ;; Hardware stack levels used:    1
+  2769 ;; Hardware stack levels required when called:    4
+  2770 ;; This function calls:
+  2771 ;;		Nothing
+  2772 ;; This function is called by:
+  2773 ;;		_EUSART_Deal
+  2774 ;; This function uses a non-reentrant model
+  2775 ;;
+  2776                           
+  2777                           
+  2778                           ;psect for function _testTimeCtrl
+  2779  020F                     _testTimeCtrl:	
+  2780                           
+  2781                           ;incstack = 0
+  2782                           ; Regs used in _testTimeCtrl: [wreg+fsr1l+fsr1h+status,2+status,0]
+  2783                           ;testTimeCtrl@IQRNum stored from wreg
+  2784  020F  00F4               	movwf	testTimeCtrl@IQRNum
+  2785                           
+  2786                           ;time_ctrl.c: 71: testIQRSta[IQRNum - 1] ^= 0x01;
+  2787  0210  3001               	movlw	1
+  2788  0211  00F2               	movwf	??_testTimeCtrl
+  2789  0212  0874               	movf	testTimeCtrl@IQRNum,w
+  2790  0213  3EFF               	addlw	255
+  2791  0214  3E30               	addlw	(low (_testIQRSta| 0))& (0+255)
+  2792  0215  0086               	movwf	6
+  2793  0216  0187               	clrf	7
+  2794  0217  0872               	movf	??_testTimeCtrl,w
+  2795  0218  0681               	xorwf	1,f
+  2796                           
+  2797                           ;time_ctrl.c: 73: if(testIQRSta[IQRNum - 1])
+  2798  0219  0874               	movf	testTimeCtrl@IQRNum,w
+  2799  021A  3EFF               	addlw	255
+  2800  021B  3E30               	addlw	(low (_testIQRSta| 0))& (0+255)
+  2801  021C  0086               	movwf	6
+  2802  021D  0187               	clrf	7
+  2803  021E  0801               	movf	1,w
+  2804  021F  1903               	btfsc	3,2
+  2805  0220  2A30               	goto	l1234
+  2806                           
+  2807                           ;time_ctrl.c: 74: LATC |= 1 << (IQRNum - 1);
+  2808  0221  3001               	movlw	1
+  2809  0222  00F2               	movwf	??_testTimeCtrl
+  2810  0223  0874               	movf	testTimeCtrl@IQRNum,w
+  2811  0224  3EFF               	addlw	-1
+  2812  0225  0A89               	incf	9,f
+  2813  0226  2A28               	goto	u684
+  2814  0227                     u685:	
+  2815  0227  35F2               	lslf	??_testTimeCtrl,f
+  2816  0228                     u684:	
+  2817  0228  0B89               	decfsz	9,f
+  2818  0229  2A27               	goto	u685
+  2819  022A  0872               	movf	??_testTimeCtrl,w
+  2820  022B  00F3               	movwf	??_testTimeCtrl+1
+  2821  022C  0873               	movf	??_testTimeCtrl+1,w
+  2822  022D  0022               	movlb	2	; select bank2
+  2823  022E  048E               	iorwf	14,f	;volatile
+  2824  022F  0008               	return
+  2825  0230                     l1234:	
+  2826                           
+  2827                           ;time_ctrl.c: 75: else
+  2828                           ;time_ctrl.c: 76: LATC &= ~(1<<(IQRNum - 1));
+  2829  0230  3001               	movlw	1
+  2830  0231  00F2               	movwf	??_testTimeCtrl
+  2831  0232  0874               	movf	testTimeCtrl@IQRNum,w
+  2832  0233  3EFF               	addlw	-1
+  2833  0234  0A89               	incf	9,f
+  2834  0235  2A37               	goto	u694
+  2835  0236                     u695:	
+  2836  0236  35F2               	lslf	??_testTimeCtrl,f
+  2837  0237                     u694:	
+  2838  0237  0B89               	decfsz	9,f
+  2839  0238  2A36               	goto	u695
+  2840  0239  0872               	movf	??_testTimeCtrl,w
+  2841  023A  3AFF               	xorlw	255
+  2842  023B  00F3               	movwf	??_testTimeCtrl+1
+  2843  023C  0873               	movf	??_testTimeCtrl+1,w
+  2844  023D  0022               	movlb	2	; select bank2
+  2845  023E  058E               	andwf	14,f	;volatile
+  2846  023F  0008               	return
+  2847  0240                     __end_of_testTimeCtrl:	
+  2848                           
+  2849                           	psect	text13
+  2850  0340                     __ptext13:	
+  2851 ;; *************** function _startTimeCtrl *****************
+  2852 ;; Defined at:
+  2853 ;;		line 46 in file "mcc_generated_files/time_ctrl.c"
+  2854 ;; Parameters:    Size  Location     Type
+  2855 ;;		None
+  2856 ;; Auto vars:     Size  Location     Type
+  2857 ;;		None
+  2858 ;; Return value:  Size  Location     Type
+  2859 ;;                  1    wreg      void 
+  2860 ;; Registers used:
+  2861 ;;		wreg, fsr1l, fsr1h, status,2, status,0, pclath, cstack
+  2862 ;; Tracked objects:
+  2863 ;;		On entry : 0/0
+  2864 ;;		On exit  : 0/0
+  2865 ;;		Unchanged: 0/0
+  2866 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2867 ;;      Params:         0       0       0       0
+  2868 ;;      Locals:         0       0       0       0
+  2869 ;;      Temps:          0       0       0       0
+  2870 ;;      Totals:         0       0       0       0
+  2871 ;;Total ram usage:        0 bytes
+  2872 ;; Hardware stack levels used:    1
+  2873 ;; Hardware stack levels required when called:    5
+  2874 ;; This function calls:
+  2875 ;;		_getTimeData
+  2876 ;;		_stopTimeCtrl
+  2877 ;; This function is called by:
+  2878 ;;		_EUSART_Deal
+  2879 ;; This function uses a non-reentrant model
+  2880 ;;
+  2881                           
+  2882                           
+  2883                           ;psect for function _startTimeCtrl
+  2884  0340                     _startTimeCtrl:	
+  2885                           
+  2886                           ;time_ctrl.c: 48: getTimeData();
+  2887                           
+  2888                           ;incstack = 0
+  2889                           ; Regs used in _startTimeCtrl: [wreg+fsr1l+fsr1h+status,2+status,0+pclath+cstack]
+  2890  0340  3181  2124  3183   	fcall	_getTimeData
+  2891                           
+  2892                           ;time_ctrl.c: 49: stopTimeCtrl();
+  2893  0343  3182  2240         	fcall	_stopTimeCtrl
+  2894                           
+  2895                           ;time_ctrl.c: 50: timeCtrlStartFlag = 1;
+  2896  0345  01FA               	clrf	_timeCtrlStartFlag
+  2897  0346  0AFA               	incf	_timeCtrlStartFlag,f
+  2898  0347  0008               	return
+  2899  0348                     __end_of_startTimeCtrl:	
+  2900                           
+  2901                           	psect	text14
+  2902  0240                     __ptext14:	
+  2903 ;; *************** function _stopTimeCtrl *****************
+  2904 ;; Defined at:
+  2905 ;;		line 53 in file "mcc_generated_files/time_ctrl.c"
+  2906 ;; Parameters:    Size  Location     Type
+  2907 ;;		None
+  2908 ;; Auto vars:     Size  Location     Type
+  2909 ;;  i               1    4[COMMON] unsigned char 
+  2910 ;; Return value:  Size  Location     Type
+  2911 ;;                  1    wreg      void 
+  2912 ;; Registers used:
+  2913 ;;		wreg, fsr1l, fsr1h, status,2, status,0
+  2914 ;; Tracked objects:
+  2915 ;;		On entry : 0/0
+  2916 ;;		On exit  : 0/0
+  2917 ;;		Unchanged: 0/0
+  2918 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2919 ;;      Params:         0       0       0       0
+  2920 ;;      Locals:         1       0       0       0
+  2921 ;;      Temps:          2       0       0       0
+  2922 ;;      Totals:         3       0       0       0
+  2923 ;;Total ram usage:        3 bytes
+  2924 ;; Hardware stack levels used:    1
+  2925 ;; Hardware stack levels required when called:    4
+  2926 ;; This function calls:
+  2927 ;;		Nothing
+  2928 ;; This function is called by:
+  2929 ;;		_EUSART_Deal
+  2930 ;;		_startTimeCtrl
+  2931 ;;		_main
+  2932 ;; This function uses a non-reentrant model
+  2933 ;;
+  2934                           
+  2935                           
+  2936                           ;psect for function _stopTimeCtrl
+  2937  0240                     _stopTimeCtrl:	
+  2938                           
+  2939                           ;time_ctrl.c: 55: uint8_t i;
+  2940                           ;time_ctrl.c: 56: timeCtrlStartFlag = 0;
+  2941                           
+  2942                           ;incstack = 0
+  2943                           ; Regs used in _stopTimeCtrl: [wreg+fsr1l+fsr1h+status,2+status,0]
+  2944  0240  01FA               	clrf	_timeCtrlStartFlag
+  2945                           
+  2946                           ;time_ctrl.c: 58: do { LATAbits.LATA2 = 1; } while(0);
+  2947  0241  0022               	movlb	2	; select bank2
+  2948  0242  150C               	bsf	12,2	;volatile
+  2949                           
+  2950                           ;time_ctrl.c: 60: for(i=0; i<8; i++)
+  2951  0243  01F4               	clrf	stopTimeCtrl@i
+  2952  0244                     L3:	
+  2953  0244  3008               	movlw	8
+  2954  0245  0274               	subwf	stopTimeCtrl@i,w
+  2955  0246  1803               	btfsc	3,0
+  2956  0247  0008               	return
+  2957                           
+  2958                           ;time_ctrl.c: 61: {
+  2959                           ;time_ctrl.c: 62: IQRSta[i] = 0;
+  2960  0248  0874               	movf	stopTimeCtrl@i,w
+  2961  0249  3E38               	addlw	(low (_IQRSta| 0))& (0+255)
+  2962  024A  0086               	movwf	6
+  2963  024B  0187               	clrf	7
+  2964  024C  0181               	clrf	1
+  2965                           
+  2966                           ;time_ctrl.c: 63: testIQRSta[i] = 0;
+  2967  024D  0874               	movf	stopTimeCtrl@i,w
+  2968  024E  3E30               	addlw	(low (_testIQRSta| 0))& (0+255)
+  2969  024F  0086               	movwf	6
+  2970  0250  0187               	clrf	7
+  2971  0251  0181               	clrf	1
+  2972                           
+  2973                           ;time_ctrl.c: 64: IQRPreSta[i] = 3;
+  2974  0252  3003               	movlw	3
+  2975  0253  00F2               	movwf	??_stopTimeCtrl
+  2976  0254  0874               	movf	stopTimeCtrl@i,w
+  2977  0255  3E54               	addlw	(low (_IQRPreSta| 0))& (0+255)
+  2978  0256  0086               	movwf	6
+  2979  0257  0187               	clrf	7
+  2980  0258  0872               	movf	??_stopTimeCtrl,w
+  2981  0259  0081               	movwf	1
+  2982                           
+  2983                           ;time_ctrl.c: 65: LATC &= ~(1<<i);
+  2984  025A  3001               	movlw	1
+  2985  025B  00F2               	movwf	??_stopTimeCtrl
+  2986  025C  0A74               	incf	stopTimeCtrl@i,w
+  2987  025D  2A5F               	goto	u524
+  2988  025E                     u525:	
+  2989  025E  35F2               	lslf	??_stopTimeCtrl,f
+  2990  025F                     u524:	
+  2991  025F  0B89               	decfsz	9,f
+  2992  0260  2A5E               	goto	u525
+  2993  0261  0872               	movf	??_stopTimeCtrl,w
+  2994  0262  3AFF               	xorlw	255
+  2995  0263  00F3               	movwf	??_stopTimeCtrl+1
+  2996  0264  0873               	movf	??_stopTimeCtrl+1,w
+  2997  0265  058E               	andwf	14,f	;volatile
+  2998  0266  3001               	movlw	1
+  2999  0267  00F2               	movwf	??_stopTimeCtrl
+  3000  0268  0872               	movf	??_stopTimeCtrl,w
+  3001  0269  07F4               	addwf	stopTimeCtrl@i,f
+  3002  026A  2A44               	goto	L3
+  3003  026B                     __end_of_stopTimeCtrl:	
+  3004                           
+  3005                           	psect	text15
+  3006  0124                     __ptext15:	
+  3007 ;; *************** function _getTimeData *****************
+  3008 ;; Defined at:
+  3009 ;;		line 13 in file "mcc_generated_files/time_ctrl.c"
+  3010 ;; Parameters:    Size  Location     Type
+  3011 ;;		None
+  3012 ;; Auto vars:     Size  Location     Type
+  3013 ;;  j               1    4[COMMON] unsigned char 
+  3014 ;;  i               1    3[COMMON] unsigned char 
+  3015 ;;  cnt             1    2[COMMON] unsigned char 
+  3016 ;; Return value:  Size  Location     Type
+  3017 ;;                  1    wreg      void 
+  3018 ;; Registers used:
+  3019 ;;		wreg, fsr1l, fsr1h, status,2, status,0
+  3020 ;; Tracked objects:
+  3021 ;;		On entry : 0/0
+  3022 ;;		On exit  : 0/0
+  3023 ;;		Unchanged: 0/0
+  3024 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  3025 ;;      Params:         0       0       0       0
+  3026 ;;      Locals:         3       0       0       0
+  3027 ;;      Temps:          0      13       0       0
+  3028 ;;      Totals:         3      13       0       0
+  3029 ;;Total ram usage:       16 bytes
+  3030 ;; Hardware stack levels used:    1
+  3031 ;; Hardware stack levels required when called:    4
+  3032 ;; This function calls:
+  3033 ;;		Nothing
+  3034 ;; This function is called by:
+  3035 ;;		_startTimeCtrl
+  3036 ;; This function uses a non-reentrant model
+  3037 ;;
+  3038                           
+  3039                           
+  3040                           ;psect for function _getTimeData
+  3041  0124                     _getTimeData:	
+  3042                           
+  3043                           ;time_ctrl.c: 15: uint8_t i, j;
+  3044                           ;time_ctrl.c: 16: uint8_t cnt = 0;
+  3045                           
+  3046                           ;incstack = 0
+  3047                           ; Regs used in _getTimeData: [wreg+fsr1l+fsr1h+status,2+status,0]
+  3048  0124  01F2               	clrf	getTimeData@cnt
+  3049                           
+  3050                           ;time_ctrl.c: 17: for(i=0; i<8; i++)
+  3051  0125  01F3               	clrf	getTimeData@i
+  3052  0126                     L4:	
+  3053  0126  3008               	movlw	8
+  3054  0127  0273               	subwf	getTimeData@i,w
+  3055  0128  1803               	btfsc	3,0
+  3056  0129  0008               	return
+  3057                           
+  3058                           ;time_ctrl.c: 18: {
+  3059                           ;time_ctrl.c: 19: for(j=0; j<4; j++)
+  3060  012A  01F4               	clrf	getTimeData@j
+  3061  012B  3004               	movlw	4
+  3062  012C  0274               	subwf	getTimeData@j,w
+  3063  012D  1803               	btfsc	3,0
+  3064  012E  2990               	goto	l1122
+  3065  012F                     l1114:	
+  3066                           
+  3067                           ;time_ctrl.c: 20: {
+  3068                           ;time_ctrl.c: 21: timeCtrlValue[i][j] = eusartRxBuffer[cnt+5];
+  3069  012F  0872               	movf	getTimeData@cnt,w
+  3070  0130  3E05               	addlw	5
+  3071  0131  3E20               	addlw	(low (_eusartRxBuffer| (0+256)))& (0+255)
+  3072  0132  0086               	movwf	6
+  3073  0133  3001               	movlw	1	; select bank2/3
+  3074  0134  0087               	movwf	7
+  3075  0135  0801               	movf	1,w
+  3076  0136  0020               	movlb	0	; select bank0
+  3077  0137  00C7               	movwf	??_getTimeData
+  3078  0138  01C8               	clrf	??_getTimeData+1
+  3079  0139  0873               	movf	getTimeData@i,w
+  3080  013A  00C9               	movwf	??_getTimeData+2
+  3081  013B  3003               	movlw	3
+  3082  013C                     u565:	
+  3083  013C  35C9               	lslf	??_getTimeData+2,f
+  3084  013D  0B89               	decfsz	9,f
+  3085  013E  293C               	goto	u565
+  3086  013F  30A0               	movlw	(low (_timeCtrlValue| 0))& (0+255)
+  3087  0140  0749               	addwf	??_getTimeData+2,w
+  3088  0141  00CA               	movwf	??_getTimeData+3
+  3089  0142  3574               	lslf	getTimeData@j,w
+  3090  0143  074A               	addwf	??_getTimeData+3,w
+  3091  0144  00CB               	movwf	??_getTimeData+4
+  3092  0145  084B               	movf	??_getTimeData+4,w
+  3093  0146  0086               	movwf	6
+  3094  0147  0187               	clrf	7
+  3095  0148  0847               	movf	??_getTimeData,w
+  3096  0149  3FC0               	movwi [0]fsr1
+  3097  014A  0848               	movf	??_getTimeData+1,w
+  3098  014B  3FC1               	movwi [1]fsr1
+  3099                           
+  3100                           ;time_ctrl.c: 22: timeCtrlValue[i][j] = (timeCtrlValue[i][j] << 8)
+  3101                           ;time_ctrl.c: 23: | eusartRxBuffer[cnt+6];
+  3102  014C  0872               	movf	getTimeData@cnt,w
+  3103  014D  3E06               	addlw	6
+  3104  014E  3E20               	addlw	(low (_eusartRxBuffer| (0+256)))& (0+255)
+  3105  014F  0086               	movwf	6
+  3106  0150  3001               	movlw	1	; select bank2/3
+  3107  0151  0087               	movwf	7
+  3108  0152  0801               	movf	1,w
+  3109  0153  00C7               	movwf	??_getTimeData
+  3110  0154  01C8               	clrf	??_getTimeData+1
+  3111  0155  0873               	movf	getTimeData@i,w
+  3112  0156  00C9               	movwf	??_getTimeData+2
+  3113  0157  3003               	movlw	3
+  3114  0158                     u575:	
+  3115  0158  35C9               	lslf	??_getTimeData+2,f
+  3116  0159  0B89               	decfsz	9,f
+  3117  015A  2958               	goto	u575
+  3118  015B  30A0               	movlw	(low (_timeCtrlValue| 0))& (0+255)
+  3119  015C  0749               	addwf	??_getTimeData+2,w
+  3120  015D  00CA               	movwf	??_getTimeData+3
+  3121  015E  3574               	lslf	getTimeData@j,w
+  3122  015F  074A               	addwf	??_getTimeData+3,w
+  3123  0160  00CB               	movwf	??_getTimeData+4
+  3124  0161  084B               	movf	??_getTimeData+4,w
+  3125  0162  0086               	movwf	6
+  3126  0163  0187               	clrf	7
+  3127  0164  3F40               	moviw [0]fsr1
+  3128  0165  00CC               	movwf	??_getTimeData+5
+  3129  0166  3F41               	moviw [1]fsr1
+  3130  0167  00CD               	movwf	??_getTimeData+6
+  3131  0168  084C               	movf	??_getTimeData+5,w
+  3132  0169  00CD               	movwf	??_getTimeData+6
+  3133  016A  01CC               	clrf	??_getTimeData+5
+  3134  016B  0847               	movf	??_getTimeData,w
+  3135  016C  044C               	iorwf	??_getTimeData+5,w
+  3136  016D  00CF               	movwf	??_getTimeData+8
+  3137  016E  0848               	movf	??_getTimeData+1,w
+  3138  016F  044D               	iorwf	??_getTimeData+6,w
+  3139  0170  00D0               	movwf	??_getTimeData+9
+  3140  0171  0873               	movf	getTimeData@i,w
+  3141  0172  00D1               	movwf	??_getTimeData+10
+  3142  0173  3003               	movlw	3
+  3143  0174                     u585:	
+  3144  0174  35D1               	lslf	??_getTimeData+10,f
+  3145  0175  0B89               	decfsz	9,f
+  3146  0176  2974               	goto	u585
+  3147  0177  30A0               	movlw	(low (_timeCtrlValue| 0))& (0+255)
+  3148  0178  0751               	addwf	??_getTimeData+10,w
+  3149  0179  00D2               	movwf	??_getTimeData+11
+  3150  017A  3574               	lslf	getTimeData@j,w
+  3151  017B  0752               	addwf	??_getTimeData+11,w
+  3152  017C  00D3               	movwf	??_getTimeData+12
+  3153  017D  0853               	movf	??_getTimeData+12,w
+  3154  017E  0086               	movwf	6
+  3155  017F  0187               	clrf	7
+  3156  0180  084F               	movf	??_getTimeData+8,w
+  3157  0181  3FC0               	movwi [0]fsr1
+  3158  0182  0850               	movf	??_getTimeData+9,w
+  3159  0183  3FC1               	movwi [1]fsr1
+  3160                           
+  3161                           ;time_ctrl.c: 24: cnt += 2;
+  3162  0184  3002               	movlw	2
+  3163  0185  00C7               	movwf	??_getTimeData
+  3164  0186  0847               	movf	??_getTimeData,w
+  3165  0187  07F2               	addwf	getTimeData@cnt,f
+  3166  0188  3001               	movlw	1
+  3167  0189  00C7               	movwf	??_getTimeData
+  3168  018A  0847               	movf	??_getTimeData,w
+  3169  018B  07F4               	addwf	getTimeData@j,f
+  3170  018C  3004               	movlw	4
+  3171  018D  0274               	subwf	getTimeData@j,w
+  3172  018E  1C03               	skipc
+  3173  018F  292F               	goto	l1114
+  3174  0190                     l1122:	
+  3175  0190  3001               	movlw	1
+  3176  0191  0020               	movlb	0	; select bank0
+  3177  0192  00C7               	movwf	??_getTimeData
+  3178  0193  0847               	movf	??_getTimeData,w
+  3179  0194  07F3               	addwf	getTimeData@i,f
+  3180  0195  2926               	goto	L4
+  3181  0196                     __end_of_getTimeData:	
+  3182                           
+  3183                           	psect	text16
+  3184  0329                     __ptext16:	
+  3185 ;; *************** function _Get_Device_Addr *****************
+  3186 ;; Defined at:
+  3187 ;;		line 75 in file "mcc_generated_files/mcc.c"
+  3188 ;; Parameters:    Size  Location     Type
+  3189 ;;		None
+  3190 ;; Auto vars:     Size  Location     Type
+  3191 ;;  device_addr     1    3[COMMON] unsigned char 
+  3192 ;; Return value:  Size  Location     Type
+  3193 ;;                  1    wreg      unsigned char 
+  3194 ;; Registers used:
+  3195 ;;		wreg, status,2, status,0
+  3196 ;; Tracked objects:
+  3197 ;;		On entry : 0/0
+  3198 ;;		On exit  : 0/0
+  3199 ;;		Unchanged: 0/0
+  3200 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  3201 ;;      Params:         0       0       0       0
+  3202 ;;      Locals:         1       0       0       0
+  3203 ;;      Temps:          1       0       0       0
+  3204 ;;      Totals:         2       0       0       0
+  3205 ;;Total ram usage:        2 bytes
+  3206 ;; Hardware stack levels used:    1
+  3207 ;; Hardware stack levels required when called:    4
+  3208 ;; This function calls:
+  3209 ;;		Nothing
+  3210 ;; This function is called by:
+  3211 ;;		_EUSART_Deal
+  3212 ;; This function uses a non-reentrant model
+  3213 ;;
+  3214                           
+  3215                           
+  3216                           ;psect for function _Get_Device_Addr
+  3217  0329                     _Get_Device_Addr:	
+  3218                           
+  3219                           ;mcc.c: 77: unsigned char device_addr;
+  3220                           ;mcc.c: 79: device_addr = PORTBbits.RB4;
+  3221                           
+  3222                           ;incstack = 0
+  3223                           ; Regs used in _Get_Device_Addr: [wreg+status,2+status,0]
+  3224  0329  3000               	movlw	0
+  3225  032A  0020               	movlb	0	; select bank0
+  3226  032B  1A0D               	btfsc	13,4	;volatile
+  3227  032C  3001               	movlw	1
+  3228  032D  00F3               	movwf	Get_Device_Addr@device_addr
+  3229                           
+  3230                           ;mcc.c: 80: device_addr |= PORTBbits.RB6 << 1;
+  3231  032E  0E0D               	swapf	13,w	;volatile
+  3232  032F  0C89               	rrf	9,f
+  3233  0330  0C89               	rrf	9,f
+  3234  0331  3901               	andlw	1
+  3235  0332  0709               	addwf	9,w
+  3236  0333  00F2               	movwf	??_Get_Device_Addr
+  3237  0334  0872               	movf	??_Get_Device_Addr,w
+  3238  0335  04F3               	iorwf	Get_Device_Addr@device_addr,f
+  3239                           
+  3240                           ;mcc.c: 82: return device_addr;
+  3241  0336  0873               	movf	Get_Device_Addr@device_addr,w
+  3242  0337  0008               	return
+  3243  0338                     __end_of_Get_Device_Addr:	
+  3244                           
+  3245                           	psect	intentry
+  3246  0004                     __pintentry:	
+  3247 ;; *************** function _INTERRUPT_InterruptManager *****************
+  3248 ;; Defined at:
+  3249 ;;		line 52 in file "mcc_generated_files/interrupt_manager.c"
+  3250 ;; Parameters:    Size  Location     Type
+  3251 ;;		None
+  3252 ;; Auto vars:     Size  Location     Type
+  3253 ;;		None
+  3254 ;; Return value:  Size  Location     Type
+  3255 ;;                  1    wreg      void 
+  3256 ;; Registers used:
+  3257 ;;		wreg, fsr1l, fsr1h, status,2, status,0, pclath, cstack
+  3258 ;; Tracked objects:
+  3259 ;;		On entry : 0/0
+  3260 ;;		On exit  : 0/0
+  3261 ;;		Unchanged: 0/0
+  3262 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  3263 ;;      Params:         0       0       0       0
+  3264 ;;      Locals:         0       0       0       0
+  3265 ;;      Temps:          1       0       0       0
+  3266 ;;      Totals:         1       0       0       0
+  3267 ;;Total ram usage:        1 bytes
+  3268 ;; Hardware stack levels used:    1
+  3269 ;; Hardware stack levels required when called:    3
+  3270 ;; This function calls:
+  3271 ;;		Absolute function
+  3272 ;;		_EUSART_Receive_ISR
+  3273 ;;		_TMR0_ISR
+  3274 ;; This function is called by:
+  3275 ;;		Interrupt level 1
+  3276 ;; This function uses a non-reentrant model
+  3277 ;;
+  3278                           
+  3279  0004                     _INTERRUPT_InterruptManager:	
+  3280                           
+  3281                           ;incstack = 0
+  3282  0004  147E               	bsf	126,0	;set compiler interrupt flag (level 1)
+  3283                           
+  3284                           ; Regs used in _INTERRUPT_InterruptManager: [wreg+fsr1l+fsr1h+status,2+status,0+pclath+c
+      +                          stack]
+  3285  0005  3180               	pagesel	$
+  3286  0006  0020               	movlb	0	; select bank0
+  3287  0007  087F               	movf	127,w
+  3288  0008  00F1               	movwf	??_INTERRUPT_InterruptManager
+  3289                           
+  3290                           ;interrupt_manager.c: 55: if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
+  3291  0009  1A8B               	btfsc	11,5	;volatile
+  3292  000A  1D0B               	btfss	11,2	;volatile
+  3293  000B  2810               	goto	i1l89
+  3294                           
+  3295                           ;interrupt_manager.c: 56: {
+  3296                           ;interrupt_manager.c: 57: TMR0_ISR();
+  3297  000C  3183  234F  3180   	fcall	_TMR0_ISR
+  3298                           
+  3299                           ;interrupt_manager.c: 58: }
+  3300  000F  2822               	goto	i1l97
+  3301  0010                     i1l89:	
+  3302                           
+  3303                           ;interrupt_manager.c: 59: else if(INTCONbits.PEIE == 1)
+  3304  0010  1F0B               	btfss	11,6	;volatile
+  3305  0011  2822               	goto	i1l97
+  3306                           
+  3307                           ;interrupt_manager.c: 60: {
+  3308                           ;interrupt_manager.c: 61: if(PIE1bits.TXIE == 1 && PIR1bits.TXIF == 1)
+  3309  0012  0021               	movlb	1	; select bank1
+  3310  0013  1A11               	btfsc	17,4	;volatile
+  3311  0014  0020               	movlb	0	; select bank0
+  3312  0015  1A11               	btfsc	17,4	;volatile
+  3313  0016  2822               	goto	i1l97
+  3314                           
+  3315                           ;interrupt_manager.c: 65: else if(PIE1bits.RCIE == 1 && PIR1bits.RCIF == 1)
+  3316                           
+  3317                           ;interrupt_manager.c: 62: {
+  3318                           ;interrupt_manager.c: 64: }
+  3319  0017  0021               	movlb	1	; select bank1
+  3320  0018  1E91               	btfss	17,5	;volatile
+  3321  0019  2822               	goto	i1l97
+  3322  001A  0020               	movlb	0	; select bank0
+  3323  001B  1E91               	btfss	17,5	;volatile
+  3324  001C  2822               	goto	i1l97
+  3325                           
+  3326                           ;interrupt_manager.c: 66: {
+  3327                           ;interrupt_manager.c: 67: EUSART_RxDefaultInterruptHandler();
+  3328  001D  085F               	movf	_EUSART_RxDefaultInterruptHandler+1,w
+  3329  001E  008A               	movwf	10
+  3330  001F  085E               	movf	_EUSART_RxDefaultInterruptHandler,w
+  3331  0020  000A               	callw
+  3332  0021  3180               	pagesel	$
+  3333  0022                     i1l97:	
+  3334                           ;interrupt_manager.c: 74: else
+  3335                           ;interrupt_manager.c: 75: {
+  3336                           
+  3337                           ;interrupt_manager.c: 72: }
+  3338                           ;interrupt_manager.c: 73: }
+  3339                           
+  3340                           ;interrupt_manager.c: 69: else
+  3341                           ;interrupt_manager.c: 70: {
+  3342                           
+  3343                           ;interrupt_manager.c: 68: }
+  3344                           
+  3345  0022  0871               	movf	??_INTERRUPT_InterruptManager,w
+  3346  0023  0020               	movlb	0	; select bank0
+  3347  0024  00FF               	movwf	127
+  3348  0025  107E               	bcf	126,0	;clear compiler interrupt flag (level 1)
+  3349  0026  0009               	retfie
+  3350  0027                     __end_of_INTERRUPT_InterruptManager:	
+  3351                           
+  3352                           	psect	text18
+  3353  034F                     __ptext18:	
+  3354 ;; *************** function _TMR0_ISR *****************
+  3355 ;; Defined at:
+  3356 ;;		line 108 in file "mcc_generated_files/tmr0.c"
+  3357 ;; Parameters:    Size  Location     Type
+  3358 ;;		None
+  3359 ;; Auto vars:     Size  Location     Type
+  3360 ;;		None
+  3361 ;; Return value:  Size  Location     Type
+  3362 ;;                  1    wreg      void 
+  3363 ;; Registers used:
+  3364 ;;		wreg, status,2, status,0, pclath, cstack
+  3365 ;; Tracked objects:
+  3366 ;;		On entry : 0/0
+  3367 ;;		On exit  : 0/0
+  3368 ;;		Unchanged: 0/0
+  3369 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  3370 ;;      Params:         0       0       0       0
+  3371 ;;      Locals:         0       0       0       0
+  3372 ;;      Temps:          0       0       0       0
+  3373 ;;      Totals:         0       0       0       0
+  3374 ;;Total ram usage:        0 bytes
+  3375 ;; Hardware stack levels used:    1
+  3376 ;; Hardware stack levels required when called:    2
+  3377 ;; This function calls:
+  3378 ;;		_TMR0_CallBack
+  3379 ;; This function is called by:
+  3380 ;;		_INTERRUPT_InterruptManager
+  3381 ;; This function uses a non-reentrant model
+  3382 ;;
+  3383                           
+  3384                           
+  3385                           ;psect for function _TMR0_ISR
+  3386  034F                     _TMR0_ISR:	
+  3387                           
+  3388                           ;tmr0.c: 112: INTCONbits.TMR0IF = 0;
+  3389                           
+  3390                           ;incstack = 0
+  3391                           ; Regs used in _TMR0_ISR: [wreg+status,2+status,0+pclath+cstack]
+  3392  034F  110B               	bcf	11,2	;volatile
+  3393                           
+  3394                           ;tmr0.c: 114: TMR0 = timer0ReloadVal;
+  3395  0350  0020               	movlb	0	; select bank0
+  3396  0351  0860               	movf	_timer0ReloadVal,w	;volatile
+  3397  0352  0095               	movwf	21	;volatile
+  3398                           
+  3399                           ;tmr0.c: 118: TMR0_CallBack();
+  3400  0353  3181  21D7         	fcall	_TMR0_CallBack
+  3401  0355  0008               	return
+  3402  0356                     __end_of_TMR0_ISR:	
+  3403                           
+  3404                           	psect	text19
+  3405  01D7                     __ptext19:	
+  3406 ;; *************** function _TMR0_CallBack *****************
+  3407 ;; Defined at:
+  3408 ;;		line 123 in file "mcc_generated_files/tmr0.c"
+  3409 ;; Parameters:    Size  Location     Type
+  3410 ;;		None
+  3411 ;; Auto vars:     Size  Location     Type
+  3412 ;;		None
+  3413 ;; Return value:  Size  Location     Type
+  3414 ;;                  1    wreg      void 
+  3415 ;; Registers used:
+  3416 ;;		wreg, status,2, status,0, pclath, cstack
+  3417 ;; Tracked objects:
+  3418 ;;		On entry : 0/0
+  3419 ;;		On exit  : 0/0
+  3420 ;;		Unchanged: 0/0
+  3421 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  3422 ;;      Params:         0       0       0       0
+  3423 ;;      Locals:         0       0       0       0
+  3424 ;;      Temps:          1       0       0       0
+  3425 ;;      Totals:         1       0       0       0
+  3426 ;;Total ram usage:        1 bytes
+  3427 ;; Hardware stack levels used:    1
+  3428 ;; Hardware stack levels required when called:    1
+  3429 ;; This function calls:
+  3430 ;;		Absolute function
+  3431 ;;		_TMR0_DefaultInterruptHandler
+  3432 ;; This function is called by:
+  3433 ;;		_TMR0_ISR
+  3434 ;; This function uses a non-reentrant model
+  3435 ;;
+  3436                           
+  3437                           
+  3438                           ;psect for function _TMR0_CallBack
+  3439  01D7                     _TMR0_CallBack:	
+  3440                           
+  3441                           ;tmr0.c: 126: static uint8_t eusartRXOvertimeCnt = 0;
+  3442                           ;tmr0.c: 127: static uint8_t timeCrlCnt = 0;
+  3443                           ;tmr0.c: 128: static uint8_t preEusartRxCount = 0;
+  3444                           ;tmr0.c: 129: static uint8_t testTimeCtrlCnt = 0;
+  3445                           ;tmr0.c: 131: if(timeCtrlStartFlag)
+  3446                           
+  3447                           ;incstack = 0
+  3448                           ; Regs used in _TMR0_CallBack: [wreg+status,2+status,0+pclath+cstack]
+  3449  01D7  087A               	movf	_timeCtrlStartFlag,w
+  3450  01D8  1903               	btfsc	3,2
+  3451  01D9  29E6               	goto	i1l1202
+  3452                           
+  3453                           ;tmr0.c: 132: {
+  3454                           ;tmr0.c: 133: if(++timeCrlCnt >= 10)
+  3455  01DA  3001               	movlw	1
+  3456  01DB  00F0               	movwf	??_TMR0_CallBack
+  3457  01DC  0870               	movf	??_TMR0_CallBack,w
+  3458  01DD  0020               	movlb	0	; select bank0
+  3459  01DE  07C4               	addwf	TMR0_CallBack@timeCrlCnt,f
+  3460  01DF  300A               	movlw	10
+  3461  01E0  0244               	subwf	TMR0_CallBack@timeCrlCnt,w
+  3462  01E1  1C03               	skipc
+  3463  01E2  29E6               	goto	i1l1202
+  3464                           
+  3465                           ;tmr0.c: 134: {
+  3466                           ;tmr0.c: 135: timeCrlCnt = 0;
+  3467  01E3  01C4               	clrf	TMR0_CallBack@timeCrlCnt
+  3468                           
+  3469                           ;tmr0.c: 136: timeCtrlOvertimeMask = 1;
+  3470  01E4  01F9               	clrf	_timeCtrlOvertimeMask
+  3471  01E5  0AF9               	incf	_timeCtrlOvertimeMask,f
+  3472  01E6                     i1l1202:	
+  3473                           
+  3474                           ;tmr0.c: 137: }
+  3475                           ;tmr0.c: 138: }
+  3476                           ;tmr0.c: 150: if(eusartRxCount != preEusartRxCount)
+  3477  01E6  0878               	movf	_eusartRxCount,w
+  3478  01E7  0020               	movlb	0	; select bank0
+  3479  01E8  0643               	xorwf	TMR0_CallBack@preEusartRxCount,w
+  3480  01E9  1903               	skipnz
+  3481  01EA  29F1               	goto	i1l1208
+  3482                           
+  3483                           ;tmr0.c: 151: {
+  3484                           ;tmr0.c: 152: preEusartRxCount = eusartRxCount;
+  3485  01EB  0878               	movf	_eusartRxCount,w
+  3486  01EC  00F0               	movwf	??_TMR0_CallBack
+  3487  01ED  0870               	movf	??_TMR0_CallBack,w
+  3488  01EE  00C3               	movwf	TMR0_CallBack@preEusartRxCount
+  3489                           
+  3490                           ;tmr0.c: 153: eusartRXOvertimeCnt = 0;
+  3491  01EF  01C5               	clrf	TMR0_CallBack@eusartRXOvertimeCnt
+  3492                           
+  3493                           ;tmr0.c: 154: }
+  3494  01F0  2A05               	goto	i1l1222
+  3495  01F1                     i1l1208:	
+  3496                           
+  3497                           ;tmr0.c: 155: else
+  3498                           ;tmr0.c: 156: {
+  3499                           ;tmr0.c: 157: if(eusartRxCount != 0)
+  3500  01F1  0878               	movf	_eusartRxCount,w
+  3501  01F2  1903               	btfsc	3,2
+  3502  01F3  2A05               	goto	i1l1222
+  3503                           
+  3504                           ;tmr0.c: 158: {
+  3505                           ;tmr0.c: 159: if(++eusartRXOvertimeCnt >= 2)
+  3506  01F4  3001               	movlw	1
+  3507  01F5  00F0               	movwf	??_TMR0_CallBack
+  3508  01F6  0870               	movf	??_TMR0_CallBack,w
+  3509  01F7  07C5               	addwf	TMR0_CallBack@eusartRXOvertimeCnt,f
+  3510  01F8  3002               	movlw	2
+  3511  01F9  0245               	subwf	TMR0_CallBack@eusartRXOvertimeCnt,w
+  3512  01FA  1C03               	skipc
+  3513  01FB  2A05               	goto	i1l1222
+  3514                           
+  3515                           ;tmr0.c: 160: {
+  3516                           ;tmr0.c: 161: eusartRXOvertimeCnt = 0;
+  3517  01FC  01C5               	clrf	TMR0_CallBack@eusartRXOvertimeCnt
+  3518                           
+  3519                           ;tmr0.c: 162: EusartRxLenth = eusartRxCount;
+  3520  01FD  0878               	movf	_eusartRxCount,w
+  3521  01FE  00F0               	movwf	??_TMR0_CallBack
+  3522  01FF  0870               	movf	??_TMR0_CallBack,w
+  3523  0200  00F7               	movwf	_EusartRxLenth
+  3524                           
+  3525                           ;tmr0.c: 163: preEusartRxCount = 0;
+  3526  0201  01C3               	clrf	TMR0_CallBack@preEusartRxCount
+  3527                           
+  3528                           ;tmr0.c: 164: eusartRxCount = 0;
+  3529  0202  01F8               	clrf	_eusartRxCount
+  3530                           
+  3531                           ;tmr0.c: 165: eusartRxOvertimeMask = 1;
+  3532  0203  01C6               	clrf	_eusartRxOvertimeMask
+  3533  0204  0AC6               	incf	_eusartRxOvertimeMask,f
+  3534  0205                     i1l1222:	
+  3535                           
+  3536                           ;tmr0.c: 166: }
+  3537                           ;tmr0.c: 167: }
+  3538                           ;tmr0.c: 168: }
+  3539                           ;tmr0.c: 170: if(TMR0_InterruptHandler)
+  3540  0205  085C               	movf	_TMR0_InterruptHandler,w
+  3541  0206  045D               	iorwf	_TMR0_InterruptHandler+1,w
+  3542  0207  1903               	btfsc	3,2
+  3543  0208  0008               	return
+  3544                           
+  3545                           ;tmr0.c: 171: {
+  3546                           ;tmr0.c: 172: TMR0_InterruptHandler();
+  3547  0209  085D               	movf	_TMR0_InterruptHandler+1,w
+  3548  020A  008A               	movwf	10
+  3549  020B  085C               	movf	_TMR0_InterruptHandler,w
+  3550  020C  000A               	callw
+  3551  020D  3181               	pagesel	$
+  3552  020E  0008               	return
+  3553  020F                     __end_of_TMR0_CallBack:	
+  3554                           
+  3555                           	psect	text20
+  3556  0372                     __ptext20:	
+  3557 ;; *************** function _TMR0_DefaultInterruptHandler *****************
+  3558 ;; Defined at:
+  3559 ;;		line 180 in file "mcc_generated_files/tmr0.c"
+  3560 ;; Parameters:    Size  Location     Type
+  3561 ;;		None
+  3562 ;; Auto vars:     Size  Location     Type
+  3563 ;;		None
+  3564 ;; Return value:  Size  Location     Type
+  3565 ;;                  1    wreg      void 
+  3566 ;; Registers used:
+  3567 ;;		None
+  3568 ;; Tracked objects:
+  3569 ;;		On entry : 0/0
+  3570 ;;		On exit  : 0/0
+  3571 ;;		Unchanged: 0/0
+  3572 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  3573 ;;      Params:         0       0       0       0
+  3574 ;;      Locals:         0       0       0       0
+  3575 ;;      Temps:          0       0       0       0
+  3576 ;;      Totals:         0       0       0       0
+  3577 ;;Total ram usage:        0 bytes
+  3578 ;; Hardware stack levels used:    1
+  3579 ;; This function calls:
+  3580 ;;		Nothing
+  3581 ;; This function is called by:
+  3582 ;;		_TMR0_Initialize
+  3583 ;;		_TMR0_CallBack
+  3584 ;; This function uses a non-reentrant model
+  3585 ;;
+  3586                           
+  3587                           
+  3588                           ;psect for function _TMR0_DefaultInterruptHandler
+  3589  0372                     _TMR0_DefaultInterruptHandler:	
+  3590                           
+  3591                           ;incstack = 0
+  3592                           ; Regs used in _TMR0_DefaultInterruptHandler: []
+  3593  0372  0008               	return
+  3594  0373                     __end_of_TMR0_DefaultInterruptHandler:	
+  3595                           
+  3596                           	psect	text21
+  3597  0307                     __ptext21:	
+  3598 ;; *************** function _EUSART_Receive_ISR *****************
+  3599 ;; Defined at:
+  3600 ;;		line 199 in file "mcc_generated_files/eusart.c"
+  3601 ;; Parameters:    Size  Location     Type
+  3602 ;;		None
+  3603 ;; Auto vars:     Size  Location     Type
+  3604 ;;		None
+  3605 ;; Return value:  Size  Location     Type
+  3606 ;;                  1    wreg      void 
+  3607 ;; Registers used:
+  3608 ;;		wreg, fsr1l, fsr1h, status,2, status,0
+  3609 ;; Tracked objects:
+  3610 ;;		On entry : 0/0
+  3611 ;;		On exit  : 0/0
+  3612 ;;		Unchanged: 0/0
+  3613 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  3614 ;;      Params:         0       0       0       0
+  3615 ;;      Locals:         0       0       0       0
+  3616 ;;      Temps:          1       0       0       0
+  3617 ;;      Totals:         1       0       0       0
+  3618 ;;Total ram usage:        1 bytes
+  3619 ;; Hardware stack levels used:    1
+  3620 ;; This function calls:
+  3621 ;;		Nothing
+  3622 ;; This function is called by:
+  3623 ;;		_EUSART_Initialize
+  3624 ;;		_INTERRUPT_InterruptManager
+  3625 ;; This function uses a non-reentrant model
+  3626 ;;
+  3627                           
+  3628                           
+  3629                           ;psect for function _EUSART_Receive_ISR
+  3630  0307                     _EUSART_Receive_ISR:	
+  3631                           
+  3632                           ;eusart.c: 201: if(1 == RCSTAbits.OERR)
+  3633                           
+  3634                           ;incstack = 0
+  3635                           ; Regs used in _EUSART_Receive_ISR: [wreg+fsr1l+fsr1h+status,2+status,0]
+  3636  0307  0023               	movlb	3	; select bank3
+  3637  0308  1C9D               	btfss	29,1	;volatile
+  3638  0309  2B0C               	goto	i1l1264
+  3639                           
+  3640                           ;eusart.c: 202: {
+  3641                           ;eusart.c: 205: RCSTAbits.CREN = 0;
+  3642  030A  121D               	bcf	29,4	;volatile
+  3643                           
+  3644                           ;eusart.c: 206: RCSTAbits.CREN = 1;
+  3645  030B  161D               	bsf	29,4	;volatile
+  3646  030C                     i1l1264:	
+  3647                           
+  3648                           ;eusart.c: 207: }
+  3649                           ;eusart.c: 216: eusartRxBuffer[eusartRxCount++] = RCREG;
+  3650  030C  0819               	movf	25,w	;volatile
+  3651  030D  00F0               	movwf	??_EUSART_Receive_ISR
+  3652  030E  0878               	movf	_eusartRxCount,w
+  3653  030F  3E20               	addlw	(low (_eusartRxBuffer| (0+256)))& (0+255)
+  3654  0310  0086               	movwf	6
+  3655  0311  3001               	movlw	1	; select bank2/3
+  3656  0312  0087               	movwf	7
+  3657  0313  0870               	movf	??_EUSART_Receive_ISR,w
+  3658  0314  0081               	movwf	1
+  3659  0315  3001               	movlw	1
+  3660  0316  00F0               	movwf	??_EUSART_Receive_ISR
+  3661  0317  0870               	movf	??_EUSART_Receive_ISR,w
+  3662  0318  07F8               	addwf	_eusartRxCount,f
+  3663  0319  0008               	return
+  3664  031A                     __end_of_EUSART_Receive_ISR:	
+  3665  007E                     btemp	set	126	;btemp
+  3666  007E                     int$flags	set	126
+  3667  007E                     wtemp0	set	126
+>>>>>>> master
 
 
 Data Sizes:
     Strings     0
     Constant    0
+<<<<<<< HEAD
     Data        9
     BSS         184
+=======
+    Data        8
+    BSS         182
+>>>>>>> master
     Persistent  5
     Stack       0
 
 Auto Spaces:
     Space          Size  Autos    Used
     COMMON           14      7      11
+<<<<<<< HEAD
     BANK0            80     13      68
+=======
+    BANK0            80     13      65
+>>>>>>> master
     BANK1            80      0      64
     BANK2            80      0      75
 
@@ -4020,11 +6571,19 @@ SFR2                 0      0       0       3        0.0%
 STACK                0      0       0       3        0.0%
 BITSFR3              0      0       0       4        0.0%
 SFR3                 0      0       0       4        0.0%
+<<<<<<< HEAD
 ABS                  0      0      DA       4        0.0%
 BITBANK0            50      0       0       5        0.0%
 BITSFR4              0      0       0       5        0.0%
 SFR4                 0      0       0       5        0.0%
 BANK0               50      D      44       6       85.0%
+=======
+ABS                  0      0      D7       4        0.0%
+BITBANK0            50      0       0       5        0.0%
+BITSFR4              0      0       0       5        0.0%
+SFR4                 0      0       0       5        0.0%
+BANK0               50      D      41       6       81.3%
+>>>>>>> master
 BITSFR5              0      0       0       6        0.0%
 SFR5                 0      0       0       6        0.0%
 BITBANK1            50      0       0       7        0.0%
@@ -4041,7 +6600,11 @@ BITSFR9              0      0       0      10        0.0%
 SFR9                 0      0       0      10        0.0%
 BITSFR10             0      0       0      11        0.0%
 SFR10                0      0       0      11        0.0%
+<<<<<<< HEAD
 DATA                 0      0      DA      11        0.0%
+=======
+DATA                 0      0      D7      11        0.0%
+>>>>>>> master
 BITSFR11             0      0       0      12        0.0%
 SFR11                0      0       0      12        0.0%
 BITSFR12             0      0       0      13        0.0%
@@ -4087,6 +6650,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.45 build -152302408 
+<<<<<<< HEAD
 Symbol Table                                                                                   Mon Aug 06 17:58:01 2018
 
                ?_EUSART_SetRxInterruptHandler 0072                              ?_tempCtrlProcess 0070  
@@ -4115,26 +6679,67 @@ Symbol Table                                                                    
                                         l1429 021C                                          l1359 0092  
                                         l1367 00CE                                          l1439 022E  
                                         l1377 010E                                          l1385 0129  
+=======
+Symbol Table                                                                                   Mon Jul 02 16:07:11 2018
+
+               ?_EUSART_SetRxInterruptHandler 0072                              ?_tempCtrlProcess 0070  
+                                 __CFG_CP$OFF 0000                               _timer0ReloadVal 0060  
+                                 __CFG_LVP$ON 0000                                           l327 02B2  
+                                         l282 00D7                                  __CFG_CPD$OFF 0000  
+                                         u524 025F                                           u525 025E  
+                                         u714 028A                                           u715 0289  
+                                         u565 013C                                           u575 0158  
+                                         u585 0174                                           u914 00F0  
+                                         u915 00EF                                           u684 0228  
+                                         u685 0227                                           u694 0237  
+                                         u934 0103                                           u695 0236  
+                                         u935 0102                                           u855 0069  
+                                         u865 007D                                           u875 0092  
+                                         u885 00A7                                  __CFG_BORV$LO 0000  
+                                         wreg 0009                                  __CFG_IESO$ON 0000  
+                                ?_EUSART_Deal 0070                                          l1122 0190  
+                                        l1114 012F                                          l1310 00A4  
+                                        l1304 0066                                          l1234 0230  
+                                        l1322 00F8                                          l1330 011F  
+                                        l1306 007A                                          l1314 00B9  
+                                        l1308 008F                                          l1316 00CB  
+                                        l1326 010B                                          l1280 01B9  
+                                        l1290 01CF                                          l1362 02A2  
+                                        l1284 01C1                                          l1356 029A  
+>>>>>>> master
                                         _LATA 010C                                          _LATB 010D  
                                         _LATC 010E                                          i1l97 0022  
                                         i1l89 0010                                          _TMR0 0015  
                                         _WPUA 020C                                          _WPUB 020D  
                                         _WPUC 020E                                  __CFG_WRT$OFF 0000  
+<<<<<<< HEAD
                                __CFG_FCMEN$ON 0000                         __size_of_stopTimeCtrl 002D  
                                         _main 01F0                                          fsr0h 0005  
+=======
+                               __CFG_FCMEN$ON 0000                         __size_of_stopTimeCtrl 002B  
+                                        _main 0295                                          fsr0h 0005  
+>>>>>>> master
                                         fsr1h 0007                                          indf0 0000  
                                         fsr0l 0004                                          indf1 0001  
                                         fsr1l 0006                                          btemp 007E  
                                __CFG_BOREN$ON 0000                                          start 0027  
+<<<<<<< HEAD
                                __CFG_MCLRE$ON 0000                                 _startTimeCtrl 0382  
                      __end_of_TMR0_Initialize 0349                                 __CFG_PLLEN$ON 0000  
               ??_TMR0_DefaultInterruptHandler 0070                    Get_Device_Addr@device_addr 0073  
               __size_of_OSCILLATOR_Initialize 0007                 __end_of_OSCILLATOR_Initialize 0391  
+=======
+                               __CFG_MCLRE$ON 0000                                 _startTimeCtrl 0340  
+                     __end_of_TMR0_Initialize 0307                                 __CFG_PLLEN$ON 0000  
+              ??_TMR0_DefaultInterruptHandler 0070                    Get_Device_Addr@device_addr 0073  
+              __size_of_OSCILLATOR_Initialize 0007                 __end_of_OSCILLATOR_Initialize 034F  
+>>>>>>> master
                                        ?_main 0070                                 __CFG_WDTE$OFF 0000  
                                        _RCREG 0199                                         _RCSTA 019D  
                                        _TRISA 008C                                         _TRISB 008D  
                                        _TRISC 008E                                         _TXSTA 019E  
            __size_of_TMR0_SetInterruptHandler 0006                     ?_TMR0_SetInterruptHandler 0072  
+<<<<<<< HEAD
                                 _stopTimeCtrl 02A6                              __end_of_TMR0_ISR 0398  
                        __size_of_workTimeCtrl 002C                                _WDT_Initialize 03B0  
                                        pclath 000A                                         status 0003  
@@ -4222,10 +6827,98 @@ EUSART_SetRxInterruptHandler@interruptHandler 0072              TMR0_CallBack@eu
         __end_of_TMR0_DefaultInterruptHandler 03B6         __size_of_TMR0_DefaultInterruptHandler 0001  
                 _TMR0_DefaultInterruptHandler 03B5                          __end_of_stopTimeCtrl 02D3  
                                 _timeCtrlMode 007A                       __end_of_tempCtrlProcess 012E  
+=======
+                                _stopTimeCtrl 0240                              __end_of_TMR0_ISR 0356  
+                       __size_of_workTimeCtrl 002A                                _WDT_Initialize 036E  
+                                       pclath 000A                                         status 0003  
+                                       wtemp0 007E                             ??_Get_Device_Addr 0072  
+                             __initialization 0029                                ?_startTimeCtrl 0070  
+                                __end_of_main 02BD                   ?_INTERRUPT_InterruptManager 0070  
+              ??_EUSART_SetRxInterruptHandler 0074                                        ??_main 0077  
+                                _workTimeCtrl 026B                        __end_of_WDT_Initialize 0372  
+                                      _ANSELA 018C                                        _ANSELB 018D  
+                                      _ANSELC 018E                          __size_of_getTimeData 0072  
+                                      _BORCON 0116                                        i1l1202 01E6  
+                                      i1l1222 0205                                        i1l1208 01F1  
+                                      i1l1264 030C                              tempCtrlProcess@i 0074  
+                                      _OSCCON 0099                                        _IQRSta 0038  
+                                      _SPBRGH 019C                                        _SPBRGL 019B  
+                                      _WDTCON 0097                                 _EusartRxLenth 0077  
+                              __CFG_PWRTE$OFF 0000                                __CFG_STVREN$ON 0000  
+                            ?_TMR0_Initialize 0070                          _eusartRxOvertimeMask 0046  
+                             ?_WDT_Initialize 0070                         __end_of_TMR0_CallBack 020F  
+    TMR0_SetInterruptHandler@InterruptHandler 0072                          __size_of_EUSART_Deal 0041  
+                           _SYSTEM_Initialize 031A                       __end_of__initialization 0050  
+                          ?_SYSTEM_Initialize 0070                               ??_startTimeCtrl 0075  
+                              __pcstackCOMMON 0070                                  __pidataBANK0 0338  
+                         ??_SYSTEM_Initialize 0075                                     ?_TMR0_ISR 0070  
+                              _OPTION_REGbits 0095                     __end_of_SYSTEM_Initialize 0329  
+                                  __pbssBANK0 0020                                    __pbssBANK1 00A0  
+                                  __pbssBANK2 0120                   __size_of_EUSART_Receive_ISR 0013  
+                                  __pmaintext 0295              _EUSART_TxDefaultInterruptHandler 0040  
+            __end_of_TMR0_SetInterruptHandler 0368                                    ??_TMR0_ISR 0071  
+                                  __pintentry 0004                                       _BAUDCON 019F  
+                                     _APFCON0 011D                                       _APFCON1 011E  
+                               _eusartRxCount 0078                      __size_of_tempCtrlProcess 00D0  
+                                     _OSCTUNE 0098                               _Get_Device_Addr 0329  
+               TMR0_CallBack@preEusartRxCount 0043                  TMR0_CallBack@testTimeCtrlCnt 0042  
+                                     __ptext1 0054                                       __ptext2 031A  
+                                     __ptext3 036E                                       __ptext4 02F2  
+                                     __ptext5 0362                                       __ptext6 02BD  
+                                     __ptext7 0348                                       __ptext8 02D9  
+                                     __ptext9 0368                         _OSCILLATOR_Initialize 0348  
+                    ??_PIN_MANAGER_Initialize 0072                    __size_of_SYSTEM_Initialize 000F  
+                                     clrloop0 035D                          end_of_initialization 0050  
+                                     init_ram 0356                                       initloop 0357  
+                           _EUSART_Initialize 02D9                                 ?_testTimeCtrl 0070  
+                                  _testIQRSta 0030                            ?_EUSART_Initialize 0070  
+                                   _IQRPreSta 0054                                     _RCSTAbits 019D  
+                         ??_EUSART_Initialize 0074                              ??_WDT_Initialize 0072  
+                    _TMR0_SetInterruptHandler 0362                                     _PORTAbits 000C  
+                                   _PORTBbits 000D                       __end_of_Get_Device_Addr 0338  
+                            __CFG_FOSC$INTOSC 0000                                 ??_getTimeData 0047  
+                           ??_tempCtrlProcess 0072                     __end_of_EUSART_Initialize 02F2  
+                              ??_testTimeCtrl 0072                             __size_of_TMR0_ISR 0007  
+                      ?_OSCILLATOR_Initialize 0070                           start_initialization 0029  
+                    __size_of_TMR0_Initialize 0015               __size_of_PIN_MANAGER_Initialize 001C  
+                               ??_EUSART_Deal 0075  EUSART_SetRxInterruptHandler@interruptHandler 0072  
+            TMR0_CallBack@eusartRXOvertimeCnt 0045                           __end_of_getTimeData 0196  
+                     TMR0_CallBack@timeCrlCnt 0044                         __end_of_startTimeCtrl 0348  
+                      __size_of_TMR0_CallBack 0038                                   __pdataBANK0 0054  
+                      tempCtrlProcess@timeCnt 0020                          _timeCtrlOvertimeMask 0079  
+                            ?_Get_Device_Addr 0070                                   __pbssCOMMON 0077  
+                                   ___latbits 0001                                 ?_stopTimeCtrl 0070  
+                               __pcstackBANK0 0047                    __end_of_EUSART_Receive_ISR 031A  
+                  __size_of_EUSART_Initialize 0019                           __end_of_EUSART_Deal 01D7  
+            _EUSART_RxDefaultInterruptHandler 005E                         _TMR0_InterruptHandler 005C  
+                                   __pnvBANK0 005C                        _PIN_MANAGER_Initialize 02BD  
+                               stopTimeCtrl@i 0074                  ??_INTERRUPT_InterruptManager 0071  
+                               ?_workTimeCtrl 0070                            testTimeCtrl@IQRNum 0074  
+                              ??_stopTimeCtrl 0072                          __end_of_testTimeCtrl 0240  
+                                 _getTimeData 0124                             _timeCtrlStartFlag 007A  
+                               _TMR0_CallBack 01D7                                _eusartRxBuffer 0120  
+                           ??_TMR0_Initialize 0074                                      _LATAbits 010C  
+                                   clear_ram0 035C                                      _PIE1bits 0091  
+                               _timeCtrlValue 00A0           __size_of_INTERRUPT_InterruptManager 0023  
+                  ??_TMR0_SetInterruptHandler 0074                                      _PIR1bits 0011  
+                                    _TMR0_ISR 034F                                ??_workTimeCtrl 0072  
+                             _tempCtrlProcess 0054                                getTimeData@cnt 0072  
+                              ?_TMR0_CallBack 0070                                   _EUSART_Deal 0196  
+                     ??_OSCILLATOR_Initialize 0072                                      __ptext10 0196  
+                                    __ptext11 026B                                      __ptext20 0372  
+                                    __ptext12 020F                                      __ptext21 0307  
+                                    __ptext13 0340                                      __ptext14 0240  
+                                    __ptext15 0124                                      __ptext16 0329  
+                                    __ptext18 034F                                      __ptext19 01D7  
+                               __size_of_main 0028          __end_of_TMR0_DefaultInterruptHandler 0373  
+       __size_of_TMR0_DefaultInterruptHandler 0001                  _TMR0_DefaultInterruptHandler 0372  
+                        __end_of_stopTimeCtrl 026B                       __end_of_tempCtrlProcess 0124  
+>>>>>>> master
                                     int$flags 007E            __end_of_INTERRUPT_InterruptManager 0027  
                   _INTERRUPT_InterruptManager 0004                         __size_of_testTimeCtrl 0031  
                                workTimeCtrl@i 0074                                    _INTCONbits 000B  
                              ??_TMR0_CallBack 0070                       __size_of_WDT_Initialize 0004  
+<<<<<<< HEAD
                                     intlevel1 0000                          __end_of_workTimeCtrl 02FF  
                      ?_PIN_MANAGER_Initialize 0070                             __CFG_CLKOUTEN$OFF 0000  
         __end_of_EUSART_SetRxInterruptHandler 03B0         __size_of_EUSART_SetRxInterruptHandler 0006  
@@ -4236,3 +6929,15 @@ EUSART_SetRxInterruptHandler@interruptHandler 0072              TMR0_CallBack@eu
                              _TMR0_Initialize 0334                                  ?_getTimeData 0070  
                       __size_of_startTimeCtrl 0008                      __size_of_Get_Device_Addr 000F  
               __end_of_PIN_MANAGER_Initialize 031B                          ??_EUSART_Receive_ISR 0070  
+=======
+                                    intlevel1 0000                          __end_of_workTimeCtrl 0295  
+                     ?_PIN_MANAGER_Initialize 0070                             __CFG_CLKOUTEN$OFF 0000  
+        __end_of_EUSART_SetRxInterruptHandler 036E         __size_of_EUSART_SetRxInterruptHandler 0006  
+                _EUSART_SetRxInterruptHandler 0368                                  _testTimeCtrl 020F  
+               ?_TMR0_DefaultInterruptHandler 0070                                  getTimeData@i 0073  
+                                getTimeData@j 0074                            _EUSART_Receive_ISR 0307  
+                                  _OPTION_REG 0095                           ?_EUSART_Receive_ISR 0070  
+                             _TMR0_Initialize 02F2                                  ?_getTimeData 0070  
+                      __size_of_startTimeCtrl 0008                      __size_of_Get_Device_Addr 000F  
+              __end_of_PIN_MANAGER_Initialize 02D9                          ??_EUSART_Receive_ISR 0070  
+>>>>>>> master

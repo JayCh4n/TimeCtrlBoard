@@ -4142,15 +4142,22 @@ void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
 
 void EUSART_Deal(void);
 
+<<<<<<< HEAD
 # 30 "mcc_generated_files/time_ctrl.h"
+=======
+# 29 "mcc_generated_files/time_ctrl.h"
+>>>>>>> master
 extern uint16_t timeCtrlValue[8][4];
 extern uint8_t timeCtrlStartFlag;
 extern uint8_t timeCtrlOvertimeMask;
 extern uint8_t IQRPreSta[8];
 extern uint8_t IQRSta[8];
+<<<<<<< HEAD
 extern uint8_t timeCtrlMode;
 extern uint8_t timeCtrlEnableSignal;
 extern uint8_t readSignalflag;
+=======
+>>>>>>> master
 
 
 
@@ -4173,9 +4180,12 @@ uint8_t IQRSta[8] = {0};
 
 
 uint8_t testIQRSta[8] = {0};
+<<<<<<< HEAD
 uint8_t timeCtrlMode = 'A';
 uint8_t timeCtrlEnableSignal = 0;
 uint8_t readSignalflag = 0;
+=======
+>>>>>>> master
 
 void getTimeData(void)
 {
@@ -4198,7 +4208,10 @@ void workTimeCtrl(void)
 uint8_t i;
 
 timeCtrlStartFlag = 0;
+<<<<<<< HEAD
 readSignalflag = 0;
+=======
+>>>>>>> master
 do { LATAbits.LATA2 = 0; } while(0);
 
 for(i=0; i<8; i++)
@@ -4222,7 +4235,10 @@ void stopTimeCtrl(void)
 {
 uint8_t i;
 timeCtrlStartFlag = 0;
+<<<<<<< HEAD
 readSignalflag = 0;
+=======
+>>>>>>> master
 
 do { LATAbits.LATA2 = 1; } while(0);
 
@@ -4244,10 +4260,17 @@ LATC |= 1 << (IQRNum - 1);
 else
 LATC &= ~(1<<(IQRNum - 1));
 
+<<<<<<< HEAD
 # 92
 }
 
 # 127
+=======
+# 87
+}
+
+# 120
+>>>>>>> master
 void tempCtrlProcess(void)
 {
 uint8_t i;
@@ -4283,11 +4306,14 @@ LATC &= ~(1<<i);
 if(++IQRSta[i] >= 4)
 {
 IQRSta[i] = 3;
+<<<<<<< HEAD
 if(timeCtrlMode == 'B')
 {
 readSignalflag = 1;
 }
 
+=======
+>>>>>>> master
 }
 }
 }

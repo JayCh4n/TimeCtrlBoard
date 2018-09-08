@@ -13,7 +13,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _LATAbits `VS104 ~T0 @X0 0 e@268 ]
 "2136
 [v _LATC `Vuc ~T0 @X0 0 e@270 ]
+<<<<<<< HEAD
 "46 mcc_generated_files/time_ctrl.h
+=======
+"42 mcc_generated_files/time_ctrl.h
+>>>>>>> master
 [v _stopTimeCtrl `(v ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
@@ -2977,6 +2981,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart.h: 366: void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void));
 [; ;eusart.h: 386: void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
 [; ;eusart.h: 388: void EUSART_Deal(void);
+<<<<<<< HEAD
 [; ;time_ctrl.h: 30: extern uint16_t timeCtrlValue[8][4];
 [; ;time_ctrl.h: 31: extern uint8_t timeCtrlStartFlag;
 [; ;time_ctrl.h: 32: extern uint8_t timeCtrlOvertimeMask;
@@ -2991,6 +2996,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;time_ctrl.h: 46: void stopTimeCtrl(void);
 [; ;time_ctrl.h: 47: void testTimeCtrl(uint8_t iqr_num);
 [; ;time_ctrl.h: 48: void getTimeData(void);
+=======
+[; ;time_ctrl.h: 29: extern uint16_t timeCtrlValue[8][4];
+[; ;time_ctrl.h: 30: extern uint8_t timeCtrlStartFlag;
+[; ;time_ctrl.h: 31: extern uint8_t timeCtrlOvertimeMask;
+[; ;time_ctrl.h: 32: extern uint8_t IQRPreSta[8];
+[; ;time_ctrl.h: 33: extern uint8_t IQRSta[8];
+[; ;time_ctrl.h: 38: void tempCtrlProcess(void);
+[; ;time_ctrl.h: 40: void workTimeCtrl(void);
+[; ;time_ctrl.h: 41: void startTimeCtrl(void);
+[; ;time_ctrl.h: 42: void stopTimeCtrl(void);
+[; ;time_ctrl.h: 43: void testTimeCtrl(uint8_t iqr_num);
+[; ;time_ctrl.h: 44: void getTimeData(void);
+>>>>>>> master
 [v F3100 `ui ~T0 @X0 -> 4 `i t ]
 "3 mcc_generated_files/time_ctrl.c
 [v _timeCtrlValue `F3100 ~T0 @X0 -> 8 `i e ]
@@ -3034,6 +3052,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _testIQRSta `uc ~T0 @X0 -> 8 `i e ]
 [i _testIQRSta
 :U ..
+<<<<<<< HEAD
 -> -> 0 `i `uc
 ..
 ]
@@ -3053,8 +3072,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 "14
 [v _readSignalflag `uc ~T0 @X0 1 e ]
 [i _readSignalflag
+=======
+>>>>>>> master
 -> -> 0 `i `uc
+..
 ]
+<<<<<<< HEAD
 [; ;time_ctrl.c: 14: uint8_t readSignalflag = 0;
 "16
 [v _getTimeData `(v ~T0 @X0 1 ef ]
@@ -3074,20 +3097,51 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _cnt -> -> 0 `i `uc ]
 [; ;time_ctrl.c: 20: for(i=0; i<8; i++)
 "20
+=======
+[; ;time_ctrl.c: 11: uint8_t testIQRSta[8] = {0};
+"13
+[v _getTimeData `(v ~T0 @X0 1 ef ]
+"14
+{
+[; ;time_ctrl.c: 13: void getTimeData(void)
+[; ;time_ctrl.c: 14: {
+[e :U _getTimeData ]
+[f ]
+"15
+[v _i `uc ~T0 @X0 1 a ]
+[v _j `uc ~T0 @X0 1 a ]
+"16
+[v _cnt `uc ~T0 @X0 1 a ]
+[; ;time_ctrl.c: 15: uint8_t i, j;
+[; ;time_ctrl.c: 16: uint8_t cnt = 0;
+[e = _cnt -> -> 0 `i `uc ]
+[; ;time_ctrl.c: 17: for(i=0; i<8; i++)
+"17
+>>>>>>> master
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 8 `i 362  ]
 [e $U 363  ]
+<<<<<<< HEAD
 "21
 [e :U 362 ]
 [; ;time_ctrl.c: 21: {
 {
 [; ;time_ctrl.c: 22: for(j=0; j<4; j++)
 "22
+=======
+"18
+[e :U 362 ]
+[; ;time_ctrl.c: 18: {
+{
+[; ;time_ctrl.c: 19: for(j=0; j<4; j++)
+"19
+>>>>>>> master
 {
 [e = _j -> -> 0 `i `uc ]
 [e $ < -> _j `i -> 4 `i 365  ]
 [e $U 366  ]
+<<<<<<< HEAD
 "23
 [e :U 365 ]
 [; ;time_ctrl.c: 23: {
@@ -3308,18 +3362,242 @@ Version 3.2 HI-TECH Software Intermediate Code
 "130
 [v F3134 `ui ~T0 @X0 -> 8 `i s timeCnt ]
 [i F3134
+=======
+"20
+[e :U 365 ]
+[; ;time_ctrl.c: 20: {
+{
+[; ;time_ctrl.c: 21: timeCtrlValue[i][j] = eusartRxBuffer[cnt+5];
+"21
+[e = *U + &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux `ui `ux -> *U + &U _eusartRxBuffer * -> -> + -> _cnt `i -> 5 `i `ui `ux -> -> # *U &U _eusartRxBuffer `ui `ux `ui ]
+[; ;time_ctrl.c: 22: timeCtrlValue[i][j] = (timeCtrlValue[i][j] << 8)
+[; ;time_ctrl.c: 23: | eusartRxBuffer[cnt+6];
+"23
+[e = *U + &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux `ui `ux | << *U + &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux * -> _j `ux -> -> # *U &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux `ui `ux -> 8 `i -> *U + &U _eusartRxBuffer * -> -> + -> _cnt `i -> 6 `i `ui `ux -> -> # *U &U _eusartRxBuffer `ui `ux `ui ]
+[; ;time_ctrl.c: 24: cnt += 2;
+"24
+[e =+ _cnt -> -> 2 `i `uc ]
+"25
+}
+"19
+[e ++ _j -> -> 1 `i `uc ]
+[e $ < -> _j `i -> 4 `i 365  ]
+[e :U 366 ]
+"25
+}
+"26
+}
+"17
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 8 `i 362  ]
+[e :U 363 ]
+"26
+}
+[; ;time_ctrl.c: 25: }
+[; ;time_ctrl.c: 26: }
+[; ;time_ctrl.c: 27: }
+"27
+[e :UE 361 ]
+}
+"29
+[v _workTimeCtrl `(v ~T0 @X0 1 ef ]
+"30
+{
+[; ;time_ctrl.c: 29: void workTimeCtrl(void)
+[; ;time_ctrl.c: 30: {
+[e :U _workTimeCtrl ]
+[f ]
+"31
+[v _i `uc ~T0 @X0 1 a ]
+[; ;time_ctrl.c: 31: uint8_t i;
+[; ;time_ctrl.c: 33: timeCtrlStartFlag = 0;
+"33
+[e = _timeCtrlStartFlag -> -> 0 `i `uc ]
+[; ;time_ctrl.c: 34: do { LATAbits.LATA2 = 0; } while(0);
+"34
+[e :U 371 ]
+{
+[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
+}
+[e :U 370 ]
+[; ;time_ctrl.c: 36: for(i=0; i<8; i++)
+"36
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 8 `i 372  ]
+[e $U 373  ]
+"37
+[e :U 372 ]
+[; ;time_ctrl.c: 37: {
+{
+[; ;time_ctrl.c: 38: IQRSta[i] = 0;
+"38
+[e = *U + &U _IQRSta * -> _i `ux -> -> # *U &U _IQRSta `ui `ux -> -> 0 `i `uc ]
+[; ;time_ctrl.c: 39: testIQRSta[i] = 0;
+"39
+[e = *U + &U _testIQRSta * -> _i `ux -> -> # *U &U _testIQRSta `ui `ux -> -> 0 `i `uc ]
+[; ;time_ctrl.c: 40: IQRPreSta[i] = 3;
+"40
+[e = *U + &U _IQRPreSta * -> _i `ux -> -> # *U &U _IQRPreSta `ui `ux -> -> 3 `i `uc ]
+[; ;time_ctrl.c: 42: LATC |= 1 << i;
+"42
+[e =| _LATC -> << -> 1 `i _i `uc ]
+"43
+}
+"36
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 8 `i 372  ]
+[e :U 373 ]
+"43
+}
+[; ;time_ctrl.c: 43: }
+[; ;time_ctrl.c: 44: }
+"44
+[e :UE 368 ]
+}
+"46
+[v _startTimeCtrl `(v ~T0 @X0 1 ef ]
+"47
+{
+[; ;time_ctrl.c: 46: void startTimeCtrl(void)
+[; ;time_ctrl.c: 47: {
+[e :U _startTimeCtrl ]
+[f ]
+[; ;time_ctrl.c: 48: getTimeData();
+"48
+[e ( _getTimeData ..  ]
+[; ;time_ctrl.c: 49: stopTimeCtrl();
+"49
+[e ( _stopTimeCtrl ..  ]
+[; ;time_ctrl.c: 50: timeCtrlStartFlag = 1;
+"50
+[e = _timeCtrlStartFlag -> -> 1 `i `uc ]
+[; ;time_ctrl.c: 51: }
+"51
+[e :UE 375 ]
+}
+"53
+[v _stopTimeCtrl `(v ~T0 @X0 1 ef ]
+"54
+{
+[; ;time_ctrl.c: 53: void stopTimeCtrl(void)
+[; ;time_ctrl.c: 54: {
+[e :U _stopTimeCtrl ]
+[f ]
+"55
+[v _i `uc ~T0 @X0 1 a ]
+[; ;time_ctrl.c: 55: uint8_t i;
+[; ;time_ctrl.c: 56: timeCtrlStartFlag = 0;
+"56
+[e = _timeCtrlStartFlag -> -> 0 `i `uc ]
+[; ;time_ctrl.c: 58: do { LATAbits.LATA2 = 1; } while(0);
+"58
+[e :U 379 ]
+{
+[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
+}
+[e :U 378 ]
+[; ;time_ctrl.c: 60: for(i=0; i<8; i++)
+"60
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 8 `i 380  ]
+[e $U 381  ]
+"61
+[e :U 380 ]
+[; ;time_ctrl.c: 61: {
+{
+[; ;time_ctrl.c: 62: IQRSta[i] = 0;
+"62
+[e = *U + &U _IQRSta * -> _i `ux -> -> # *U &U _IQRSta `ui `ux -> -> 0 `i `uc ]
+[; ;time_ctrl.c: 63: testIQRSta[i] = 0;
+"63
+[e = *U + &U _testIQRSta * -> _i `ux -> -> # *U &U _testIQRSta `ui `ux -> -> 0 `i `uc ]
+[; ;time_ctrl.c: 64: IQRPreSta[i] = 3;
+"64
+[e = *U + &U _IQRPreSta * -> _i `ux -> -> # *U &U _IQRPreSta `ui `ux -> -> 3 `i `uc ]
+[; ;time_ctrl.c: 65: LATC &= ~(1<<i);
+"65
+[e =& _LATC -> ~ << -> 1 `i _i `uc ]
+"66
+}
+"60
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 8 `i 380  ]
+[e :U 381 ]
+"66
+}
+[; ;time_ctrl.c: 66: }
+[; ;time_ctrl.c: 67: }
+"67
+[e :UE 376 ]
+}
+"69
+[v _testTimeCtrl `(v ~T0 @X0 1 ef1`uc ]
+"70
+{
+[; ;time_ctrl.c: 69: void testTimeCtrl(uint8_t IQRNum)
+[; ;time_ctrl.c: 70: {
+[e :U _testTimeCtrl ]
+"69
+[v _IQRNum `uc ~T0 @X0 1 r1 ]
+"70
+[f ]
+[; ;time_ctrl.c: 71: testIQRSta[IQRNum - 1] ^= 0x01;
+"71
+[e =^ *U + &U _testIQRSta * -> -> - -> _IQRNum `i -> 1 `i `ui `ux -> -> # *U &U _testIQRSta `ui `ux -> -> 1 `i `uc ]
+[; ;time_ctrl.c: 73: if(testIQRSta[IQRNum - 1])
+"73
+[e $ ! != -> *U + &U _testIQRSta * -> -> - -> _IQRNum `i -> 1 `i `ui `ux -> -> # *U &U _testIQRSta `ui `ux `i -> -> -> 0 `i `uc `i 384  ]
+[; ;time_ctrl.c: 74: LATC |= 1 << (IQRNum - 1);
+"74
+[e =| _LATC -> << -> 1 `i - -> _IQRNum `i -> 1 `i `uc ]
+[e $U 385  ]
+"75
+[e :U 384 ]
+[; ;time_ctrl.c: 75: else
+[; ;time_ctrl.c: 76: LATC &= ~(1<<(IQRNum - 1));
+"76
+[e =& _LATC -> ~ << -> 1 `i - -> _IQRNum `i -> 1 `i `uc ]
+[e :U 385 ]
+[; ;time_ctrl.c: 87: }
+"87
+[e :UE 383 ]
+}
+"120
+[v _tempCtrlProcess `(v ~T0 @X0 1 ef ]
+"121
+{
+[; ;time_ctrl.c: 120: void tempCtrlProcess(void)
+[; ;time_ctrl.c: 121: {
+[e :U _tempCtrlProcess ]
+[f ]
+"122
+[v _i `uc ~T0 @X0 1 a ]
+"123
+[v F3131 `ui ~T0 @X0 -> 8 `i s timeCnt ]
+[i F3131
+>>>>>>> master
 :U ..
 -> -> 0 `i `ui
 ..
 ]
+<<<<<<< HEAD
 [; ;time_ctrl.c: 129: uint8_t i;
 [; ;time_ctrl.c: 130: static uint16_t timeCnt[8] = {0};
 [; ;time_ctrl.c: 132: for(i=0; i<8; i++)
 "132
+=======
+[; ;time_ctrl.c: 122: uint8_t i;
+[; ;time_ctrl.c: 123: static uint16_t timeCnt[8] = {0};
+[; ;time_ctrl.c: 125: for(i=0; i<8; i++)
+"125
+>>>>>>> master
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 8 `i 387  ]
 [e $U 388  ]
+<<<<<<< HEAD
 "133
 [e :U 387 ]
 [; ;time_ctrl.c: 133: {
@@ -3365,12 +3643,60 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;time_ctrl.c: 143: }
 [e $U 391  ]
 "136
+=======
+"126
+[e :U 387 ]
+[; ;time_ctrl.c: 126: {
+{
+[; ;time_ctrl.c: 127: if(IQRPreSta[i] != IQRSta[i])
+"127
+[e $ ! != -> *U + &U _IQRPreSta * -> _i `ux -> -> # *U &U _IQRPreSta `ui `ux `i -> *U + &U _IQRSta * -> _i `ux -> -> # *U &U _IQRSta `ui `ux `i 390  ]
+[; ;time_ctrl.c: 128: {
+"128
+{
+[; ;time_ctrl.c: 129: switch(IQRSta[i])
+"129
+[e $U 392  ]
+[; ;time_ctrl.c: 130: {
+"130
+{
+[; ;time_ctrl.c: 131: case 0: timeCnt[i] = timeCtrlValue[i][0]; break;
+"131
+[e :U 393 ]
+[e = *U + &U F3131 * -> _i `ux -> -> # *U &U F3131 `ui `ux *U + &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux `ui `ux ]
+[e $U 391  ]
+[; ;time_ctrl.c: 132: case 1: timeCnt[i] = timeCtrlValue[i][1]; break;
+"132
+[e :U 394 ]
+[e = *U + &U F3131 * -> _i `ux -> -> # *U &U F3131 `ui `ux *U + &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux `ui `ux ]
+[e $U 391  ]
+[; ;time_ctrl.c: 133: case 2: timeCnt[i] = timeCtrlValue[i][2]; break;
+"133
+[e :U 395 ]
+[e = *U + &U F3131 * -> _i `ux -> -> # *U &U F3131 `ui `ux *U + &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux `ui `ux ]
+[e $U 391  ]
+[; ;time_ctrl.c: 134: case 3: timeCnt[i] = timeCtrlValue[i][3]; break;
+"134
+[e :U 396 ]
+[e = *U + &U F3131 * -> _i `ux -> -> # *U &U F3131 `ui `ux *U + &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux * -> -> -> 3 `i `ui `ux -> -> # *U &U *U + &U _timeCtrlValue * -> _i `ux -> * -> # *U &U *U &U _timeCtrlValue `ui -> -> 4 `i `ui `ux `ui `ux ]
+[e $U 391  ]
+[; ;time_ctrl.c: 135: default: break;
+"135
+[e :U 397 ]
+[e $U 391  ]
+"136
+}
+[; ;time_ctrl.c: 136: }
+[e $U 391  ]
+"129
+>>>>>>> master
 [e :U 392 ]
 [e [\ *U + &U _IQRSta * -> _i `ux -> -> # *U &U _IQRSta `ui `ux , $ -> -> 0 `i `uc 393
  , $ -> -> 1 `i `uc 394
  , $ -> -> 2 `i `uc 395
  , $ -> -> 3 `i `uc 396
  397 ]
+<<<<<<< HEAD
 "143
 [e :U 391 ]
 [; ;time_ctrl.c: 145: IQRPreSta[i] = IQRSta[i];
@@ -3455,5 +3781,78 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;time_ctrl.c: 169: }
 [; ;time_ctrl.c: 171: }
 "171
+=======
+"136
+[e :U 391 ]
+[; ;time_ctrl.c: 138: IQRPreSta[i] = IQRSta[i];
+"138
+[e = *U + &U _IQRPreSta * -> _i `ux -> -> # *U &U _IQRPreSta `ui `ux *U + &U _IQRSta * -> _i `ux -> -> # *U &U _IQRSta `ui `ux ]
+"139
+}
+[e :U 390 ]
+[; ;time_ctrl.c: 139: }
+[; ;time_ctrl.c: 141: if(--timeCnt[i] == 0)
+"141
+[e $ ! == =- *U + &U F3131 * -> _i `ux -> -> # *U &U F3131 `ui `ux -> -> 1 `i `ui -> -> 0 `i `ui 398  ]
+[; ;time_ctrl.c: 142: {
+"142
+{
+[; ;time_ctrl.c: 143: if(IQRSta[i]%2 == 0)
+"143
+[e $ ! == % -> *U + &U _IQRSta * -> _i `ux -> -> # *U &U _IQRSta `ui `ux `i -> 2 `i -> 0 `i 399  ]
+[; ;time_ctrl.c: 144: {
+"144
+{
+[; ;time_ctrl.c: 145: LATC |= 1 << i;
+"145
+[e =| _LATC -> << -> 1 `i _i `uc ]
+"146
+}
+[; ;time_ctrl.c: 146: }
+[e $U 400  ]
+"147
+[e :U 399 ]
+[; ;time_ctrl.c: 147: else if(IQRSta[i]%2 == 1)
+[e $ ! == % -> *U + &U _IQRSta * -> _i `ux -> -> # *U &U _IQRSta `ui `ux `i -> 2 `i -> 1 `i 401  ]
+[; ;time_ctrl.c: 148: {
+"148
+{
+[; ;time_ctrl.c: 149: LATC &= ~(1<<i);
+"149
+[e =& _LATC -> ~ << -> 1 `i _i `uc ]
+"150
+}
+[e :U 401 ]
+"152
+[e :U 400 ]
+[; ;time_ctrl.c: 150: }
+[; ;time_ctrl.c: 152: if(++IQRSta[i] >= 4)
+[e $ ! >= -> =+ *U + &U _IQRSta * -> _i `ux -> -> # *U &U _IQRSta `ui `ux -> -> 1 `i `uc `i -> 4 `i 402  ]
+[; ;time_ctrl.c: 153: {
+"153
+{
+[; ;time_ctrl.c: 154: IQRSta[i] = 3;
+"154
+[e = *U + &U _IQRSta * -> _i `ux -> -> # *U &U _IQRSta `ui `ux -> -> 3 `i `uc ]
+"155
+}
+[e :U 402 ]
+"156
+}
+[e :U 398 ]
+"157
+}
+"125
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 8 `i 387  ]
+[e :U 388 ]
+"157
+}
+[; ;time_ctrl.c: 155: }
+[; ;time_ctrl.c: 156: }
+[; ;time_ctrl.c: 157: }
+[; ;time_ctrl.c: 159: }
+"159
+>>>>>>> master
 [e :UE 386 ]
 }

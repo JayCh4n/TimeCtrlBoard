@@ -92,18 +92,30 @@ void main(void)
         }
         
         if(timeCtrlOvertimeMask)
+<<<<<<< HEAD
         {   
             if(timeCtrlEnableSignal && (timeCtrlStartFlag == 1))
+=======
+        {
+            if(!SIGNAL_GetValue() && timeCtrlStartFlag == 1)
+>>>>>>> master
             {
                 LED_SetLow();
                 tempCtrlProcess();
                 timeCtrlOvertimeMask = 0;
             }
+<<<<<<< HEAD
             else if(!timeCtrlEnableSignal && (timeCtrlStartFlag == 1))
             {
                 stopTimeCtrl();
                 timeCtrlStartFlag = 1;
                 readSignalflag = 1;
+=======
+            else if(SIGNAL_GetValue() && timeCtrlStartFlag == 1)
+            {
+                stopTimeCtrl();
+                timeCtrlStartFlag = 1;
+>>>>>>> master
             }
         }
 

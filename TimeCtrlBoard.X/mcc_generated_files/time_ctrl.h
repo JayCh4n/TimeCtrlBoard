@@ -17,7 +17,10 @@ extern "C" {
 #define TIME_CTRL_STOP  0x1C
 #define TIME_CTRL_START 0x1D
 #define TIME_CTRL_WORK  0x4E
+<<<<<<< HEAD
 #define TIME_CTRL_MODE  0X1F
+=======
+>>>>>>> master
 #define TEST_QIR1       0x21
 #define TEST_QIR2       0x22
 #define TEST_QIR3       0x23
@@ -32,9 +35,12 @@ extern uint8_t timeCtrlStartFlag;
 extern uint8_t timeCtrlOvertimeMask;
 extern uint8_t IQRPreSta[8];
 extern uint8_t IQRSta[8];
+<<<<<<< HEAD
 extern uint8_t timeCtrlMode;
 extern uint8_t timeCtrlEnableSignal;
 extern uint8_t readSignalflag;
+=======
+>>>>>>> master
 //extern uint8_t testTimeCtrlFlag;
 //extern uint8_t testTimeCtrlOvertimeMask;
 //extern uint8_t testIQRNum;
