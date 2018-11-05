@@ -9,12 +9,9 @@ uint8_t IQRSta[8] = {0};      //?????? ??8??? 0?T1  1?T2  2:T3 3:T4
 //uint8_t testTimeCtrlOvertimeMask = 0;
 //uint8_t testIQRNum = 0;
 uint8_t testIQRSta[8] = {0};
-<<<<<<< HEAD
 uint8_t timeCtrlMode = 'A';
 uint8_t timeCtrlEnableSignal = 0; 
 uint8_t readSignalflag = 0;
-=======
->>>>>>> master
 
 void getTimeData(void)
 {
@@ -37,10 +34,7 @@ void workTimeCtrl(void)
     uint8_t i;
     
     timeCtrlStartFlag = 0;
-<<<<<<< HEAD
     readSignalflag = 0;
-=======
->>>>>>> master
     LED_SetLow();
     
     for(i=0; i<8; i++)
@@ -64,10 +58,7 @@ void stopTimeCtrl(void)
 {
     uint8_t i;
     timeCtrlStartFlag = 0;
-<<<<<<< HEAD
     readSignalflag = 0;
-=======
->>>>>>> master
     
     LED_SetHigh();
     
@@ -100,10 +91,7 @@ void testTimeCtrl(uint8_t IQRNum)
 //    testTimeCtrlFlag = 1;
 }
 
-<<<<<<< HEAD
 //????
-=======
->>>>>>> master
 //void testTimeCtrlProcess(uint8_t IQRNum)
 //{
 //    static uint16_t timeCnt = 0;
@@ -135,10 +123,7 @@ void testTimeCtrl(uint8_t IQRNum)
 //    }
 //}
 
-<<<<<<< HEAD
 //?????
-=======
->>>>>>> master
 void tempCtrlProcess(void)
 {
     uint8_t i;
@@ -174,14 +159,11 @@ void tempCtrlProcess(void)
             if(++IQRSta[i] >= 4)
             {
                 IQRSta[i] = 3;
-<<<<<<< HEAD
                 if(timeCtrlMode == 'B')
                 {
                     readSignalflag = 1;
                 }
                 
-=======
->>>>>>> master
             }
         }
     }

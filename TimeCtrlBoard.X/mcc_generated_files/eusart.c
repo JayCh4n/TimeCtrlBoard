@@ -251,15 +251,11 @@ void EUSART_Deal(void)
                 {
                     workTimeCtrl();
                 }
-<<<<<<< HEAD
             }
             if(eusartRxBuffer[3] == TIME_CTRL_MODE)
             {
                 timeCtrlMode = eusartRxBuffer[4];
             }
-=======
-            }    
->>>>>>> master
         }
     }
 }
