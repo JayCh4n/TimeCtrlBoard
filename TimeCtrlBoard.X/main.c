@@ -72,10 +72,6 @@ void main(void)
 
         if(timeCtrlMode == 'A')
         {
-            timeCtrlEnableSignal = !SIGNAL_GetValue();
-        }
-        else if(timeCtrlMode == 'B')
-        {
             if(readSignalflag)
             {
                 if((timeCtrlEnableSignal = !SIGNAL_GetValue()))
@@ -83,6 +79,10 @@ void main(void)
                     readSignalflag = 0;
                 }
             }
+        }
+        else if(timeCtrlMode == 'B')
+        {
+            timeCtrlEnableSignal = !SIGNAL_GetValue();
         }
         
         if (eusartRxOvertimeMask)

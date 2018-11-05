@@ -1,6 +1,6 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[v F3098 `(v ~T0 @X0 0 tf ]
 [v F3101 `(v ~T0 @X0 0 tf ]
+[v F3104 `(v ~T0 @X0 0 tf ]
 "1321 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1828.h
 [s S72 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S72 . TMR1IE TMR2IE CCP1IE SSP1IE TXIE RCIE ADIE TMR1GIE ]
@@ -9,9 +9,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S71 . . ]
 "1332
 [v _PIE1bits `VS71 ~T0 @X0 0 e@145 ]
-[v F3113 `(v ~T0 @X0 0 tf ]
+[v F3116 `(v ~T0 @X0 0 tf ]
 "386 mcc_generated_files/eusart.h
-[v _EUSART_SetRxInterruptHandler `(v ~T0 @X0 0 ef1`*F3113 ]
+[v _EUSART_SetRxInterruptHandler `(v ~T0 @X0 0 ef1`*F3116 ]
 "346
 [v _EUSART_Receive_ISR `(v ~T0 @X0 0 ef ]
 "3490 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1828.h
@@ -36,7 +36,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RCREG `Vuc ~T0 @X0 0 e@409 ]
 "100 mcc_generated_files/mcc.h
 [v _Get_Device_Addr `(uc ~T0 @X0 0 ef ]
-<<<<<<< HEAD
 "46 mcc_generated_files/time_ctrl.h
 [v _stopTimeCtrl `(v ~T0 @X0 0 ef ]
 "45
@@ -47,16 +46,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _workTimeCtrl `(v ~T0 @X0 0 ef ]
 "35
 [v _timeCtrlMode `uc ~T0 @X0 0 e ]
-=======
-"42 mcc_generated_files/time_ctrl.h
-[v _stopTimeCtrl `(v ~T0 @X0 0 ef ]
-"41
-[v _startTimeCtrl `(v ~T0 @X0 0 ef ]
-"43
-[v _testTimeCtrl `(v ~T0 @X0 0 ef1`uc ]
-"40
-[v _workTimeCtrl `(v ~T0 @X0 0 ef ]
->>>>>>> master
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -2993,7 +2982,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pin_manager.h: 289: void PIN_MANAGER_Initialize (void);
 [; ;pin_manager.h: 301: void PIN_MANAGER_IOC(void);
 [; ;interrupt_manager.h: 109: void interrupt INTERRUPT_InterruptManager(void);
-<<<<<<< HEAD
 [; ;time_ctrl.h: 30: extern uint16_t timeCtrlValue[8][4];
 [; ;time_ctrl.h: 31: extern uint8_t timeCtrlStartFlag;
 [; ;time_ctrl.h: 32: extern uint8_t timeCtrlOvertimeMask;
@@ -3008,19 +2996,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;time_ctrl.h: 46: void stopTimeCtrl(void);
 [; ;time_ctrl.h: 47: void testTimeCtrl(uint8_t iqr_num);
 [; ;time_ctrl.h: 48: void getTimeData(void);
-=======
-[; ;time_ctrl.h: 29: extern uint16_t timeCtrlValue[8][4];
-[; ;time_ctrl.h: 30: extern uint8_t timeCtrlStartFlag;
-[; ;time_ctrl.h: 31: extern uint8_t timeCtrlOvertimeMask;
-[; ;time_ctrl.h: 32: extern uint8_t IQRPreSta[8];
-[; ;time_ctrl.h: 33: extern uint8_t IQRSta[8];
-[; ;time_ctrl.h: 38: void tempCtrlProcess(void);
-[; ;time_ctrl.h: 40: void workTimeCtrl(void);
-[; ;time_ctrl.h: 41: void startTimeCtrl(void);
-[; ;time_ctrl.h: 42: void stopTimeCtrl(void);
-[; ;time_ctrl.h: 43: void testTimeCtrl(uint8_t iqr_num);
-[; ;time_ctrl.h: 44: void getTimeData(void);
->>>>>>> master
 [; ;tmr0.h: 107: void TMR0_Initialize(void);
 [; ;tmr0.h: 228: void TMR0_ISR(void);
 [; ;tmr0.h: 246: void TMR0_CallBack(void);
@@ -3037,10 +3012,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart.h: 83: extern uint8_t eusartRxOvertimeMask;
 [; ;eusart.h: 84: extern uint8_t EusartRxLenth;
 "89 mcc_generated_files/eusart.h
-[v _EUSART_TxDefaultInterruptHandler `*F3098 ~T0 @X0 1 e ]
+[v _EUSART_TxDefaultInterruptHandler `*F3101 ~T0 @X0 1 e ]
 [; ;eusart.h: 89: void (*EUSART_TxDefaultInterruptHandler)(void);
 "90
-[v _EUSART_RxDefaultInterruptHandler `*F3101 ~T0 @X0 1 e ]
+[v _EUSART_RxDefaultInterruptHandler `*F3104 ~T0 @X0 1 e ]
 [; ;eusart.h: 90: void (*EUSART_RxDefaultInterruptHandler)(void);
 [; ;eusart.h: 112: void EUSART_Initialize(void);
 [; ;eusart.h: 346: void EUSART_Receive_ISR(void);
@@ -3139,12 +3114,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 362 ]
 }
 "223
-[v _EUSART_SetRxInterruptHandler `(v ~T0 @X0 1 ef1`*F3113 ]
+[v _EUSART_SetRxInterruptHandler `(v ~T0 @X0 1 ef1`*F3116 ]
 {
 [; ;eusart.c: 223: void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void)){
 [e :U _EUSART_SetRxInterruptHandler ]
-[v F3121 `(v ~T0 @X0 0 tf ]
-[v _interruptHandler `*F3121 ~T0 @X0 1 r1 ]
+[v F3124 `(v ~T0 @X0 0 tf ]
+[v _interruptHandler `*F3124 ~T0 @X0 1 r1 ]
 [f ]
 [; ;eusart.c: 224: EUSART_RxDefaultInterruptHandler = interruptHandler;
 "224
@@ -3153,131 +3128,116 @@ Version 3.2 HI-TECH Software Intermediate Code
 "225
 [e :UE 364 ]
 }
-"228
+"227
 [v _EUSART_Deal `(v ~T0 @X0 1 ef ]
-"229
+"228
 {
-[; ;eusart.c: 228: void EUSART_Deal(void)
-[; ;eusart.c: 229: {
+[; ;eusart.c: 227: void EUSART_Deal(void)
+[; ;eusart.c: 228: {
 [e :U _EUSART_Deal ]
 [f ]
-[; ;eusart.c: 231: if(eusartRxBuffer[0] == 0xA5 && eusartRxBuffer[1] == 0x5A)
-"231
+[; ;eusart.c: 229: if(eusartRxBuffer[0] == 0xA5 && eusartRxBuffer[1] == 0x5A)
+"229
 [e $ ! && == -> *U + &U _eusartRxBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _eusartRxBuffer `ui `ux `i -> 165 `i == -> *U + &U _eusartRxBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _eusartRxBuffer `ui `ux `i -> 90 `i 366  ]
+[; ;eusart.c: 230: {
+"230
+{
+[; ;eusart.c: 231: if(eusartRxBuffer[2] == EusartRxLenth-5)
+"231
+[e $ ! == -> *U + &U _eusartRxBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _eusartRxBuffer `ui `ux `i - -> _EusartRxLenth `i -> 5 `i 367  ]
 [; ;eusart.c: 232: {
 "232
 {
-[; ;eusart.c: 234: if(eusartRxBuffer[2] == EusartRxLenth-5)
-"234
-[e $ ! == -> *U + &U _eusartRxBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _eusartRxBuffer `ui `ux `i - -> _EusartRxLenth `i -> 5 `i 367  ]
-[; ;eusart.c: 235: {
-"235
-{
-[; ;eusart.c: 236: if(eusartRxBuffer[4] == Get_Device_Addr())
-"236
+[; ;eusart.c: 233: if(eusartRxBuffer[4] == Get_Device_Addr())
+"233
 [e $ ! == -> *U + &U _eusartRxBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _eusartRxBuffer `ui `ux `i -> ( _Get_Device_Addr ..  `i 368  ]
-[; ;eusart.c: 237: {
-"237
+[; ;eusart.c: 234: {
+"234
 {
-[; ;eusart.c: 238: if(eusartRxBuffer[3] == 0x1C)
-"238
+[; ;eusart.c: 235: if(eusartRxBuffer[3] == 0x1C)
+"235
 [e $ ! == -> *U + &U _eusartRxBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _eusartRxBuffer `ui `ux `i -> 28 `i 369  ]
-[; ;eusart.c: 239: {
-"239
+[; ;eusart.c: 236: {
+"236
 {
-[; ;eusart.c: 240: stopTimeCtrl();
-"240
+[; ;eusart.c: 237: stopTimeCtrl();
+"237
 [e ( _stopTimeCtrl ..  ]
-"241
+"238
 }
-[; ;eusart.c: 241: }
+[; ;eusart.c: 238: }
 [e $U 370  ]
-"242
+"239
 [e :U 369 ]
-[; ;eusart.c: 242: else if(eusartRxBuffer[3] == 0x1D)
+[; ;eusart.c: 239: else if(eusartRxBuffer[3] == 0x1D)
 [e $ ! == -> *U + &U _eusartRxBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _eusartRxBuffer `ui `ux `i -> 29 `i 371  ]
-[; ;eusart.c: 243: {
-"243
+[; ;eusart.c: 240: {
+"240
 {
-[; ;eusart.c: 244: startTimeCtrl();
-"244
+[; ;eusart.c: 241: startTimeCtrl();
+"241
 [e ( _startTimeCtrl ..  ]
-"245
+"242
 }
-[; ;eusart.c: 245: }
+[; ;eusart.c: 242: }
 [e $U 372  ]
-"246
+"243
 [e :U 371 ]
-[; ;eusart.c: 246: else if(eusartRxBuffer[3] >= 0x21 && eusartRxBuffer[3] <= 0x28)
+[; ;eusart.c: 243: else if(eusartRxBuffer[3] >= 0x21 && eusartRxBuffer[3] <= 0x28)
 [e $ ! && >= -> *U + &U _eusartRxBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _eusartRxBuffer `ui `ux `i -> 33 `i <= -> *U + &U _eusartRxBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _eusartRxBuffer `ui `ux `i -> 40 `i 373  ]
-[; ;eusart.c: 247: {
-"247
+[; ;eusart.c: 244: {
+"244
 {
-[; ;eusart.c: 248: testTimeCtrl(eusartRxBuffer[3] - 0x20);
-"248
+[; ;eusart.c: 245: testTimeCtrl(eusartRxBuffer[3] - 0x20);
+"245
 [e ( _testTimeCtrl (1 -> - -> *U + &U _eusartRxBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _eusartRxBuffer `ui `ux `i -> 32 `i `uc ]
-"249
+"246
 }
-[; ;eusart.c: 249: }
+[; ;eusart.c: 246: }
 [e $U 374  ]
-"250
+"247
 [e :U 373 ]
-[; ;eusart.c: 250: else if(eusartRxBuffer[3] == 0x4E)
+[; ;eusart.c: 247: else if(eusartRxBuffer[3] == 0x4E)
 [e $ ! == -> *U + &U _eusartRxBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _eusartRxBuffer `ui `ux `i -> 78 `i 375  ]
-[; ;eusart.c: 251: {
-"251
+[; ;eusart.c: 248: {
+"248
 {
-[; ;eusart.c: 252: workTimeCtrl();
-"252
+[; ;eusart.c: 249: workTimeCtrl();
+"249
 [e ( _workTimeCtrl ..  ]
-"253
+"250
 }
 [e :U 375 ]
-"254
+"251
 [e :U 374 ]
 [e :U 372 ]
 [e :U 370 ]
 }
 [e :U 368 ]
-<<<<<<< HEAD
-[; ;eusart.c: 253: }
-[; ;eusart.c: 254: }
-[; ;eusart.c: 255: if(eusartRxBuffer[3] == 0X1F)
-"255
+[; ;eusart.c: 250: }
+[; ;eusart.c: 251: }
+[; ;eusart.c: 252: if(eusartRxBuffer[3] == 0X1F)
+"252
 [e $ ! == -> *U + &U _eusartRxBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _eusartRxBuffer `ui `ux `i -> 31 `i 376  ]
-[; ;eusart.c: 256: {
-"256
+[; ;eusart.c: 253: {
+"253
 {
-[; ;eusart.c: 257: timeCtrlMode = eusartRxBuffer[4];
-"257
+[; ;eusart.c: 254: timeCtrlMode = eusartRxBuffer[4];
+"254
 [e = _timeCtrlMode *U + &U _eusartRxBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _eusartRxBuffer `ui `ux ]
-"258
+"255
 }
 [e :U 376 ]
-"259
-}
-[e :U 367 ]
-"260
-}
-[e :U 366 ]
-[; ;eusart.c: 258: }
-[; ;eusart.c: 259: }
-[; ;eusart.c: 260: }
-[; ;eusart.c: 261: }
-"261
-=======
-"255
-}
-[e :U 367 ]
 "256
 }
+[e :U 367 ]
+"257
+}
 [e :U 366 ]
-[; ;eusart.c: 253: }
-[; ;eusart.c: 254: }
 [; ;eusart.c: 255: }
 [; ;eusart.c: 256: }
 [; ;eusart.c: 257: }
-"257
->>>>>>> master
+[; ;eusart.c: 258: }
+"258
 [e :UE 365 ]
 }

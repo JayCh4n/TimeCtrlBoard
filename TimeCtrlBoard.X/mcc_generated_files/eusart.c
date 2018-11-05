@@ -224,14 +224,11 @@ void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void)){
     EUSART_RxDefaultInterruptHandler = interruptHandler;
 }
 
-/*?Eusart??????????*/
 void EUSART_Deal(void)
 {
-//    LED_Toggle();
-    if(eusartRxBuffer[0] == 0xA5 && eusartRxBuffer[1] == 0x5A)      //????????
+    if(eusartRxBuffer[0] == 0xA5 && eusartRxBuffer[1] == 0x5A)     
     {
- //       LED_SetLow();
-        if(eusartRxBuffer[2] == EusartRxLenth-5)                      //??????????
+        if(eusartRxBuffer[2] == EusartRxLenth-5)                     
         {
             if(eusartRxBuffer[4] == Get_Device_Addr())
             {

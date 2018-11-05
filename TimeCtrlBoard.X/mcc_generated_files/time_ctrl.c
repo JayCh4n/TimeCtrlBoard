@@ -79,16 +79,6 @@ void testTimeCtrl(uint8_t IQRNum)
         LATC |= 1 << (IQRNum - 1);
     else
         LATC &= ~(1<<(IQRNum - 1));
-//    uint8_t i;
-//
-//    testIQRNum = IQRNum;
-
-//    for(i=0; i<4; i++)
-//    {
-//        timeCtrlValue[IQRNum - 1][i] = eusartRxBuffer[i * 2 + 5];
-//        timeCtrlValue[IQRNum - 1][i] = (timeCtrlValue[IQRNum - 1][i] << 8) | eusartRxBuffer[i * 2 + 6];
-//    }
-//    testTimeCtrlFlag = 1;
 }
 
 //????
@@ -159,11 +149,10 @@ void tempCtrlProcess(void)
             if(++IQRSta[i] >= 4)
             {
                 IQRSta[i] = 3;
-                if(timeCtrlMode == 'B')
+                if(timeCtrlMode == 'A')
                 {
                     readSignalflag = 1;
-                }
-                
+                } 
             }
         }
     }

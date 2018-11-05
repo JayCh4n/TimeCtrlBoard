@@ -4087,22 +4087,15 @@ void PIN_MANAGER_IOC(void);
 # 109 "mcc_generated_files/interrupt_manager.h"
 void interrupt INTERRUPT_InterruptManager(void);
 
-<<<<<<< HEAD
 # 30 "mcc_generated_files/time_ctrl.h"
-=======
-# 29 "mcc_generated_files/time_ctrl.h"
->>>>>>> master
 extern uint16_t timeCtrlValue[8][4];
 extern uint8_t timeCtrlStartFlag;
 extern uint8_t timeCtrlOvertimeMask;
 extern uint8_t IQRPreSta[8];
 extern uint8_t IQRSta[8];
-<<<<<<< HEAD
 extern uint8_t timeCtrlMode;
 extern uint8_t timeCtrlEnableSignal;
 extern uint8_t readSignalflag;
-=======
->>>>>>> master
 
 
 
@@ -4228,13 +4221,10 @@ void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void)){
 EUSART_RxDefaultInterruptHandler = interruptHandler;
 }
 
-
 void EUSART_Deal(void)
 {
-
 if(eusartRxBuffer[0] == 0xA5 && eusartRxBuffer[1] == 0x5A)
 {
-
 if(eusartRxBuffer[2] == EusartRxLenth-5)
 {
 if(eusartRxBuffer[4] == Get_Device_Addr())
@@ -4255,13 +4245,10 @@ else if(eusartRxBuffer[3] == 0x4E)
 {
 workTimeCtrl();
 }
-<<<<<<< HEAD
 }
 if(eusartRxBuffer[3] == 0X1F)
 {
 timeCtrlMode = eusartRxBuffer[4];
-=======
->>>>>>> master
 }
 }
 }
